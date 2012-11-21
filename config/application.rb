@@ -62,6 +62,41 @@ module RailsPrelaunchSignup
     # Enable escaping HTML in JSON.
     config.active_support.escape_html_entities_in_json = true
 
+
+
+    #config.action_mailer.smtp_settings = {
+      #address: "smtp.gmail.com",
+      #port: 587,
+      #domain: "localhost:3000",
+      #authentication: "plain",
+      #enable_starttls_auto: true,
+      #user_name: "jtg028@gmail.com",
+      #password: "Kahuna!8"
+    #}
+
+    config.action_mailer.smtp_settings = {
+      :address              => "smtp.gmail.com",
+      :port                 => 587,
+      :domain               => "localhost:3000",
+      :user_name            => "jtg028@gmail.com",
+      :password             => "Kahuna!8",
+      :authentication       => :plain,
+      :enable_starttls_auto => true
+    }
+
+    config.action_mailer.default_url_options = {
+      :host => "localhost:3000"
+    }
+
+        # ActionMailer Config
+    #config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+    config.action_mailer.delivery_method = :smtp
+    # change to true to allow email to be sent during development
+    config.action_mailer.perform_deliveries = true
+    config.action_mailer.raise_delivery_errors = true
+    config.action_mailer.default :charset => "utf-8"
+
+
     # Use SQL instead of Active Record's schema dumper when creating the database.
     # This is necessary if your schema can't be completely dumped by the schema dumper,
     # like if you have constraints or database-specific column types

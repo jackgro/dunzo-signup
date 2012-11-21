@@ -13,22 +13,27 @@ RailsPrelaunchSignup::Application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
-  # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-  config.action_mailer.delivery_method = :smtp
-  # change to true to allow email to be sent during development
-  config.action_mailer.perform_deliveries = false
-  config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.default :charset => "utf-8"  
-
     config.action_mailer.smtp_settings = {
-      :address   => "smtp.mandrillapp.com",
-      :port      => 25,
-      :user_name => ENV["MANDRILL_USERNAME"],
-      :password  => ENV["MANDRILL_API_KEY"]
+      :address              => "smtp.gmail.com",
+      :port                 => 587,
+      :domain               => "localhost:3000",
+      :user_name            => "jtg028@gmail.com",
+      :password             => "Kahuna!8",
+      :authentication       => :plain,
+      :enable_starttls_auto => true
     }
 
+    config.action_mailer.default_url_options = {
+      :host => "localhost:3000"
+    }
 
+        # ActionMailer Config
+    #config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+    config.action_mailer.delivery_method = :smtp
+    # change to true to allow email to be sent during development
+    config.action_mailer.perform_deliveries = true
+    config.action_mailer.raise_delivery_errors = true
+    config.action_mailer.default :charset => "utf-8"
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
