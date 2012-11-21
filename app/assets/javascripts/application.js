@@ -37,6 +37,13 @@ $('document').ready(function() {
     });
     return false;
   });
+
+
+  // Display New Category form
+
+  $('span.new-category').on('click', function(){
+      $("div.new-user-category-form").toggleClass("display-none");
+  });
   
 })
 
