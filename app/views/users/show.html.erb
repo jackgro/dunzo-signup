@@ -1,3 +1,45 @@
-<h3>User</h3>
-<p>User: <%= @user.name %></p>
-<p>Email: <%= @user.email if @user.email %></p>
+<div class="row">
+	<div class="span2">
+		<h6>Categories <%= link_to "+ Add", '#', class: "new-category-link pull-right" %></h6>
+		<div class="new-user-category-form display-none">
+				<%= form_for ([@user, @category]) do |f|%>
+					<%= f.text_field :name, placeholder: "Name", class: "span2" %>
+				<% end %>
+		</div>
+
+		<div class="category">
+			<%= link_to "All categories", user_categories_path(@user) %>
+		</div>
+		<% @categories.each do |category| %>
+			<div class="category">
+				<%= category.name %>
+				<%= link_to "x", user_category_path(@user, category), method: :delete, class: "pull-right" %>
+				<%# link_to "rename" , edit_user_category_path([category]), class: "pull-right" %>
+
+			</div>
+		<% end %>
+
+	</div>
+	<div class="span4 offset1">
+		<% @categories.each do |category| %>
+			<div class="category">
+				<h6><%= category.name %></h6> 
+				<%= link_to "Add a new item...", "#", class: "new-category-task-link", data: { category_id: category.id } %>
+			</div>
+			<%= content_tag "div", class: "new-task-form display-none", data: {category_id: category.id } do %>
+				<%= form_for ([category, @task]) do |f|%> 
+					<%= f.text_field :name, placeholder: "e.g. Dinner at 5pm" %>
+				<% end %>
+			<% end %>
+
+			<%= div_for(category.tasks, :class => "tasks") do |task| %>
+				<li><%= task.name if task %></li>
+			<% end %>
+
+		<% end %>
+	</div>
+	<div class="span4 offset1">
+		<h3>TODO: Calendar</h3>
+	</div>
+
+</div>
