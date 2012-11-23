@@ -36,16 +36,21 @@ $('document').ready(function() {
       }
     });
     return false;
-  });
+  });  
 
+    // Display New Category form
+    $('a.new-category-link').on('click', function(){
+      $('div.new-user-category-form').slideToggle(200);
+    });
 
-  // Display New Category form
+    link = $('a.new-category-task-link');
+    form = $('div.new-task-form');
+      form.hide();
+      link.on('click', function(){
+        form.slideToggle(200);
 
-  $('span.new-category').on('click', function(){
-      $("div.new-user-category-form").toggleClass("display-none");
-  });
-  
-})
+      });
+});
 
 // load social sharing scripts if the page includes a Twitter "share" button
 function loadSocial() {
