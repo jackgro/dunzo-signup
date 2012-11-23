@@ -75,8 +75,8 @@ RailsPrelaunchSignup::Application.configure do
     domain: "localhost:3000",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: "jtg028@gmail.com",
-    password: "Kahuna!8"
+    user_name: "",
+    password: ""
   }
 
   # Log the query plan for queries taking more than this (works
