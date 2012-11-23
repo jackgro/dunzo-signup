@@ -9,6 +9,9 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @category = @user.categories.new
+    @categories = @user.categories.all
+    @task = @category.tasks.new
   end
   
   def invite
