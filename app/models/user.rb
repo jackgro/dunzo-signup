@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   after_create :add_user_to_mailchimp unless Rails.env.test?
   before_destroy :remove_user_from_mailchimp unless Rails.env.test?
 
-  has_many :categories
+  has_many :categories, dependent: :destroy
   has_many :tasks, :through => :categories
   # override Devise method
   # no password is required when the account is created; validate password when the user sets one

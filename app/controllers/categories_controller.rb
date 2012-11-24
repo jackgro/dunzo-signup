@@ -12,18 +12,18 @@ class CategoriesController < ApplicationController
 
   def destroy
     @category = Category.find(params[:id]) 
+    @user = @category.user
     @category.destroy
-    redirect_to :back, notice: "Category destroyed."
+    redirect_to user_path(@user), notice: "Category destroyed."
   end
 
   def create
     @user = User.find(params[:user_id])
     @category = @user.categories.create(params[:category])
     if @category.save
-      redirect_to :back, notice: "Category created."
+      redirect_to user_path(@user), notice: "Category created."
     else
       render 'new'
     end
-    # params raise.to_yaml
   end
 end

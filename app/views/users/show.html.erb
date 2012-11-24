@@ -2,9 +2,9 @@
 	<div class="span2">
 		<h6>Categories <%= link_to "+ Add", '#', class: "new-category-link pull-right" %></h6>
 		<div class="new-user-category-form display-none">
-				<%= form_for ([@user, @category]) do |f|%>
-					<%= f.text_field :name, placeholder: "Name", class: "span2" %>
-				<% end %>
+			<%= form_for ([@user, @category]) do |f|%>
+				<%= f.text_field :name, placeholder: "Name", class: "span2" %>
+			<% end %>
 		</div>
 
 		<div class="category">
@@ -20,21 +20,25 @@
 		<% end %>
 
 	</div>
+
 	<div class="span4 offset1">
 		<% @categories.each do |category| %>
-			<div class="category">
+			<div class="category-<%= category.id %>">
 				<h6><%= category.name %></h6> 
-				<%= link_to "Add a new item...", "#", class: "new-category-task-link", data: { category_id: category.id } %>
-			</div>
-			<%= content_tag "div", class: "new-task-form display-none", data: {category_id: category.id } do %>
-				<%= form_for ([category, @task]) do |f|%> 
-					<%= f.text_field :name, placeholder: "e.g. Dinner at 5pm" %>
-				<% end %>
-			<% end %>
+				<%= link_to "Add a new item...", new_category_task_path(category), 
+				class: "category-#{category.id}-task-link", remote: true %>
 
-			<%= div_for(category.tasks, :class => "tasks") do |task| %>
-				<li><%= task.name if task %></li>
-			<% end %>
+				<div class="category-<%= category.id %>-tasks">
+					<% category.tasks.each do |task| %>
+						<li class="task">
+							<%= task.name if task %>
+							<%= link_to "x", category_task_path(category, task), class: "delete-task pull-right",
+							:method => :delete, :confirm => "Are you sure?" %>
+						</li>
+					<% end %>
+				</div>
+			</div>
+
 
 		<% end %>
 	</div>

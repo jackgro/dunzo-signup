@@ -43,13 +43,6 @@ $('document').ready(function() {
       $('div.new-user-category-form').slideToggle(200);
     });
 
-    link = $('a.new-category-task-link');
-    form = $('div.new-task-form');
-      form.hide();
-      link.on('click', function(){
-        form.slideToggle(200);
-
-      });
 });
 
 // load social sharing scripts if the page includes a Twitter "share" button

@@ -1,0 +1,4 @@
+$('form.new_task').remove();
+$('.category-<%= @category.id if @category %>-task-link').show();
+$('div.category-<%= @category.id if @category %>-tasks').append('<li class="<%= @task.id if @task %>"><%= j @task.name if @task %></li>');
+$('li.task').loadOnCreate();

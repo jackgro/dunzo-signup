@@ -1,0 +1,3 @@
+<%= form_for ([@category, @task]), remote: true do |f|%> 
+	<%= f.text_field :name, placeholder: "e.g. Dinner at 5pm" %>
+<% end %>
