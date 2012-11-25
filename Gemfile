@@ -23,6 +23,7 @@ gem "simple_form", ">= 2.0.4"
 gem "google_visualr", ">= 2.1.2"
 gem "jquery-datatables-rails", ">= 1.11.1"
 gem "quiet_assets", ">= 1.0.1", :group => :development
+gem "figaro"
 group :production do
   gem 'pg', '0.12.2'
 end

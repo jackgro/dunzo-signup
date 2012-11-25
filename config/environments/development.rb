@@ -14,21 +14,17 @@ RailsPrelaunchSignup::Application.configure do
   config.action_controller.perform_caching = false
 
     config.action_mailer.smtp_settings = {
-      :address              => "smtp.gmail.com",
-      :port                 => 587,
-      :domain               => "localhost:3000",
-      :user_name            => "",
-      :password             => "",
-      :authentication       => :plain,
-      :enable_starttls_auto => true
+      address: "smtp.gmail.com",
+      port: 587,
+      domain: "example.com",
+      authentication: "plain",
+      enable_starttls_auto: true,
+      user_name: ENV["GMAIL_USERNAME"],
+      password: ENV["GMAIL_PASSWORD"]
     }
 
-    config.action_mailer.default_url_options = {
-      :host => "localhost:3000"
-    }
-
-        # ActionMailer Config
-    #config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+    # ActionMailer Config
+    config.action_mailer.default_url_options = { :host => ENV["MAILER_HOST"] }
     config.action_mailer.delivery_method = :smtp
     # change to true to allow email to be sent during development
     config.action_mailer.perform_deliveries = true

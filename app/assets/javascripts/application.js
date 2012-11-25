@@ -28,7 +28,7 @@ $('document').ready(function() {
     var dataString = 'user[email]='+ email + '&user[opt_in]=' + opt_in;
     $.ajax({
       type: "POST",
-      url: "/users",
+      url: "/accounts",
       data: dataString,
       success: function(data) {
         $('#request-invite').html(data);
@@ -38,10 +38,10 @@ $('document').ready(function() {
     return false;
   });  
 
-    // Display New Category form
-    $('a.new-category-link').on('click', function(){
-      $('div.new-user-category-form').slideToggle(200);
-    });
+  // Display New Category form
+  $('a.new-category-link').on('click', function(){
+    $('div.new-user-category-form').slideToggle(200);
+  });
 
 });
 
