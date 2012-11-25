@@ -63,31 +63,6 @@ module RailsPrelaunchSignup
     config.active_support.escape_html_entities_in_json = true
 
 
-
-    #config.action_mailer.smtp_settings = {
-      #address: "smtp.gmail.com",
-      #port: 587,
-      #domain: "localhost:3000",
-      #authentication: "plain",
-      #enable_starttls_auto: true,
-      #user_name: "jtg028@gmail.com",
-      #password: "Kahuna!8"
-    #}
-
-    config.action_mailer.smtp_settings = {
-      :address              => "smtp.gmail.com",
-      :port                 => 587,
-      :domain               => "localhost:3000",
-      :user_name            => "",
-      :password             => "",
-      :authentication       => :plain,
-      :enable_starttls_auto => true
-    }
-
-    config.action_mailer.default_url_options = {
-      :host => "localhost:3000"
-    }
-
         # ActionMailer Config
     #config.action_mailer.default_url_options = { :host => 'localhost:3000' }
     config.action_mailer.delivery_method = :smtp
