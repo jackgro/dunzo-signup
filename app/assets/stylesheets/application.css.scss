@@ -43,3 +43,8 @@ div.new-user-category-form form, form.new_task{
 .visibility-hidden{
 	visibility: hidden;
 }
+
+li.task{
+  list-style-type: none;
+  line-height: 28px;
+}

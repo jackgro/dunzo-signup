@@ -1,4 +1,6 @@
+html = '<li class="task"><%= check_box("task", :complete) %> <%= j @task.name if @task %><%= link_to "x", category_task_path(@category, @task), class: "delete-task pull-right", :method => :delete %></li>'
 $('form.new_task').remove();
 $('.category-<%= @category.id if @category %>-task-link').show();
-$('div.category-<%= @category.id if @category %>-tasks').append('<li class="<%= @task.id if @task %>"><%= j @task.name if @task %></li>');
+// $('div.category-<%= @category.id if @category %>-tasks').append(html).fadeIn(500);
+$(html).hide().appendTo('div.category-<%= @category.id if @category %>-tasks').fadeIn(300);
 $('li.task').loadOnCreate();

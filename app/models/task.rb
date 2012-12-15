@@ -1,6 +1,6 @@
 class Task < ActiveRecord::Base
-  attr_accessible :name
+  attr_accessible :name, :complete
 
   belongs_to :category
-  # has_many :users, :through => :categories
+  has_many :users, :through => :categories
 end

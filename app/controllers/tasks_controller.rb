@@ -11,7 +11,7 @@ class TasksController < ApplicationController
     respond_to do |format|
       format.html { 
         if @task.save
-          redirect_to user_path(@user), notice: "Task created."
+          redirect_to user_path(@user)
         else
           render 'new'
         end

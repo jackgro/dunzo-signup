@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     @category = @user.categories.new
     @categories = @user.categories.all
     @task = Task.new
+    
   end
   
   def invite
