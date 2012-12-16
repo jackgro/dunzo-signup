@@ -1,5 +1,2 @@
-%h1 New Category
 = form_for ([:user, @category]) do |f|
-  = f.label :name
-  = f.text_field :name
-  = f.submit
+  = f.text_field :name, placeholder: "Name", class: "span2"
