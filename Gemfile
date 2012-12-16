@@ -11,6 +11,7 @@ gem "google_visualr", ">= 2.1.2"
 gem "jquery-datatables-rails", ">= 1.11.1"
 gem "figaro"
 gem "unicorn"
+gem "newrelic_rpm"
 
 gem "rspec-rails", ">= 2.11.4", :group => [:development, :test]
 gem "factory_girl_rails", ">= 4.1.0", :group => [:development, :test]
@@ -18,7 +19,7 @@ gem "factory_girl_rails", ">= 4.1.0", :group => [:development, :test]
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'yui-compressor' 
+  gem 'yui-compressor'
   gem 'uglifier', '>= 1.0.3'
 end
 

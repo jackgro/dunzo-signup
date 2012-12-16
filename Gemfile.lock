@@ -98,6 +98,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.19)
     multi_json (1.3.7)
+    newrelic_rpm (3.5.3.25)
     nokogiri (1.5.5)
     open4 (1.3.0)
     orm_adapter (0.4.0)
@@ -194,6 +195,7 @@ DEPENDENCIES
   jquery-datatables-rails (>= 1.11.1)
   jquery-rails
   launchy (>= 2.1.2)
+  newrelic_rpm
   pg (= 0.12.2)
   quiet_assets (>= 1.0.1)
   rails (= 3.2.9)
