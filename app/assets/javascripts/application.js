@@ -17,7 +17,7 @@
 //= require dataTables/jquery.dataTables.bootstrap
 //= require_tree .
 $('document').ready(function() {
-  
+
   // use AJAX to submit the "request invitation" form
   $('#invitation_button').live('click', function() {
     var email = $('form #user_email').val();
