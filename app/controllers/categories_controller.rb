@@ -1,6 +1,5 @@
 class CategoriesController < ApplicationController
   def new
-    # @user = User.find params[:id]
     @category = Category.new
   end
 
@@ -11,7 +10,7 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    @category = Category.find(params[:id]) 
+    @category = Category.find(params[:id])
     @user = @category.user
     @category.destroy
     redirect_to user_path(@user)

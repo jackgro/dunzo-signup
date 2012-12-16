@@ -3,8 +3,7 @@
     %h6
       Categories #{link_to "+ Add", '#', class: "new-category-link pull-right"}
     .new-user-category-form.display-none
-      = form_for ([@user, @category]) do |f|
-        = f.text_field :name, placeholder: "Name", class: "span2"
+      = render 'categories/form'
     .category
       = link_to "All categories", user_categories_path(@user)
     - @categories.each do |category|
