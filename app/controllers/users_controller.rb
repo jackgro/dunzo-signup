@@ -11,7 +11,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @category = @user.categories.new
     @categories = @user.categories.all
-    @task = Task.new
   end
 
   def invite
