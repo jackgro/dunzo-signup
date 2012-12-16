@@ -20,6 +20,8 @@
             = link_to 'Login', new_user_session_path
         %ul.dropdown-menu
           %li
+            = link_to "Profile", user_path(current_user)
+          %li
             = link_to 'Logout', destroy_user_session_path, :method=>'delete'
           %li
             = link_to 'Edit account', edit_user_registration_path
