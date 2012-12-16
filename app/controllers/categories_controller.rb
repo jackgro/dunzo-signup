@@ -13,12 +13,15 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @user = @category.user
     @category.destroy
-    redirect_to user_path(@user)
+    respond_to do |format|
+      format.html{ redirect_to user_path(@user) }
+      format.js
+    end
   end
 
   def create
     @user = User.find(params[:user_id])
-    @category = @user.categories.create(params[:category])
+    @category = @user.categories.new(params[:category])
     if @category.save
       redirect_to user_path(@user)
     else
