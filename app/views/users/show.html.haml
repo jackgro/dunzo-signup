@@ -19,10 +19,10 @@
           class: "category-#{category.id}-task-link", remote: true       |
         %div{:class => "category-#{category.id}-tasks"}
           - category.tasks.each do |task|
-            %li.task
+            %li{:id => "task-#{task.id}", :class => "task"}
               = check_box("task", :complete)
               = task.name
               = link_to "x", category_task_path(category, task), class: "delete-task pull-right", |
-                :method => :delete                                                                |
+                :method => :delete, remote: true
   .span4.offset1
     %h3 TODO: Calendar

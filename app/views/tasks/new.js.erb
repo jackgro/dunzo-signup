@@ -1,1 +1,6 @@
-$('.category-<%= @category.id %>-task-link').hide().after('<%= j render("form") %>');
+// After clicking "Add a new item" this js hides that link and
+// then appends the task form in its place.
+$('.category-<%= @category.id %>-task-link').hide().before('<%= j render("form") %>');
+
+// Focus the cursor in the form once created.
+$('input#task_name').focus();

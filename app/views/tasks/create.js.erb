@@ -1,6 +1,12 @@
-html = '<li class="task"><%= check_box("task", :complete) %> <%= j @task.name if @task %><%= link_to "x", category_task_path(@category, @task), class: "delete-task pull-right", :method => :delete %></li>'
+// Set html code for a task after a new one is created.
+html = '<li class="task" id="task-<%= @task.id %>"><%= check_box("task", :complete) %> <%= j @task.name %><%= link_to "x",
+category_task_path(@category, @task), class: "delete-task pull-right", :method => :delete, :remote => true %></li>'
+
+// Remove task form
 $('form.new_task').remove();
-$('.category-<%= @category.id if @category %>-task-link').show();
-// $('div.category-<%= @category.id if @category %>-tasks').append(html).fadeIn(500);
+
+// Show link to add a new task again
+$('.category-<%= @category.id %>-task-link').show();
+
+// Append and fade in the new task to the list
 $(html).hide().appendTo('div.category-<%= @category.id if @category %>-tasks').fadeIn(300);
-$('li.task').loadOnCreate();

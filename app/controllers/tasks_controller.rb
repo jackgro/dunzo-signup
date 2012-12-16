@@ -24,7 +24,12 @@ class TasksController < ApplicationController
     @category = Category.find(params[:category_id])
     @task = @category.tasks.find(params[:id])
     @user = @category.user
+    respond_to do |format|
     @task.destroy
-    redirect_to user_path(@user)
+      format.html {
+        redirect_to user_path(@user)
+      }
+      format.js
+    end
   end
 end
