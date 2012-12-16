@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :opt_in
-  
+
   after_create :add_user_to_mailchimp unless Rails.env.test?
   before_destroy :remove_user_from_mailchimp unless Rails.env.test?
 
@@ -17,23 +17,23 @@ class User < ActiveRecord::Base
   # no password is required when the account is created; validate password when the user sets one
   validates_confirmation_of :password
   def password_required?
-    if !persisted? 
+    if !persisted?
       !(password != "")
     else
       !password.nil? || !password_confirmation.nil?
     end
   end
-  
+
   # override Devise method
   def confirmation_required?
     false
   end
-  
+
   # override Devise method
   def active_for_authentication?
     confirmed? || confirmation_period_valid?
   end
-  
+
   # new function to set the password
   def attempt_set_password(params)
     p = {}
@@ -41,7 +41,7 @@ class User < ActiveRecord::Base
     p[:password_confirmation] = params[:password_confirmation]
     update_attributes(p)
   end
-  
+
   # new function to determine whether a password has been set
   def has_no_password?
     self.encrypted_password.blank?
@@ -51,7 +51,11 @@ class User < ActiveRecord::Base
   def only_if_unconfirmed
     pending_any_confirmation {yield}
   end
-    
+
+  def first_name
+    self.name.split[0]
+  end
+
   private
 
   def add_user_to_mailchimp
@@ -63,7 +67,7 @@ class User < ActiveRecord::Base
       Rails.logger.info("MAILCHIMP SUBSCRIBE: result #{result.inspect} for #{self.email}")
     end
   end
-  
+
   def remove_user_from_mailchimp
     unless self.email.include?('@example.com')
       mailchimp = Hominid::API.new(ENV["MAILCHIMP_API_KEY"])
@@ -72,5 +76,4 @@ class User < ActiveRecord::Base
       Rails.logger.info("MAILCHIMP UNSUBSCRIBE: result #{result.inspect} for #{self.email}")
     end
   end
-
 end
