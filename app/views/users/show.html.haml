@@ -6,10 +6,10 @@
       = render 'categories/form'
     .category
       = link_to "All categories", user_categories_path(@user)
-    - @categories.each do |category|
-      .div{:class => "category-#{category.id}"}
-        = category.name
-        = link_to "x", user_category_path(@user, category), method: :delete, class: "pull-right", remote: true
+      - @categories.each do |category|
+        %div{:class => "category-#{category.id}"}
+          = category.name
+          = link_to "x", user_category_path(@user, category), method: :delete, class: "pull-right", remote: true
   .span4.offset1
     - @categories.each do |category|
       %div{:class => "category-#{category.id}"}
