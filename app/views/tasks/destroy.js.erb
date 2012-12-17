@@ -1,6 +1,6 @@
-$this = $('li#task-<%= @task.id %>')
 // Fade out deleted task, then run a function so the element
 // is removed from DOM
+$this = $('li#task-<%= @task.id %>')
 $this.fadeOut(200, function(){
     $this.remove();
 });
