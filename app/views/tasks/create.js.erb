@@ -1,12 +1,18 @@
-// Set html code for a task after a new one is created.
-html = '<li class="task" id="task-<%= @task.id %>"><%= check_box("task", :complete) %> <%= j @task.name %><%= link_to "x",
-category_task_path(@category, @task), class: "delete-task pull-right", :method => :delete, :remote => true %></li>'
+// Set html for a newly created task.
+html =
+  '<li class="task" id="task-<%= @task.id %>">' +
+  '<%= check_box("task", :complete) %> ' +
+  '<%= j @task.name %>' +
+  '<%= link_to "x", category_task_path(@category, @task), class: "delete-task pull-right", :method => :delete, :remote => true %>' +
+  '</li>'
 
-// Remove task form
-$('form.new_task').remove();
+$new_task_link = $('.category-<%= @category.id %>-task-link')
+$task_list     = 'div.category-<%= @category.id %>-tasks'
 
-// Show link to add a new task again
-$('.category-<%= @category.id %>-task-link').show();
+$('form.new_task').remove(); // Remove task form
 
-// Append and fade in the new task to the list
-$(html).hide().appendTo('div.category-<%= @category.id if @category %>-tasks').fadeIn(300);
+$new_task_link.show(); // Show link to add a new task again
+
+ $(html).hide() // Append and fade in the new task to the list
+          .appendTo($task_list)
+            .fadeIn(300);
