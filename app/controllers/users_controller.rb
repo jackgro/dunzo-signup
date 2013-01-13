@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @category = @user.categories.new
     @categories = @user.categories.all
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
 
   def invite

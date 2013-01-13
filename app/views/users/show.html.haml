@@ -19,4 +19,10 @@
             = render :partial => "tasks/task", locals: {category: category, task: task}
 
   .span4.offset1
-    %h3 TODO: Calendar
+    %h3
+      = @date.strftime("%B %Y")
+      %span.pull-right
+      = link_to "<", date: @date.prev_month
+      = link_to ">", date: @date.next_month
+    = calendar @date do |date|
+      = date.day
