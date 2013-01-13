@@ -18,6 +18,7 @@ gem "rspec-rails", ">= 2.11.4", :group => [:development, :test]
 gem "factory_girl_rails", ">= 4.1.0", :group => [:development, :test]
 
 group :assets do
+  gem 'jquery-ui-rails'
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'yui-compressor'
