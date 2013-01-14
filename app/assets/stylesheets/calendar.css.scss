@@ -27,21 +27,43 @@
 
   .notmonth, .notmonth a { color: #CCC; }
   .today { background-color: #D7F2FF; }
+
+  /*#month {*/
+    /*margin: 0;*/
+    /*padding-bottom: 10px;*/
+    /*text-align: center;*/
+    /*font-size: 12px;*/
+    /*a {*/
+      /*text-decoration: none;*/
+      /*padding: 0 10px;*/
+      /*color: #999;*/
+    /*}*/
+  /*}*/
+
+  /*ul {*/
+    /*[>font-size: 11px;<]*/
+    /*padding-left: 20px;*/
+  /*}*/
 }
 
-#month {
-  margin: 0;
-  padding-bottom: 10px;
-  text-align: center;
-  font-size: 12px;
-  a {
-    text-decoration: none;
-    padding: 0 10px;
-    color: #999;
+
+header.date{
+  font-size: 24.5px;
+  font-weight: normal;
+  color: #888888;
+  line-height: 40px;
+  margin: 10px 0;
+
+  .today{
+    color: #2d90ff;
+  }
+
+  .next-day{
+    float: right;
+  }
+
+  .month-switcher{
+    float: right; 
   }
 }
 
-ul {
-  font-size: 11px;
-  padding-left: 20px;
-}
