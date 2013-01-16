@@ -13,6 +13,7 @@ gem "figaro"
 gem "unicorn"
 gem "newrelic_rpm"
 gem "haml-rails"
+gem 'sqlite3'
 
 gem "rspec-rails", ">= 2.11.4", :group => [:development, :test]
 gem "factory_girl_rails", ">= 4.1.0", :group => [:development, :test]
@@ -26,7 +27,6 @@ group :assets do
 end
 
 group :development do
-  gem 'sqlite3', :group => :development
   gem "quiet_assets", ">= 1.0.1"
   gem "better_errors"
   gem "binding_of_caller"
