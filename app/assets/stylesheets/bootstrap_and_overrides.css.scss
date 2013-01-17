@@ -3,10 +3,11 @@ body { padding-top: 80px; }
 @import "bootstrap-responsive";
 
 .navbar{
-  height: 60px;
+  height: 54px;
 
   .navbar-inner {
-    padding: 10px 0!important;
+    height:54px;
+    line-height:52px;
   }
 
   .brand {
@@ -14,5 +15,6 @@ body { padding-top: 80px; }
     font-style: italic;
     font-weight: 100;
     letter-spacing: 1px;
+    padding-top:0px;
   }
 }
