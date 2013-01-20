@@ -1,3 +1,27 @@
 // Place all the styles related to the tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+a.add-item-link{
+  display: block;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0px 10px 40px;
+  color: #666;
+  font-size: .75rem;
+  font-weight: bold;
+}
+
+li.task{
+  list-style-type: none;
+  line-height: 28px;
+  padding: 5px 15px;
+  border-bottom: 1px solid #ddd;
+
+  span{ /* task text */
+    padding-left: 10px;
+  }
+  input#task_complete{
+    vertical-align: baseline;
+  }
+}

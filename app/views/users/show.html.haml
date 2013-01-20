@@ -13,11 +13,13 @@
     = date_header(@date)
     = @date.strftime("%A, %B %e, %Y")
     %span.next-day= link_to ">", date: @date.next_day
+  %hr.tasks
 
   - @categories.each do |category|
     %div{:class => "category-#{category.id}"}
-      %h6= category.name
-      = link_to "Add a new item...", new_category_task_path(category, :date => @date), class: "category-#{category.id}-task-link", remote: true
+      %header.category
+        %h6= category.name
+      = link_to "Add a new item...", new_category_task_path(category, :date => @date), class: "category-#{category.id}-task-link add-item-link", remote: true
       %div{:class => "category-#{category.id}-tasks"}
         - category.tasks.each do |task|
           = render :partial => "tasks/task", locals: {category: category, task: task}
@@ -28,5 +30,6 @@
     %span.month-switcher
       = link_to "<", date: @date.prev_month
       = link_to ">", date: @date.next_month
+  %hr.calendar
   = calendar @date do |date|
-    = date.day
+    = link_to date.day, "#{current_user.id}?date=#{date}", class: "calendar-day"

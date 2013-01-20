@@ -1,6 +1,6 @@
 - if task.date == @date
   %li{:id => "task-#{task.id}", :class => "task"}
     = check_box("task", :complete)
-    = task.name
+    %span= task.name
     = link_to "x", category_task_path(category, task), class: "delete-task pull-right", |
       :method => :delete, remote: true

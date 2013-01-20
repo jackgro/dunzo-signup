@@ -1,6 +1,8 @@
+hr.calendar{ width: 90%;}
+
 .calendar {
   border-collapse: collapse;
-  width: 100%;
+  width: 90%;
 
   td, th {
     font-family: "Lucida Grande", arial, helvetica, sans-serif;
@@ -13,43 +15,29 @@
     background: #DDD;
     color: #666;
     text-align: center;
-    width: 8%;
+    width: 14%;
   }
 
   td {
     background: #FFF;
     color: #777;
-    height: 8%;
+    height: 14%;
     vertical-align: top;
     font-size: 11px;
     text-align: center;
   }
 
+  a.calendar-day{
+    font-weight: bold;
+    color: #555;
+  }
   .notmonth, .notmonth a { color: #CCC; }
   .today { background-color: #D7F2FF; }
-
-  /*#month {*/
-    /*margin: 0;*/
-    /*padding-bottom: 10px;*/
-    /*text-align: center;*/
-    /*font-size: 12px;*/
-    /*a {*/
-      /*text-decoration: none;*/
-      /*padding: 0 10px;*/
-      /*color: #999;*/
-    /*}*/
-  /*}*/
-
-  /*ul {*/
-    /*[>font-size: 11px;<]*/
-    /*padding-left: 20px;*/
-  /*}*/
 }
-
 
 header.date{
   font-size: 24.5px;
-  font-weight: normal;
+  font-weight: 200;
   color: #888888;
   line-height: 40px;
   margin: 10px 0;
@@ -64,6 +52,6 @@ header.date{
 
   .month-switcher{
     float: right; 
+    margin-right: 10%;
   }
 }
-

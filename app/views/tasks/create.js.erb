@@ -2,7 +2,7 @@
 html =
   '<li class="task" id="task-<%= @task.id %>">' +
   '<%= check_box("task", :complete) %> ' +
-  '<%= j @task.name %>' +
+  '<span><%= j @task.name %></span>' +
   '<%= link_to "x", category_task_path(@category, @task), class: "delete-task pull-right", :method => :delete, :remote => true %>' +
   '</li>'
 
