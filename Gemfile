@@ -13,7 +13,6 @@ gem "figaro"
 gem "unicorn"
 gem "newrelic_rpm"
 gem "haml-rails"
-gem 'sqlite3'
 
 gem "rspec-rails", ">= 2.11.4", :group => [:development, :test]
 gem "factory_girl_rails", ">= 4.1.0", :group => [:development, :test]
