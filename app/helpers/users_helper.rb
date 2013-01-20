@@ -14,7 +14,6 @@ module UsersHelper
       end
     else
       content_tag(:span, class: "today") do
-        "Date:"
       end
     end
   end
