@@ -8,6 +8,24 @@ class TasksController < ApplicationController
     @category = Category.find(params[:category_id])
     @user = @category.user
     @task = @category.tasks.create(params[:task])
+    redirect_to :back
+
+    #respond_to do |format|
+      #format.html {
+        #if @task.save
+          #redirect_to :back
+        #else
+          #render 'new'
+        #end
+      #}
+      #format.js
+    #end
+  end
+
+  def update
+    @category = Category.find(params[:category_id])
+    @user = @category.user
+    @task = @category.tasks.create(params[:task])
 
     respond_to do |format|
       format.html {

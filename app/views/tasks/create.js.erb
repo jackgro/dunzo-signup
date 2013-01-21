@@ -1,10 +1,10 @@
 // Set html for a newly created task.
 html =
-  '<li class="task" id="task-<%= @task.id %>">' +
-  '<%= check_box("task", :complete) %> ' +
-  '<span><%= j @task.name %></span>' +
-  '<%= link_to "x", category_task_path(@category, @task), class: "delete-task pull-right", :method => :delete, :remote => true %>' +
-  '</li>'
+  '<%= form_for([@category, @task]), remote: true do |f| %>' +
+  '<%= f.check_box :complete %>' +
+  '<%= f.label :name, @task.name %>' +
+  '<%= link_to "x", category_task_path(@category, @task), class: "delete-task pull-right", method: :delete, remote: true %>' +
+  '<% end %>'
 
 $new_task_link = $('.category-<%= @category.id %>-task-link')
 $task_list     = 'div.category-<%= @category.id %>-tasks'
