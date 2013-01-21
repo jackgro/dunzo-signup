@@ -41,6 +41,7 @@ header.date{
   color: #888888;
   line-height: 40px;
   margin: 10px 0;
+  position: relative;
 
   .today{
     color: #2d90ff;
@@ -54,4 +55,18 @@ header.date{
     float: right; 
     margin-right: 10%;
   }
+}
+
+input.date-select{
+  position: absolute;
+  right: 4%;
+  width: 15%;
+  bottom: 12%;
+  border: 1px solid #c3c3c3;
+  margin-bottom: 0px;
+  /*@include border-radius(2px);*/
+  color: #979797;
+  font-weight: bold;
+  font-size: 0.8rem;
+  padding: 5px 12px;
 }

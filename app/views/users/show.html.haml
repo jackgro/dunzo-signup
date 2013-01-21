@@ -1,6 +1,7 @@
 .span2
-  %h6
-    Categories #{link_to "+ Add", '#', class: "new-category-link pull-right"}
+  %header
+    %h6
+      Categories #{link_to "+ Add", '#', class: "new-category-link pull-right"}
   .new-user-category-form.display-none
     = render 'categories/form'
   .category
@@ -12,6 +13,7 @@
     %span.prev-day= link_to "<", date: @date.prev_day
     = date_header(@date)
     = @date.strftime("%A, %B %e, %Y")
+    = text_field_tag(:date, @date, class: "date-select")
     %span.next-day= link_to ">", date: @date.next_day
   %hr.tasks
 
