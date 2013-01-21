@@ -19,7 +19,7 @@
     %div{:class => "category-#{category.id}"}
       %header.category
         %h6= category.name
-      = link_to "Add a new item...", new_category_task_path(category, :date => @date), class: "category-#{category.id}-task-link add-item-link", remote: true
+      = link_to "Add a new item...", new_category_task_path(category, :date => @date), class: "category-#{category.id}-task-link add-item", remote: true
       %div{:class => "category-#{category.id}-tasks"}
         - category.tasks.each do |task|
           = render :partial => "tasks/task", locals: {category: category, task: task}
