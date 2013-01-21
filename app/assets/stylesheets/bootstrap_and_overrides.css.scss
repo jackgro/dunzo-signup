@@ -2,6 +2,41 @@
 body { padding-top: 80px; }
 @import "bootstrap-responsive";
 
+/* ========================================*/
+/* Mixins
+/* ========================================*/
+
+@mixin border-radius($radius){
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin border($border){
+  -webkit-border: $border;
+  -o-border: $border;
+  -moz-border: $border;
+  -ms-border: $border;
+  border: $border;
+}
+
+@mixin font-size($size){
+  -webkit-font-size: $size;
+  -o-font-size: $size;
+  -moz-font-size: $size;
+  -ms-font-size: $size;
+  font-size: $size;
+}
+
+/* ========================================*/
+/* Variables
+/* ========================================*/
+
+$dunzoBlue: #2d90ff;
+
+
 .navbar{
   height: 54px;
 

@@ -5,10 +5,10 @@ hr.calendar{ width: 90%;}
   width: 90%;
 
   td, th {
+    @include font-size(0.6rem);
+    @include border(1px solid #999);
     font-family: "Lucida Grande", arial, helvetica, sans-serif;
-    font-size: 10px;
     padding: 6px;
-    border: 1px solid #999;
   }
 
   th {
@@ -23,7 +23,7 @@ hr.calendar{ width: 90%;}
     color: #777;
     height: 14%;
     vertical-align: top;
-    font-size: 11px;
+    @include font-size(0.6rem);
     text-align: center;
   }
 
@@ -36,15 +36,15 @@ hr.calendar{ width: 90%;}
 }
 
 header.date{
-  font-size: 24.5px;
+  margin: 10px 0;
+  line-height: 40px;
+  @include font-size(1.5rem);
   font-weight: 200;
   color: #888888;
-  line-height: 40px;
-  margin: 10px 0;
   position: relative;
 
   .today{
-    color: #2d90ff;
+    color: $dunzoBlue;
   }
 
   .next-day{
@@ -62,11 +62,11 @@ input.date-select{
   right: 4%;
   width: 15%;
   bottom: 12%;
-  border: 1px solid #c3c3c3;
   margin-bottom: 0px;
-  /*@include border-radius(2px);*/
-  color: #979797;
-  font-weight: bold;
-  font-size: 0.8rem;
   padding: 5px 12px;
+  @include border(1px solid #c3c3c3);
+  @include border-radius(2px);
+  @include font-size(0.8rem);
+  font-weight: bold;
+  color: #979797;
 }

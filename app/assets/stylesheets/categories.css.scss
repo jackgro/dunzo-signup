@@ -2,10 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
 header.category{
   h6{
     padding-left: 40px;
-    color: #2d90ff;
+    color: $dunzoBlue;
   }
 }
 
