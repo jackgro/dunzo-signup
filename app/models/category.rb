@@ -1,5 +1,9 @@
 class Category < ActiveRecord::Base
-  attr_accessible :name, :task_id, :user_id
+  attr_accessible :name
   belongs_to :user
   has_many :tasks, dependent: :destroy
+
+  def tasks_by_date(date)
+    tasks.where(date: date)
+  end
 end
