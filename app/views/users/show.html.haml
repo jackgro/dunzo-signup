@@ -1,12 +1,12 @@
 .span2
-  %header
-    %h6
-      Categories #{link_to "+ Add", '#', class: "new-category-link pull-right"}
-  .new-user-category-form.display-none
-    = render 'categories/form'
-  .category
-    %p= link_to "All categories", "#"
-    = render @categories
+  %ul.nav.nav-list.well
+    %header
+      %h6 Categories #{link_to "+ Add", '#', class: "new-category-link pull-right"}
+    .new-user-category-form.display-none
+      = render 'categories/form'
+    .category
+      %li= link_to "All categories", "#"
+      = render @categories
 
 .span6
   %header.date
@@ -31,7 +31,7 @@
           - if task.date == @date
             = render :partial => "tasks/task", locals: {category: category, task: task}
 
-.span3
+.span4
   %header.date
     = @date.strftime("%B %Y")
     .btn-toolbar.date-switcher.month-switcher
@@ -42,4 +42,4 @@
           %i.icon-chevron-right
   %hr.calendar
   = calendar @date do |date|
-    = link_to date.day, "#{current_user.id}?date=#{date}", class: "calendar-day"
+    = link_to date.day, "#{user_path(current_user, date: date)}", class: "calendar-day"
