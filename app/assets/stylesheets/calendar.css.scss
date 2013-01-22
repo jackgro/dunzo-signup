@@ -52,16 +52,21 @@ header.date{
   }
 
   .month-switcher{
-    float: right; 
     margin-right: 10%;
   }
 }
 
+.date-switcher{
+  float: right;
+  margin: 0px;
+  display: inline;
+}
+
 input.date-select{
   position: absolute;
-  right: 4%;
+  right: 15%;
   width: 15%;
-  bottom: 12%;
+  bottom: 18%;
   margin-bottom: 0px;
   padding: 5px 12px;
   @include border(1px solid #c3c3c3);

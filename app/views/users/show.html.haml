@@ -10,11 +10,15 @@
 
 .span6
   %header.date
-    %span.prev-day= link_to "<", date: @date.prev_day
     = date_header(@date)
     = @date.strftime("%A, %B %e, %Y")
     = text_field_tag(:date, @date, class: "date-select")
-    %span.next-day= link_to ">", date: @date.next_day
+    .btn-toolbar.date-switcher
+      .btn-group
+        %a.btn{:href => "#{user_path(current_user, date: @date.prev_day)}"}
+          %i.icon-chevron-left
+        %a.btn{:href => "#{user_path(current_user, date: @date.next_day)}"}
+          %i.icon-chevron-right
   %hr.tasks
 
   - @categories.each do |category|
@@ -24,14 +28,18 @@
       = link_to "Add a new item...", new_category_task_path(category, :date => @date), class: "category-#{category.id}-task-link add-item", remote: true
       %div{:class => "category-#{category.id}-tasks"}
         - category.tasks.each do |task|
-          = render :partial => "tasks/task", locals: {category: category, task: task}
+          - if task.date == @date
+            = render :partial => "tasks/task", locals: {category: category, task: task}
 
 .span3
   %header.date
     = @date.strftime("%B %Y")
-    %span.month-switcher
-      = link_to "<", date: @date.prev_month
-      = link_to ">", date: @date.next_month
+    .btn-toolbar.date-switcher.month-switcher
+      .btn-group
+        %a.btn{:href => "#{user_path(current_user, date: @date.prev_month)}"}
+          %i.icon-chevron-left
+        %a.btn{:href => "#{user_path(current_user, date: @date.next_month)}"}
+          %i.icon-chevron-right
   %hr.calendar
   = calendar @date do |date|
     = link_to date.day, "#{current_user.id}?date=#{date}", class: "calendar-day"
