@@ -12,10 +12,12 @@ a.add-item{
   font-weight: bold;
 }
 
-li.task{
-  list-style-type: none;
-  line-height: 28px;
-  padding: 5px 15px;
+form.edit_task{
+  margin: 0px;
+}
+
+.edit_task{
+  padding: 10px 15px;
   border-bottom: 1px solid #ddd;
 
   span{ /* task text */
@@ -23,5 +25,11 @@ li.task{
   }
   input#task_complete{
     vertical-align: baseline;
+  }
+
+  label{
+    display: inline;
+    margin-left: 1.5%;
+
   }
 }
