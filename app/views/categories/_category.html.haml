@@ -1,4 +1,6 @@
-%div{:class => "category-#{category.id}"}
-  %li
+%li{class: "category category-#{category.id}"}
+  %a{:href => "#"}
     = category.name
-    = link_to "x", user_category_path(@user, category), method: :delete, confirm: "Are you sure?", class: "pull-right", remote: true
+    = link_to "x", user_category_path(@user, category), |
+    method: :delete, confirm: "Are you sure?", |
+    class: "pull-right", remote: true

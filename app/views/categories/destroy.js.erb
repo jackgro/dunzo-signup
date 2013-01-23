@@ -1,4 +1,10 @@
-$this = $('div.category-<%= @category.id %>')
-$this.fadeOut(200, function(){
+$left_nav = $('li.category-<%= @category.id %>');
+$category_task_list = $('div.category-<%= @category.id %>');
+
+$left_nav.fadeOut(200, function(){
+  $this.remove();
+});
+
+$category_task_list.fadeOut(200, function(){
   $this.remove();
 });
