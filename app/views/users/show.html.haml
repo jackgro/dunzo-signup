@@ -10,7 +10,6 @@
   %header.date
     = date_header(@date)
     = @date.strftime("%A, %B %e, %Y")
-    = text_field_tag(:date, @date, class: "date-select")
     = render partial: "tasks/day_switcher"
   %hr.tasks
 
