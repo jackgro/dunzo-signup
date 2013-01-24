@@ -1,5 +1,12 @@
-= form_for task, remote: true do |f|
-  = f.check_box :complete
-  = f.label :name, task.name
-  = link_to "x", task, class: "delete-task pull-right", |
-  :method => :delete, remote: true
+- if task.complete?
+  = form_for task, remote: true, html: {:class => "edit_task complete"} do |f|
+    = f.check_box :complete
+    = f.label :name, task.name
+    = link_to "x", task, class: "delete-task pull-right", |
+    :method => :delete, remote: true
+- else
+  = form_for task, remote: true do |f|
+    = f.check_box :complete
+    = f.label :name, task.name
+    = link_to "x", task, class: "delete-task pull-right", |
+    :method => :delete, remote: true

@@ -32,4 +32,11 @@ form.edit_task{
     margin-left: 1.5%;
 
   }
+
 }
+  .complete{
+    color: #999999;
+    background: #f5f5f5;
+    cursor: default;
+    text-decoration: line-through;
+  }

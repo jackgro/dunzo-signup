@@ -10,3 +10,5 @@ $task_list     = $('div.category-<%= @category.id %>-tasks');
 
  // Append and fade in the new task to the list
 $html.hide().appendTo($task_list).fadeIn(300);
+
+$('#edit_task_<%= @task.id %>').submitOnCheck();

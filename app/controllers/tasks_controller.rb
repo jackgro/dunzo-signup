@@ -21,16 +21,15 @@ class TasksController < ApplicationController
   end
 
   def update
-    @category = Category.find(params[:category_id])
-    @user = @category.user
-    @task = @category.tasks.create(params[:task])
+    @task = Task.find(params[:id])
+    @task.update_attributes!(params[:task])
 
     respond_to do |format|
       format.html {
         if @task.save
           redirect_to :back
         else
-          render 'new'
+          render 'edit'
         end
       }
       format.js
