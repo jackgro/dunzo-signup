@@ -1,11 +1,11 @@
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
 
-hr.calendar{ width: 90%;}
+hr.calendar{ width: 100%;}
 
 .calendar {
   border-collapse: collapse;
-  width: 90%;
+  width: 100%;
 
   td, th {
     @include font-size(0.6rem);
