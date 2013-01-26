@@ -1,4 +1,4 @@
-.well.sidebar-nav.left
+.left.sidebar-nav.well
   %ul.nav.nav-list
     %li.nav-header Categories #{link_to "+ Add", '#', class: "new-category-link pull-right"}
     .new-user-category-form.display-none
@@ -6,7 +6,7 @@
     %li= link_to "All categories", "#", class: "all-categories"
     = render @categories
 
-.sidebar-nav.right
+.right
   %header.date
     = @date.strftime("%B %Y")
     = render partial: "tasks/month_switcher"

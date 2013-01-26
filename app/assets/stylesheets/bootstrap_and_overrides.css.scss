@@ -54,9 +54,23 @@ $dunzoBlue: #2d90ff;
   }
 }
 
+//*================================================*/
+// Fixed width column styles
+//*================================================*/
 
 .sidebar-nav {
     padding: 9px 0;
+
+    ul{
+      li.nav-header{
+        padding: 3px 15px 15px;
+      }
+    li.category{
+      a{
+        display: inline-block;
+      }
+    }
+  }
 }
 
 .row-fluid > .sidebar-nav {
@@ -68,11 +82,13 @@ $dunzoBlue: #2d90ff;
 .left {
     float:left;
     width: 250px;
+    padding: 9px 0;
 }
 
 .right {
     float:right;
     width: 300px;
+    padding: 0px;
 }
 
 .fixed-fluid {
