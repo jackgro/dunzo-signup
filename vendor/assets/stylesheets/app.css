@@ -1,0 +1,126 @@
+@charset "utf-8";
+
+	CSS TOB: 
+
+	1. RESETS
+	2. COMMONS
+	3. CATEGORIES
+	4. MIDDLE
+	5. CALENDAR
+
+		
+---------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------
+	1.RESETS
+--------------------------------------------------------*/
+	
+	html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline; }
+	
+
+
+/*--------------------------------------------------------
+	2.COMMONS
+--------------------------------------------------------*/
+
+	html { font-size: 62.5%; } 
+	body { font-family: 'Lato', sans-serif; }
+	::selection { background: #42A0E9; color:#FFF; /* Safari */ }
+	::-moz-selection { background: #42A0E9; color:#FFF; /* Firefox */ }
+	
+	h1, h2, h3, h4, h5 { font-weight:200; }
+
+	.navbar .brand { font-family: Helvetica Neue, sans-serif; padding-bottom:0; }
+	.navbar .navbar-inner { line-height:54px; }
+	.navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner { padding:0; }
+	.navbar .nav.pull-right { padding:7px 0; }
+
+	#main { height:100%; }
+	
+
+
+/*--------------------------------------------------------
+	3.CATEGORIES
+--------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------
+	3.MIDDLE
+--------------------------------------------------------*/
+
+	a.add-item { color:#999; font-size:1.2rem; }
+	a.add-item:hover { background:#F5F5F5; color:#666; text-decoration:none; }
+	.edit_task { cursor:move; }
+	.edit_task:hover { background:#F5F5F5; }
+
+	label, input, button, select, textarea { font-size:1.3rem; }
+	input.date-select { font-size:1.2rem; }
+
+
+
+/*--------------------------------------------------------
+	5.CALENDAR
+--------------------------------------------------------*/
+
+header.date { color:#5E5E5E; font-size:2.2rem; }
+
+hr.calendar {
+    width: 90%;
+}
+.calendar {
+    border-collapse: collapse;
+    width: 90%;
+}
+.calendar td, .calendar th {
+    border: 1px solid #C5C5C5;
+    font-size: 1.1rem;
+	padding:0;
+}
+.calendar th {
+    background: none repeat scroll 0 0 #EEE;
+	border-right:0;
+	border-left:0;
+    color: #666;
+	padding:4px 0;
+    text-align: center;
+    width: 14%;
+}
+.calendar td {
+    background: none repeat scroll 0 0 #FFF;
+    color: #777;
+    font-size: 1.1rem;
+    height: 14%;
+    text-align: center;
+    vertical-align: top;
+}
+.calendar td:hover {
+	background:#F5F5F5;
+}
+.calendar tr:first-child {
+    border-left: 1px solid #C5C5C5;
+    border-right: 1px solid #C5C5C5;
+}
+.calendar a.calendar-day {
+    color: #555555;
+	display:block;
+    font-weight: bold;
+	padding:6px;
+}
+.calendar a.calendar-day:hover {
+	text-decoration:none; 
+}
+.calendar .notmonth, .calendar .notmonth a {
+    color: #BBB;
+}
+.calendar .today {
+    background-color: #42A0E9;
+}
+.calendar .today a.calendar-day {
+	color:#FFF;
+} 
+.calendar .today:hover {
+	background-color:#42A0E9;
+} 

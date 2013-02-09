@@ -10,7 +10,7 @@ hr.calendar{ width: 100%;}
   td, th {
     @include font-size(0.6rem);
     @include border(1px solid #999);
-    font-family: "Lucida Grande", arial, helvetica, sans-serif;
+    /*font-family: "Lucida Grande", arial, helvetica, sans-serif;*/
     padding: 6px;
   }
 
