@@ -4,31 +4,31 @@
     %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0", :name => "viewport"}
       %title= content_for?(:title) ? yield(:title) : "Dunzo | Easily create and manage your daily to-do lists."
       %meta{:content => content_for?(:description) ? yield(:description) : "Dunzo | Easily create and manage your daily to-do lists.", :name => "description"}
-        - if params[:controller] == "home"
-          = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,400italic,700italic,600italic,300italic,800italic"
-          = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Quicksand"
-          = stylesheet_link_tag "jquery.fancybox-1.3.4.css"
-          = stylesheet_link_tag "style.css"
-          = stylesheet_link_tag "epicfullscreen.css"
-          = stylesheet_link_tag "udt_shortcodes.css"
-          = stylesheet_link_tag "udt_media_queries.css"
-          = stylesheet_link_tag "flexslider.css"
-          = javascript_include_tag "jquery-ui-1.9.0.custom.min.js"
-          = javascript_include_tag "jquery.mobile-touch-swipe-1.0.js"
-          = javascript_include_tag "jquery.lazyload.min.js"
-          = javascript_include_tag "jquery.epicfullscreen.js"
-          = javascript_include_tag "waypoints.min.js"
-          = javascript_include_tag "jquery.parallax-1.1.3.js"
-          = javascript_include_tag "onepage.js"
-          = javascript_include_tag "jquery.fancybox-1.3.4.pack.js"
-          = javascript_include_tag "common.js"
-          = javascript_include_tag "subscribe.js"
-        - else
-          = stylesheet_link_tag "udt_shortcodes.css"
-          = stylesheet_link_tag "style.css"
-          = stylesheet_link_tag "application", :media => "all"
-          = stylesheet_link_tag "http://dunzoapp.com/css/app.css"
-          = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,400italic,700italic,600italic,300italic,800italic"
+      - unless params[:controller] == "home"
+        = stylesheet_link_tag "udt_shortcodes.css"
+        = stylesheet_link_tag "style.css"
+        = stylesheet_link_tag "application", :media => "all"
+        = stylesheet_link_tag "http://dunzoapp.com/css/app.css"
+        = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,400italic,700italic,600italic,300italic,800italic"
+      - else
+        = stylesheet_link_tag "jquery.fancybox-1.3.4.css"
+        = stylesheet_link_tag "style.css"
+        = stylesheet_link_tag "epicfullscreen.css"
+        = stylesheet_link_tag "udt_shortcodes.css"
+        = stylesheet_link_tag "udt_media_queries.css"
+        = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,400italic,700italic,600italic,300italic,800italic"
+        = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Quicksand"
+        = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+        = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js"
+        = javascript_include_tag "jquery.mobile-touch-swipe-1.0.js"
+        = javascript_include_tag "jquery.lazyload.min.js"
+        = javascript_include_tag "jquery.epicfullscreen.js"
+        = javascript_include_tag "waypoints.min.js"
+        = javascript_include_tag "jquery.parallax-1.1.3.js"
+        = javascript_include_tag "onepage.js"
+        = javascript_include_tag "jquery.fancybox-1.3.4.pack.js"
+        = javascript_include_tag "common.js"
+        = javascript_include_tag "subscribe.js"
 
         %link{:href => "/icons/iphone_icon.png", :rel => "apple-touch-icon"}/
         :javascript
@@ -71,11 +71,6 @@
         = csrf_meta_tags
         = yield(:head)
   %body{:class => "#{controller_name} #{action_name}"}
-    #wrapper
-      = render 'layouts/navigation'
-    .container-fluid
-      .row-fluid
-        = render 'layouts/messages'
-        = yield
+    = render 'layouts/messages'
+    = yield
   %footer
-    = javascript_include_tag "application"
