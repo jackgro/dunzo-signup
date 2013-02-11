@@ -5,8 +5,7 @@ RailsPrelaunchSignup::Application.routes.draw do
     root :to => 'home#index'
   end
   devise_scope :user do
-    root :to => "devise/registrations#new"
-    #root :to => "home#index"
+    root :to => 'home#index'
     match '/user/confirmation' => 'confirmations#update', :via => :put, :as => :update_user_confirmation
   end
   devise_for :users, :path => 'accounts', :controllers => { :registrations => "registrations", :confirmations => "confirmations" }
