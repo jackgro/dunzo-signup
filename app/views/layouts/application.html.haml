@@ -69,9 +69,13 @@
         = yield(:head)
   %body{:class => "#{controller_name} #{action_name}"}
     - unless params[:controller] == "home"
-      = render 'layouts/navigation'
-      = render 'layouts/messages'
-    = yield
+      .container-fluid
+        .row-fluid
+          = render 'layouts/navigation'
+          = render 'layouts/messages'
+          = yield
+    - else
+      = yield
   %footer
     - unless params[:controller] == "home"
       = javascript_include_tag "application"
