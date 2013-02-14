@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user || User.find(params[:id])
     @category = @user.categories.new
     @categories = @user.categories.all
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
