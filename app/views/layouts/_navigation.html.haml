@@ -14,15 +14,13 @@
             %li.dropdown
               = link_to "#", class: "dropdown-toggle", :data => { toggle: "dropdown" } do
                 - if current_user
+                  %i.icon-cog.icon-white
                   = "#{current_user.first_name}"
                   %b.caret
                 - else
                   = link_to 'Login', new_user_session_path
               %ul.dropdown-menu
                 %li
-                  -#- if params[:controller] == "users" && params[:action] == "show"
-                    -#= link_to "Home", ""
-                  -#- else
                   = link_to "Profile", user_path(current_user)
                 %li
                   = link_to 'Logout', destroy_user_session_path, :method=>'delete'
