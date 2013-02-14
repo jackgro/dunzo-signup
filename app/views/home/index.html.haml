@@ -12,6 +12,8 @@
       %ul.navigation
         - if user_signed_in?
           %li
+            = link_to "Profile", user_path(current_user)
+          %li
             = link_to 'Logout', destroy_user_session_path, :method=> :delete, class: 'submit submitGray'
         - else
           %li
@@ -28,7 +30,7 @@
     #featured.content.clearfix{:style => "opacity: 1;"}
       .one_column
         %h1 Dunzo is a free web app that let's you easily create and manage daily task lists.
-        %a.submit.submitBlue{:href => "#signup"} Create Your Account
+        %a.submit.submitBlue{:href => new_user_registration_path} Create Your Account
         #app-button-container
           %a#button-appstore{:href => "#", :title => "Available in the App Store"}
           %a#button-tweet{:href => "http://twitter.com/share?url=http://dunzoapp.com is a really neat new app! Try it out.", :title => "Tweet This"}

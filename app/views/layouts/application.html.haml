@@ -5,8 +5,6 @@
       %title= content_for?(:title) ? yield(:title) : "Dunzo | Easily create and manage your daily to-do lists."
       %meta{:content => content_for?(:description) ? yield(:description) : "Dunzo | Easily create and manage your daily to-do lists.", :name => "description"}
       - unless params[:controller] == "home"
-        = stylesheet_link_tag "udt_shortcodes.css"
-        = stylesheet_link_tag "style.css"
         = stylesheet_link_tag "application", :media => "all"
         = stylesheet_link_tag "http://dunzoapp.com/css/app.css"
         = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,400italic,700italic,600italic,300italic,800italic"
@@ -70,7 +68,10 @@
         = csrf_meta_tags
         = yield(:head)
   %body{:class => "#{controller_name} #{action_name}"}
-    = render 'layouts/navigation'
-    = render 'layouts/messages'
+    - unless params[:controller] == "home"
+      = render 'layouts/navigation'
+      = render 'layouts/messages'
     = yield
   %footer
+    - unless params[:controller] == "home"
+      = javascript_include_tag "application"
