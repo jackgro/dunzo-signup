@@ -8,24 +8,10 @@
         = stylesheet_link_tag "application", :media => "all"
         = stylesheet_link_tag "http://dunzoapp.com/css/app.css"
         = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,400italic,700italic,600italic,300italic,800italic"
-      - else
-        = stylesheet_link_tag "jquery.fancybox-1.3.4.css"
-        = stylesheet_link_tag "style.css"
-        = stylesheet_link_tag "epicfullscreen.css"
-        = stylesheet_link_tag "udt_shortcodes.css"
-        = stylesheet_link_tag "udt_media_queries.css"
-        = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,400italic,700italic,600italic,300italic,800italic"
         = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Quicksand"
-        = javascript_include_tag "application.js"
-        = javascript_include_tag "jquery.mobile-touch-swipe-1.0.js"
-        = javascript_include_tag "jquery.lazyload.min.js"
-        = javascript_include_tag "jquery.epicfullscreen.js"
-        = javascript_include_tag "waypoints.min.js"
-        = javascript_include_tag "jquery.parallax-1.1.3.js"
-        = javascript_include_tag "onepage.js"
-        = javascript_include_tag "jquery.fancybox-1.3.4.pack.js"
-        = javascript_include_tag "common.js"
-        = javascript_include_tag "subscribe.js"
+      - else
+        = stylesheet_link_tag "home"
+        = javascript_include_tag "home"
 
         %link{:href => "/icons/iphone_icon.png", :rel => "apple-touch-icon"}/
         :javascript
