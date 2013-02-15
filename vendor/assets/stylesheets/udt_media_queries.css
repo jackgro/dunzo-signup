@@ -17,52 +17,52 @@
 	/*----------------------------
 	i.-- Header
 	-----------------------------*/
-	
-		/* main menu
-		----------------------------*/
 
-		.header ul.navigation{display:table !important;}
+/* main menu
+----------------------------*/
+
+.header ul.navigation{display:table !important;}
 }
 
 @media only screen and (min-width: 960px) and (max-width: 1199px) {
 
-	/*----------------------------
-	i.-- Page
-	-----------------------------*/
-	
-	.homepage .content,.page .content{max-width:870px;margin:auto;}
-	.page .highlight{background-attachment:scroll; background-position:center center;}
-	
-	/*----------------------------
-	ii.-- Header
-	-----------------------------*/
+/*----------------------------
+i.-- Page
+-----------------------------*/
 
-	/*inner pages*/
-	/*.header {display:block;}*/
-	.header .inner{/*max-width:870px;*/margin:0 25px;}
-	
-		/* main menu
-		----------------------------*/
+.homepage .content,.page .content{max-width:870px;margin:auto;}
+.page .highlight{background-attachment:scroll; background-position:center center;}
 
-		.header ul.navigation{display:table !important;}
-	
+/*----------------------------
+ii.-- Header
+-----------------------------*/
 
-	/*----------------------------
-	iii.-- Content
-	-----------------------------*/	
+/*inner pages*/
+/*.header {display:block;}*/
+.header .inner{/*max-width:870px;*/margin:0 25px;}
 
-	
+/* main menu
+----------------------------*/
 
-	
-	/*blog
-	----------------------------*/
-	
-	.content-inner-left{width:610px;}
-	.content-inner-right{width:610px;}
-		.blog-post-content, .blog-post-content .blog-post-media{width:620px;}
-		.blog-post-content .blog-post-media .video{width:620px !important;height:348px !important;}
+.header ul.navigation{display:table !important;}
 
-	
+
+/*----------------------------
+iii.-- Content
+-----------------------------*/	
+
+
+
+
+/*blog
+----------------------------*/
+
+.content-inner-left{width:610px;}
+.content-inner-right{width:610px;}
+.blog-post-content, .blog-post-content .blog-post-media{width:620px;}
+.blog-post-content .blog-post-media .video{width:620px !important;height:348px !important;}
+
+
 
 
 
@@ -102,29 +102,29 @@
 
 
 
-	/*----------------------------
-	i.-- Page
-	-----------------------------*/
-	
-	.homepage .content{max-width:640px;padding-bottom:100px;}
-	.page .content{max-width:640px;padding:140px 0 100px 0;}
-	.page .highlight{background-attachment:scroll; background-position:center center;}
-		
-	/*----------------------------
-	ii.-- Header
-	-----------------------------*/
+/*----------------------------
+i.-- Page
+-----------------------------*/
 
-	/*inner pages*/
-	/*.header {height:auto;/*display:block;*/}*/
-	/*.header .inner{margin:auto;}*/
-	/*.header .logo-pages {float: none;}*/
-	/*.header .logo{width:100%;text-align:center;} */
-	
-		/* main menu
-		----------------------------*/
+.homepage .content{max-width:640px;padding-bottom:100px;}
+.page .content{max-width:640px;padding:140px 0 100px 0;}
+.page .highlight{background-attachment:scroll; background-position:center center;}
 
-	  /*  .header .inner ul.navigation{width:100%; text-align: center;margin:0px;padding-bottom:8px;display:table !important;}*/
-		/* .header .inner ul.navigation li{ float: none !important; display: inline;} */
+/*----------------------------
+ii.-- Header
+-----------------------------*/
+
+/*inner pages*/
+/*.header {height:auto;/*display:block;*/}
+/*.header .inner{margin:auto;}*/
+/*.header .logo-pages {float: none;}*/
+/*.header .logo{width:100%;text-align:center;} */
+
+/* main menu
+----------------------------*/
+
+  /*  .header .inner ul.navigation{width:100%; text-align: center;margin:0px;padding-bottom:8px;display:table !important;}*/
+/* .header .inner ul.navigation li{ float: none !important; display: inline;} */
 
 	/*----------------------------
 	iii.-- Content
