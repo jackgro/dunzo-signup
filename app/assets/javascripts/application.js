@@ -19,7 +19,6 @@
 //= require bootstrap-dropdown.js
 //= require bootstrap-modal.js
 //= require bootstrap-tab.js
-//= require bootstrap.js
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
 //= require_tree .
