@@ -43,7 +43,7 @@ $('document').ready(function() {
       }
     });
     return false;
-  });  
+  });
 
   // Display New Category form
   $('a.new-category-link').on('click', function(){
@@ -54,7 +54,7 @@ $('document').ready(function() {
 
 // load social sharing scripts if the page includes a Twitter "share" button
 function loadSocial() {
-    
+
     //Twitter
     if (typeof (twttr) != 'undefined') {
       twttr.widgets.load();
