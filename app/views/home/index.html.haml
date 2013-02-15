@@ -1,27 +1,5 @@
 #wrapper
-  .header.header-main.clearfix
-    .inner
-      .logo-pages
-        .logo
-          %a.navigateTo{:href => root_path}
-            dunzo
-      / mobileMenu toggle
-      .mobileMenuToggle
-        %a{:href => ""}
-      / navigation
-      %ul.navigation
-        - if user_signed_in?
-          %li
-            = link_to "Profile", user_path(current_user)
-          %li
-            = link_to 'Logout', destroy_user_session_path, :method=> :delete, class: 'submit submitGray'
-        - else
-          %li.blog
-            %a{:href => "http://dunzoapp.tumblr.com/", :target => "_blank"} Blog
-          %li
-            %a.navigateTo.submit.submitBlue.active{:href => new_user_registration_path} Create Account
-          %li
-            %a.submit.submitGray{:href => new_user_session_path} Log In
+  = render "nav"
   #homepage.homepage.section{:style => "height: 481px;"}
     .epicFullscreen{:style => "background-color: rgb(0, 0, 0); height: 969px; background-position: initial initial; background-repeat: initial initial;"}
       %img.epicImg{:alt => "", :src => "assets/parallax-desk-2.jpg", :style => "opacity: 0.9; width: 1438px; height: 969px; left: 0px; top: -244px;"}/
