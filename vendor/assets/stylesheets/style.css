@@ -510,5 +510,5 @@ v.--MISC
 .left{float:left !important;}
 .right{float:right !important;}
 .last{margin:0 !important;}
-.hide { display:none;!important }
+.hide { display:none !important; }
 
