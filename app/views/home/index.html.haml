@@ -16,7 +16,7 @@
           %li
             = link_to 'Logout', destroy_user_session_path, :method=> :delete, class: 'submit submitGray'
         - else
-          %li
+          %li.blog
             %a{:href => "http://dunzoapp.tumblr.com/", :target => "_blank"} Blog
           %li
             %a.navigateTo.submit.submitBlue.active{:href => new_user_registration_path} Create Account

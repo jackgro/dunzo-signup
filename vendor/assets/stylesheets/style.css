@@ -83,11 +83,12 @@
 		----------------------------*/
 		
 		.header .inner ul.navigation{list-style:none;float:right; font-family:Arial, Helvetica, sans-serif;font-size:14px;margin:0;}
-		.header .inner ul.navigation li{float:left;padding:0 5px;}
+		.header .inner ul.navigation li{float:left;padding:5px 5px;}
 		.header .inner ul.navigation li:last-child{padding-right:0;}
 		.header .inner ul.navigation li a{font-family: 'Open Sans', sans-serif; font-size: 13px; color:#999; text-decoration:none;  padding: 5px 10px; text-transform:none;}
 		.header .inner ul.navigation li a:hover{color:#FFF;}
 		.header .inner ul.navigation li a.active{ color: #EEE; text-decoration: none;}
+		.header .inner ul.navigation li.blog{ padding: 17px 5px; }
 		
 		.header .inner ul.navigation .submitBlue { float:none; font-size:12px; margin:0; padding:7px 15px; }
 		.header .inner ul.navigation .submitGray { float:none; font-size:12px; margin:0; padding:7px 15px; }
