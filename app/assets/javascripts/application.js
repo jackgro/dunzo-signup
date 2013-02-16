@@ -22,6 +22,7 @@
 //= require bootstrap-tab.js
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
+//= require users.js
 
 $('document').ready(function() {
 
