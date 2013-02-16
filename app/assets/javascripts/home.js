@@ -1,5 +1,3 @@
-//= require jquery
-//= require jquery_ujs
 //= require custom/bootstrap.min.js
 //= require jquery.mobile-touch-swipe-1.0.js
 //= require jquery.lazyload.min.js
