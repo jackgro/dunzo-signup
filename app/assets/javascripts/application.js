@@ -23,6 +23,7 @@
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
 //= require users.js
+//= require_tree .
 
 $('document').ready(function() {
 
