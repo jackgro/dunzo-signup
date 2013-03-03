@@ -21,7 +21,8 @@
 //= require bootstrap-tab.js
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
-//= require_tree .
+//= require tasks
+//= require users
 
 $('document').ready(function() {
 

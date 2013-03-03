@@ -15,6 +15,11 @@
 
 $('document').ready(function() {
 
+  // Display New Category form
+  $('a.new-category-link').on('click', function(){
+    $('div.new-user-category-form').slideToggle(200);
+  });
+
   // use AJAX to submit the "request invitation" form
   $('#invitation_button').live('click', function() {
     var email = $('form #user_email').val();
