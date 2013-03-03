@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.13.rc1'
 gem 'jquery-rails'
 gem "bootstrap-sass", ">= 2.1.0.1"
 gem "hominid", ">= 3.0.5"
