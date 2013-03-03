@@ -11,7 +11,7 @@ gem "google_visualr", ">= 2.1.2"
 gem "jquery-datatables-rails", ">= 1.11.1"
 gem "figaro"
 gem "unicorn"
-gem "newrelic_rpm"
+gem "newrelic_rpm", "3.5.7.59"
 gem "haml-rails"
 
 gem "rspec-rails", ">= 2.11.4", :group => [:development, :test]
