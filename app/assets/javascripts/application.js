@@ -23,13 +23,3 @@
 //= require dataTables/jquery.dataTables.bootstrap
 //= require tasks
 //= require users
-
-$('document').ready(function() {
-
-  // Display New Category form
-  $('a.new-category-link').on('click', function(){
-    $('div.new-user-category-form').slideToggle(200);
-  });
-
-});
-
