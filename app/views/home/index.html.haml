@@ -8,19 +8,7 @@
     #featured.content.clearfix{:style => "opacity: 1;"}
       .one_column
         %h1 Dunzo is a free web app that lets you easily create and manage daily task lists.
-        #request-invite.modal{:style => "display: #{@user.errors.any? ? 'block' : 'none';}"}
-          = simple_form_for @user, :as => @user, :url => registration_path(@user) , :html => {:class => 'form-horizontal' } do |f|
-            .modal-header
-              %a.close{"data-dismiss" => "modal"} ×
-              %h3.request-invitation Request Invitation
-            .modal-body.request-body
-              = f.error_notification
-              = f.input :email, :placeholder => 'user@example.com'
-            .modal-footer
-              = f.submit "Request Invitation", :class => "submit submitBlue", :id => 'invitation_button'
-              %a.submit.submitGray{"data-dismiss" => "modal", :href => "#"} Close
-        #call-to-action{:style => "margin-top: 40px"}
-          %a.submit.submitBlue{"data-toggle" => "modal", :href => "#request-invite"} Request an Invite
+        = render :partial => 'devise/shared/signup-modal'
         -##app-button-container
           -#%a#button-appstore{:href => "#", :title => "Available in the App Store"}
           -#%a#button-tweet{:href => "http://twitter.com/share?url=http://dunzoapp.com is a really neat new app! Try it out.", :title => "Tweet This"}

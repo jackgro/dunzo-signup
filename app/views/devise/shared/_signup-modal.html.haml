@@ -1,0 +1,14 @@
+#request-invite.modal{:style => "display: #{@user.errors.any? ? 'block' : 'none';}"}
+  = simple_form_for @user, :as => @user, :url => registration_path(@user) , :html => {:class => 'form-horizontal' } do |f|
+    .modal-header
+      %a.close{"data-dismiss" => "modal"} ×
+      %h3.request-invitation Request Invitation
+    .modal-body.request-body
+      = f.input :email, :placeholder => 'user@example.com'
+    .modal-footer
+      = f.submit "Request Invitation", :class => "submit submitBlue", :id => 'invitation_button'
+      %a.submit.submitGray{"data-dismiss" => "modal", :href => "#"} Close
+#call-to-action{:style => "margin-top: 40px"}
+  %a.submit.submitBlue{"data-toggle" => "modal", :href => "#request-invite"} Request an Invite
+
+
