@@ -14,42 +14,7 @@
         = javascript_include_tag "home"
 
         %link{:href => "/icons/iphone_icon.png", :rel => "apple-touch-icon"}/
-        :javascript
-          //device check
-          var isMobile = false;
-
-          if( navigator.userAgent.match(/Android/i) ||
-            navigator.userAgent.match(/webOS/i) ||
-            navigator.userAgent.match(/iPhone/i) ||
-            navigator.userAgent.match(/iPad/i)||
-            navigator.userAgent.match(/iPod/i) ||
-            navigator.userAgent.match(/BlackBerry/i)){
-              isMobile = true;
-          }
-          //epic fullscreen
-          $(window).load(function(){
-             $('.epicFullscreen').epicFullscreen({
-              opacity:0.9,
-              background:'#000',
-              pattern:true,
-              callback: function(){
-                $('#featured').animate({opacity:1},500);
-              }
-             });
-          });
-           //twitter
-           !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-
-        :javascript
-          var _gaq = _gaq || [];
-          _gaq.push(['_setAccount', 'UA-37954201-1']);
-          _gaq.push(['_trackPageview']);
-
-          (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-          })();
+        = render 'homepage-js'
 
         = csrf_meta_tags
         = yield(:head)
