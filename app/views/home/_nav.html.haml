@@ -18,7 +18,7 @@
         %li.blog
           %a{:href => "http://dunzoapp.tumblr.com/", :target => "_blank"} Blog
         %li
-          %a.navigateTo.submit.submitBlue.active{:href => new_user_registration_path} Create Account
+          %a.navigateTo.submit.submitBlue.active{"data-toggle" => "modal", :href => "#request-invite"} Create Account
         %li
           %a.submit.submitGray{:href => new_user_session_path} Log In
 
