@@ -29,6 +29,8 @@ application.css: application-9c87d271a4da52b12bb39839cbc7a351.css
 application/index.css: application-9c87d271a4da52b12bb39839cbc7a351.css
 home.css: home-6931e44ec822dfa053d322c6e97096a7.css
 home/index.css: home-6931e44ec822dfa053d322c6e97096a7.css
+theme.css: theme-31dbed872c4ca5f4199079d7c65b7fae.css
+theme/index.css: theme-31dbed872c4ca5f4199079d7c65b7fae.css
 iphone_icon.png: iphone_icon-d34b7ad530f114554686aeab3f62d729.png
 iphone_icon/index.png: iphone_icon-d34b7ad530f114554686aeab3f62d729.png
 asterisk.png: asterisk-4cb4b201e8ad6844b5f1dbc3652f5121.png
