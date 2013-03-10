@@ -26,10 +26,10 @@ class User < ActiveRecord::Base
   end
 
   def full_name
-    unless self.first_name.nil? && self.last_name.nil?
-      "#{self.email}"
-    else
+    if self.first_name.present? && self.last_name.present?
       "#{self.first_name} #{self.last_name}"
+    else
+      "#{self.email}"
     end
   end
 

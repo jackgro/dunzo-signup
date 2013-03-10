@@ -7,8 +7,6 @@
             - if current_user
               = current_user.full_name
               %i.icon-caret-down
-            - else
-              = link_to 'Login', new_user_session_path
           %ul.dropdown-menu
             %li
               = link_to 'Profile', user_path(current_user), tabindex: '-1'
