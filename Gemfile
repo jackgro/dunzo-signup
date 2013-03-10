@@ -13,11 +13,10 @@ gem "figaro"
 gem "unicorn"
 gem "newrelic_rpm", "3.5.7.59"
 gem "haml-rails"
-
-gem "rspec-rails", ">= 2.11.4", :group => [:development, :test]
-gem "factory_girl_rails", ">= 4.1.0", :group => [:development, :test]
+gem "therubyracer"
 
 group :assets do
+  #gem "less-rails"
   gem 'jquery-ui-rails'
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -30,9 +29,13 @@ group :development do
   gem "better_errors"
   #gem "binding_of_caller"
   gem "sqlite3"
+  gem "rspec-rails", ">= 2.11.4"
+  gem "factory_girl_rails", ">= 4.1.0"
 end
 
 group :test do
+  gem "rspec-rails", ">= 2.11.4"
+  gem "factory_girl_rails", ">= 4.1.0"
   gem "email_spec", ">= 1.2.1"
   gem "cucumber-rails", ">= 1.3.0", :require => false
   gem "database_cleaner", ">= 0.9.1"

@@ -2,22 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import "bootstrap/variables";
-@import "bootstrap/mixins";
 
-header.category{
-  h6{
-    padding-left: 40px;
-    color: $dunzoBlue;
+.category-form form, form.new_task{
+  margin: 0px;
+
+  input{
+    margin: 10px 0;
+    width: 95%;
   }
-}
-
-hr{
-  margin: -7px 0px 7px;
-  color: #555;
-  border-top: 1px solid #ccc;
-}
-
-.new-user-category-form form, form.new_task{
-	margin: 0px;
 }

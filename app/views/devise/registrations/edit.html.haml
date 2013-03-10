@@ -1,0 +1,28 @@
+.row-fluid
+  .dialog.span8.offset4
+    .block
+      %p.block-heading
+        Edit Account Settings
+      .block-body
+        = simple_form_for(resource, :as => resource_name, url: registration_path(resource), html: { class: 'form-vertical' }) do |f|
+          = f.error_notification
+          .row-fluid
+            .span6
+              = f.input :first_name, :autofocus => true, input_html: { class: 'span12' }
+              = f.input :last_name, :autofocus => true, input_html: { class: 'span12' }
+              = f.input :username, :autofocus => true, input_html: { class: 'span12' }
+              = f.input :email, :required => true, input_html: { class: 'span12' }
+            .span6
+              = f.input :password, :autocomplete => "off", :hint => "* leave it blank if you don't want to change it", :required => false, input_html: { class: 'span12' }
+              = f.input :password_confirmation, :required => false, input_html: { class: 'span12' }
+              = f.input :current_password, :hint => "* we need your current password to confirm your changes", :required => true, input_html: { class: 'span12' }
+              = f.button :submit, 'Update', :class => 'btn-primary'
+          .row-fluid
+            %h3 Cancel my account
+            %p
+              Unhappy? 
+              = link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete
+            %p
+              = link_to :back do
+                %i.icon-arrow-left
+                Go Back

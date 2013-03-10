@@ -2,5 +2,5 @@
 // is removed from DOM
 $this = $('#edit_task_<%= @task.id %>')
 $this.fadeOut(200, function(){
-    $this.remove();
+    $this.parents('tbody').remove();
 });

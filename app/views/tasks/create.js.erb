@@ -4,5 +4,10 @@ $new_task_link = $('.category-<%= @category.id %>-task-link')
 $task_list     = $('div.category-<%= @category.id %>-tasks');
 
 $html.hide().appendTo($task_list).fadeIn(300); // Append and fade in the new task to the list
-$('form.new_task')[0].reset(); // After submit, reset the form
-$('#edit_task_<%= @task.id %>').submitOnCheck();
+
+$form = $('.new_task');
+$form.resetForm(); // After creation, reset the form to add more
+
+$input = $('#task_name');
+$form = $input.parents('form');
+// $input.hideAndReplaceWith($form, $new_task_link);

@@ -1,12 +1,7 @@
-- if task.complete?
-  = form_for task, remote: true, html: {:class => "edit_task complete"} do |f|
-    = f.check_box :complete
-    = f.label :name, task.name
-    = link_to "x", task, class: "delete-task pull-right", |
-    :method => :delete, remote: true
-- else
-  = form_for task, remote: true do |f|
-    = f.check_box :complete
-    = f.label :name, task.name
-    = link_to "x", task, class: "delete-task pull-right", |
-    :method => :delete, remote: true
+- form_class = task.complete? ? "edit_task complete" : "edit_task"
+
+= form_for task, remote: true, html: {:class => form_class } do |f|
+  = f.check_box :complete, data: { form: "#{task.id}" }
+  = f.label :complete, task.name, data: { form: "#{task.id}" }
+  = link_to task_path(task.id), remote: true, method: :delete, class: "delete-task" do
+    %i.icon-remove.pull-right

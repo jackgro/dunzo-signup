@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :opt_in
+  attr_accessible :first_name, :last_name, :username, :email, :password, :password_confirmation, 
+                   :remember_me, :opt_in
 
   after_create :add_user_to_mailchimp unless Rails.env.test?
   before_destroy :remove_user_from_mailchimp unless Rails.env.test?
@@ -22,6 +23,10 @@ class User < ActiveRecord::Base
     else
       !password.nil? || !password_confirmation.nil?
     end
+  end
+
+  def full_name
+    "#{self.first_name} #{self.last_name}"
   end
 
   # override Devise method
@@ -50,10 +55,6 @@ class User < ActiveRecord::Base
   # new function to provide access to protected method pending_any_confirmation
   def only_if_unconfirmed
     pending_any_confirmation {yield}
-  end
-
-  def first_name
-    self.name.split[0]
   end
 
   private

@@ -1,0 +1,17 @@
+.row-fluid
+  .dialog.span4.offset4
+    .block
+      %p.block-heading Sign In
+      .block-body
+        = simple_form_for(resource, :as => resource_name, url: new_user_session_path, html: { class: 'form-vertical' }) do |f|
+          = f.error_notification
+          = f.input :email, autofocus: true, input_html: {class: 'span12'}
+          = f.input :password, input_html: {class: 'span12'}
+          .btn-toolbar
+            %a= f.submit "Sign in", class: 'btn btn-primary btn-block btn-large'
+          .clearfix
+    %p
+      %small= render "devise/shared/links"
+%footer.primary.navbar-fixed-bottom
+  Don't have an account yet? &nbsp;
+  = link_to "Create Account", new_user_registration_path , class: 'btn btn-large'

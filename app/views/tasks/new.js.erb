@@ -3,4 +3,9 @@ $new_task_link = $('.category-<%= @category.id %>-task-link')
 $new_task_link.hide() // After clicking "Add a new item" hide that link
     .before('<%= j render("form") %>'); // append task form in its place.
 
-$('input#task_name').focus(); // Focus cursor in the form once created.
+$input = $('#task_name');
+$form = $input.parents('form');
+
+$input.focus(); // Focus cursor in the form once created.
+//$input.hideAndReplaceWith($form, $new_task_link); // Hide form upon clicking out, replace with new task link
+

@@ -1,1 +1,24 @@
-= render :partial => 'devise/shared/signup-modal'
+.row-fluid
+  .dialog.span4.offset4
+    .block
+      %p.block-heading Sign Up
+      .block-body
+        = simple_form_for(resource, :as => resource_name, url: registration_path(resource_name), html: { class: 'form-vertical' }) do |f|
+          = f.error_notification
+          = f.input :first_name, autofocus: true, input_html: { class: 'span12' }
+          = f.input :last_name, autofocus: true, input_html: { class: 'span12' }
+          = f.input :username, autofocus: true, input_html: { class: 'span12' }
+          = f.input :email, required: true, input_html: { class: 'span12' }
+          = f.input :password, required: true, input_html: { class: 'span12' }
+          = f.input :password_confirmation, required: true, label: "Confirmation", input_html: { class: 'span12' }
+          %label.remember-me
+            %input{:type => "checkbox"}/
+            %small
+              I agree with the
+              %a{:href => "terms-and-conditions.html"} Terms & Conditions
+          .btn-toolbar
+            %a= f.submit "Sign up", class: 'btn btn-primary btn-block btn-large'
+          .clearfix
+    %p
+      %a{:href => "privacy-policy.html"}
+        %small Privacy Policy

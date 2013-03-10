@@ -1,30 +1,6 @@
-@import "bootstrap";
+@import "bootstrap.min";
 @import "bootstrap_and_overrides";
 @import "dataTables/jquery.dataTables.bootstrap";
-@import "jquery.ui.datepicker";
 @import "calendar";
 @import "categories";
 @import "tasks";
-
-
-
-/* ========================================*/
-/* General Styles
-/* ========================================*/
-
-.display-none{
-	display: none;
-}
-.display-on{
-	display: inline;
-}
-
-.visibility-hidden{
-	visibility: hidden;
-}
-
-.content {
-  background-color: #FFF;
-  padding: 20px;
-  margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
-}

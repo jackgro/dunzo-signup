@@ -1,32 +1,45 @@
 !!!
-%html
+%html{:lang => "en"}
   %head
-    %meta{:content => "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0", :name => "viewport"}
-      %title= content_for?(:title) ? yield(:title) : "Dunzo | Easily create and manage your daily to-do lists."
-      %meta{:content => content_for?(:description) ? yield(:description) : "Dunzo | Easily create and manage your daily to-do lists.", :name => "description"}
-      - unless params[:controller] == "home"
-        = stylesheet_link_tag "application", :media => "all"
-        = stylesheet_link_tag "http://dunzoapp.com/css/app.css"
-        = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,400italic,700italic,600italic,300italic,800italic"
-        = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Quicksand"
-      - else
-        = stylesheet_link_tag "home"
-        = javascript_include_tag "home"
-        = render 'homepage-js'
-
-        %link{:href => "/icons/iphone_icon.png", :rel => "apple-touch-icon"}/
-
-        = csrf_meta_tags
-        = yield(:head)
-  %body{:class => "#{controller_name} #{action_name}"}
+    %meta{:charset => "utf-8"}/
+    %title Dunzo | Daily to-do lists made simple
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %meta{:content => content_for?(:description) ? yield(:description) : "Dunzo | Daily to-do lists made simple", :name => "description"}
+    %meta{:content => "", :name => "author"}/
     - unless params[:controller] == "home"
-      .container-fluid
-        .row-fluid
-          = render 'layouts/navigation'
-          = render 'layouts/messages'
-          = yield
+      = stylesheet_link_tag "application", :media => "all"
+      = stylesheet_link_tag "theme"
+      %link{:href => "http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,400italic,700italic,700", :rel => "stylesheet", :type => "text/css"}/
+    - else
+      = stylesheet_link_tag "home"
+      = javascript_include_tag "home"
+      = render 'homepage-js'
+
+    = stylesheet_link_tag "font-awesome/css/font-awesome"
+    = csrf_meta_tag
+    / Le HTML5 shim, for IE6-8 support of HTML5 elements
+    /[if lt IE 9]
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    / Le fav and touch icons
+    %link{:href => "../assets/ico/favicon.ico", :rel => "shortcut icon"}/
+    %link{:href => "../assets/ico/apple-touch-icon-144-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "144x144"}/
+    %link{:href => "../assets/ico/apple-touch-icon-114-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "114x114"}/
+    %link{:href => "../assets/ico/apple-touch-icon-72-precomposed.png", :rel => "apple-touch-icon-precomposed", :sizes => "72x72"}/
+    %link{:href => "../assets/ico/apple-touch-icon-57-precomposed.png", :rel => "apple-touch-icon-precomposed"}/
+  /[if lt IE 7 ] <body class="ie ie6">
+  /[if IE 7 ] <body class="ie ie7 ">
+  /[if IE 8 ] <body class="ie ie8 ">
+  /[if IE 9 ] <body class="ie ie9 ">
+  / [if (gt IE 9)|!(IE)]><!
+  %body{class: "#{params[:controller]} #{params[:action]}"}
+    / <![endif]
+    = render partial: 'layouts/navigation'
+    - unless params[:controller] == "home"
+      = render partial: 'layouts/messages'
+      = yield
     - else
       = yield
-  %footer
-    - unless params[:controller] == "home"
-      = javascript_include_tag "application"
+
+  - unless params[:controller] == "home"
+    = javascript_include_tag "application"

@@ -1,42 +1,60 @@
-// Place all the styles related to the tasks controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-a.add-item{
+a.add-task{
   display: block;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-  padding: 10px 0px 10px 40px;
-  color: #666;
+  padding: 10px 0px 10px 30px;
+  /*color: #666;*/
   font-size: .75rem;
   font-weight: bold;
 }
 
 form.edit_task{
   margin: 0px;
-}
-
-.edit_task{
-  padding: 10px 15px;
   border-bottom: 1px solid #ddd;
+  padding: 10px 15px;
 
   span{ /* task text */
     padding-left: 10px;
   }
   input#task_complete{
     vertical-align: baseline;
+    display: none;
   }
 
   label{
     display: inline;
     margin-left: 1.5%;
+  }
 
+  input[type="checkbox"]+label{
+    background:image-url('check-sprite.png') left top no-repeat;
+    background-position:0 0px;
+    position:relative;
+    margin:0;
+    padding: 3px 0 3px 50px;
+    cursor:pointer;
+    display:inline-block;
+    z-index:0;
+  }
+  input[type='checkbox']:checked+label{
+    background:image-url('check-sprite.png') left top no-repeat;
+    background-position:0 -26px
   }
 
 }
-  .complete{
-    color: #999999;
-    background: #f5f5f5;
-    cursor: default;
-    text-decoration: line-through;
+
+form.new_task{
+  margin: -10px 0 2px 0;
+
+  input{
+    margin: 6px 0;
   }
+}
+
+.complete{
+  color: #999999;
+  background: #f5f5f5;
+  cursor: default;
+  /*text-decoration: line-through;*/
+}
+

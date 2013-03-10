@@ -1,11 +1,11 @@
 RailsPrelaunchSignup::Application.routes.draw do
 
-
+  match '/thankyou', to: 'application#thankyou'
   authenticated :user do
     root :to => 'users#show'
   end
   devise_scope :user do
-    root :to => 'home#index'
+    root :to => 'devise/sessions#new'
     match '/user/confirmation' => 'confirmations#update', :via => :put, :as => :update_user_confirmation
   end
   devise_for :users, :path => 'accounts', :controllers => { :registrations => "registrations", :confirmations => "confirmations" }
