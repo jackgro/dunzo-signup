@@ -46,7 +46,7 @@ RailsPrelaunchSignup::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-   config.assets.precompile += %w( home.js home.css epicfullscreen.css udt_shortcodes.css udt_media_queries.css jquery.fancybox-1.3.4.css style.css custom/bootstrap.min.css custom/bootstrap.min.js)
+   config.assets.precompile += %w( theme.css home.js home.css epicfullscreen.css udt_shortcodes.css udt_media_queries.css jquery.fancybox-1.3.4.css style.css custom/bootstrap.min.css custom/bootstrap.min.js)
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
