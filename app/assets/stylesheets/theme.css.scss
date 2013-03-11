@@ -124,14 +124,19 @@ hr {
   border-top: 1px solid #ffffff;
   border-left: 1px solid #ffffff;
   padding: 0em 1.25em;
+  margin-bottom: 1.5em;
+  position: relative;
 }
 
 .date-switcher {
-		
+  position: absolute;
+  right: 25px;
+  top: 12px;
 }
 .header h1 {
   margin: 1em 0em;
   padding: 0em;
+  display: inline-block;
   line-height: 1em;
   font-size: 1.3em;
   font-weight:normal;

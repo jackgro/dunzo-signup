@@ -30,11 +30,12 @@
 .content
   .header
     %h1.page-title= @date.strftime("%A, %B %e, %Y")
+    = render partial: "tasks/day_switcher"
   .container-fluid
     .row-fluid
       .btn-toolbar.date-switcher
         .btn-group
-          = render partial: "tasks/day_switcher"
+      = render partial: 'layouts/messages'
       - @categories.each do |category|
         .well{class: "category-#{category.id}-well"}
           = div_for category do

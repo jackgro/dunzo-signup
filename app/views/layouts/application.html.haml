@@ -37,7 +37,7 @@
     / <![endif]
     = render partial: 'layouts/navigation'
     - unless params[:controller] == "home"
-      = render partial: 'layouts/messages'
+      -#= render partial: 'layouts/messages'
       = yield
     - else
       = yield

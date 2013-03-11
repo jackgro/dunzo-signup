@@ -1,4 +1,5 @@
-%a.btn{:href => "#{user_path(current_user, date: @date.prev_day)}"}
-  %i.icon-chevron-left
-%a.btn{:href => "#{user_path(current_user, date: @date.next_day)}"}
-  %i.icon-chevron-right
+.date-switcher
+  %a.btn{:href => "#{user_path(current_user, date: @date.prev_day)}"}
+    %i.icon-chevron-left
+  %a.btn{:href => "#{user_path(current_user, date: @date.next_day)}"}
+    %i.icon-chevron-right
