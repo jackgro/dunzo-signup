@@ -48,9 +48,4 @@
             = content_tag :div, class: "category-#{category.id}-tasks" do
               = render category.tasks_by_date(@date)
 
-              -#= link_to task_path(task.id), remote: true, :method => :delete, class: "delete-task" do
-                -#%i.icon-remove
-              -#-#%a{:href => "user.html"}
-                -#-#%i.icon-pencil
-
       = render partial: "layouts/footer"
