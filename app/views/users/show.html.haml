@@ -21,7 +21,7 @@
     %i.icon-chevron-up
   #calendar-menu.collapse.out
     = calendar @date do |date|
-      = link_to date.day, "#{user_path(current_user, date: params[:date])}", class: "calendar-day"
+      = link_to date.day, "#{user_path(@user, date: params[:date])}", class: "calendar-day"
 
 
 // ======================================================
@@ -41,7 +41,7 @@
             %h5= category.name.titleize
             //========== Task form ============
             = render partial: "tasks/form", locals: { category: category, date: @date }
-
+            //========== Tasks ============
             = content_tag :div, class: "category-#{category.id}-tasks" do
               = render category.tasks_by_date(@date)
 
