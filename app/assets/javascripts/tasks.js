@@ -1,7 +1,7 @@
 jQuery.fn.submitOnCheck = function () {
-  //this.find('input:checkbox').on('click', function(){
-    //$(this).parent('form').submit();
-  //});
+  this.find('input:checkbox').on('click', function(){
+    $(this).parent('form').submit();
+  });
 }
 
 jQuery.fn.resetForm = function() { 
@@ -23,16 +23,5 @@ jQuery.fn.resetForm = function() {
 
 $(function(){
   //$('.new_task').resetForm();
-
-
-  $('label').on('click', function(){
-    console.log($(this).data('form'));
-    $input = $(this).closest('input');
-    console.log($input);
-    console.log($input.val());
-
-    //console.log($(this).closest('input'));
-    //if $(this).
-  });
-
+  $('.edit_task').submitOnCheck();
 });

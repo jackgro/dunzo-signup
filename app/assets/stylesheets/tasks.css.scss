@@ -16,7 +16,7 @@ form.edit_task{
   span{ /* task text */
     padding-left: 10px;
   }
-  input#task_complete{
+  input{
     vertical-align: baseline;
     display: none;
   }
@@ -55,6 +55,5 @@ form.new_task{
   color: #999999;
   background: #f5f5f5;
   cursor: default;
-  /*text-decoration: line-through;*/
 }
 
