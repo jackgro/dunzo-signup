@@ -11,7 +11,7 @@
     Categories
     %i.icon-chevron-up
   %ul#dashboard-menu.nav.nav-list.collapse.in
-    .category-form.display-none
+    .category-form
       = render 'categories/form'
     = render @categories
   //========== Calendar Accordion ============
@@ -19,9 +19,9 @@
     %i.icon-calendar.icon-white>
     Calendar
     %i.icon-chevron-up
-  #calendar-menu.collapse.out
+  #calendar-menu.collapse.in
     = calendar @date do |date|
-      = link_to date.day, "#{user_path(@user, date: params[:date])}", class: "calendar-day"
+      = link_to date.day, "#{user_path(@user, date: date)}", class: "calendar-day"
 
 
 // ======================================================
