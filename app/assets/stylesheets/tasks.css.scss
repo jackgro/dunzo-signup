@@ -8,6 +8,12 @@ a.add-task{
   font-weight: bold;
 }
 
+a.delete-task{
+  i{
+    margin-top: 3px;
+  }
+}
+
 form.edit_task{
   margin: 0px;
   border-bottom: 1px solid #ddd;
