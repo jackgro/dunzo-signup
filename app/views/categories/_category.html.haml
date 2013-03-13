@@ -1,4 +1,5 @@
 = content_tag(:li, class: "category-#{category.id}") do
-  = link_to user_category_path(@user, category), method: :delete, remote: true do
+  = link_to "#" do
     = category.name.titleize
+  = link_to user_category_path(@user, category), method: :delete, remote: true do
     %i.icon-remove.pull-right
