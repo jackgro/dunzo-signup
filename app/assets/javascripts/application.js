@@ -26,26 +26,6 @@
 
 $('document').ready(function() {
 
-  // use AJAX to submit the "request invitation" form
-  //$('#invitation_button').on('click', function() {
-    //var email = $('form #user_email').val();
-    //if($('form #user_opt_in').is(':checked'))
-        //var opt_in = true;
-    //else
-        //var opt_in = false;
-    //var dataString = 'user[email]='+ email + '&user[opt_in]=' + opt_in;
-    //$.ajax({
-      //type: "POST",
-      //url: "/accounts",
-      //data: dataString,
-      //success: function(data) {
-        //$('#request-invite').html(data);
-        //loadSocial();
-      //}
-    //});
-    //return false;
-  //});
-
   if ($('.thankyou').length > 0) {
     loadSocial();
   }
