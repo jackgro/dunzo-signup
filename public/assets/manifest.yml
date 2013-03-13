@@ -15,6 +15,8 @@ extra_clean_paper.png: extra_clean_paper-33175baa85f89861656d7ad405af6e51.png
 extra_clean_paper/index.png: extra_clean_paper-33175baa85f89861656d7ad405af6e51.png
 furley_bg.png: furley_bg-c3603ba194ec75bff831004680a6cd0e.png
 furley_bg/index.png: furley_bg-c3603ba194ec75bff831004680a6cd0e.png
+iphone-icon.png: iphone-icon-aaef2bae61481befdd52f2862ce43aef.png
+iphone-icon/index.png: iphone-icon-aaef2bae61481befdd52f2862ce43aef.png
 mobileMenu-toggle.png: mobileMenu-toggle-7a6f90f17fb9b3ccd2de84df5c40a102.png
 mobileMenu-toggle/index.png: mobileMenu-toggle-7a6f90f17fb9b3ccd2de84df5c40a102.png
 parallax-desk-2.jpg: parallax-desk-2-3debaec65ef3cdf148d52108db964eb9.jpg
@@ -29,8 +31,8 @@ application.css: application-62235384b58d81445992924113aacca5.css
 application/index.css: application-62235384b58d81445992924113aacca5.css
 home.css: home-6931e44ec822dfa053d322c6e97096a7.css
 home/index.css: home-6931e44ec822dfa053d322c6e97096a7.css
-theme.css: theme-fcb7baf2f78ed7883ac199f4de68035e.css
-theme/index.css: theme-fcb7baf2f78ed7883ac199f4de68035e.css
+theme.css: theme-a535aae295d373fc8e5ea2635f75758d.css
+theme/index.css: theme-a535aae295d373fc8e5ea2635f75758d.css
 iphone_icon.png: iphone_icon-d34b7ad530f114554686aeab3f62d729.png
 iphone_icon/index.png: iphone_icon-d34b7ad530f114554686aeab3f62d729.png
 asterisk.png: asterisk-4cb4b201e8ad6844b5f1dbc3652f5121.png
