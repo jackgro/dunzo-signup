@@ -11,12 +11,12 @@
       = stylesheet_link_tag "application", :media => "all"
       = stylesheet_link_tag "theme"
       = stylesheet_link_tag "http://www.dunzoapp.com/stylesheets/merge.css"
-      = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic,300italic,300"
     - else
       = stylesheet_link_tag "home"
       = javascript_include_tag "home"
       = render 'homepage-js'
 
+    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic,300italic,300"
     = stylesheet_link_tag "font-awesome/css/font-awesome"
     = csrf_meta_tag
     / Le HTML5 shim, for IE6-8 support of HTML5 elements
