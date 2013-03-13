@@ -7,21 +7,17 @@
 
   td, th {
     @include font-size(0.6rem);
-    /*@include border(1px solid #999);*/
     font-family: "Lucida Grande", arial, helvetica, sans-serif;
     padding: 6px;
   }
 
   th {
-    /*background: #DDD;*/
     color: #666;
     text-align: center;
     width: 14%;
   }
 
   td {
-    /*background: #FFF;*/
-    /*color: #777;*/
     height: 14%;
     vertical-align: top;
     @include font-size(0.6rem);
@@ -30,7 +26,6 @@
 
   a.calendar-day{
     font-weight: bold;
-    /*color: #555;*/
   }
   .notmonth, .notmonth a { color: #CCC; }
   .today { background-color: #fff; }
@@ -41,11 +36,9 @@ header.date{
   line-height: 40px;
   @include font-size(1.5rem);
   font-weight: 200;
-  /*color: #888888;*/
   position: relative;
 
   .today{
-    /*color: $dunzoBlue;*/
   }
 
   .next-day{
@@ -65,5 +58,4 @@ input.date-select{
   @include border-radius(2px);
   @include font-size(0.8rem);
   font-weight: bold;
-  /*color: #979797;*/
 }
