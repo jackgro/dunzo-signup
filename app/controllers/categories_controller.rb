@@ -9,6 +9,13 @@ class CategoriesController < ApplicationController
   def update
   end
 
+  def show
+    @user = current_user
+    @categories = @user.categories.all
+    @category = Category.find(params[:id])
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
+  end
+
   def destroy
     @category = Category.find(params[:id])
     @user = @category.user

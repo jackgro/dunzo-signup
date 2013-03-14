@@ -1,0 +1,50 @@
+
+// ======================================================
+// Sidebar
+// ======================================================
+.sidebar-nav
+  //========== Search ============
+  %form.search.form-inline
+    %input{:placeholder => "Search...", :type => "text"}/
+  //========== Categories Accordion ============
+  %a.nav-header{"data-toggle" => "collapse", :href => "#dashboard-menu"}
+    %i.icon-tags>
+    Categories
+    %i.icon-chevron-up
+  %ul#dashboard-menu.nav.nav-list.collapse.in
+    .category-form
+      = render 'categories/form'
+    = render @categories
+  /========== Calendar Accordion ============
+  %a.nav-header{"data-toggle" => "collapse", :href => "#calendar-menu"}
+    %i.icon-calendar.icon-white>
+    Calendar
+    %i.icon-chevron-up
+  #calendar-menu.collapse.in
+    = calendar @date do |date|
+      - current = "current" if date == @date
+      = link_to date.day, "#{user_category_path(@user, @category, date: date)}", class: "calendar-day #{current}"
+
+
+// ======================================================
+// Content
+// ======================================================
+.content
+  .header
+    %h1.page-title= @date.strftime("%A, %B %e, %Y")
+    = render partial: "tasks/day_switcher"
+  .container-fluid
+    .row-fluid
+      .btn-toolbar.date-switcher
+        .btn-group
+      = render partial: 'layouts/messages'
+      .well{class: "category-#{@category.id}-well"}
+        = div_for @category do
+          %h5= @category.name.titleize
+          //========== Task form ============
+          = render partial: "tasks/form", locals: { category: @category, date: @date }
+          //========== Tasks ============
+          = content_tag :div, class: "category-#{@category.id}-tasks" do
+            = render @category.tasks_by_date(@date)
+
+      = render partial: "layouts/footer"
