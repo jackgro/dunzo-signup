@@ -14,6 +14,8 @@
   %ul#dashboard-menu.nav.nav-list.collapse.in
     .category-form
       = render 'categories/form'
+    = content_tag(:li) do
+      = link_to "View all", root_path
     = render @categories
   /========== Calendar Accordion ============
   %a.nav-header{"data-toggle" => "collapse", :href => "#calendar-menu"}
