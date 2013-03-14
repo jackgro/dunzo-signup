@@ -20,13 +20,12 @@
               %li
                 = link_to 'Dashboard', users_path, tabindex: '-1'
       - else
-        %li#fat-menu
-          = link_to new_user_registration_path, tabindex: '-1' do
-            %i.icon-user
-            Sign Up
-        %li#fat-menu
-          = link_to new_user_session_path, tabindex: '-1' do
-            %i.icon-lock
-            Login
+        %ul.nav.nav-pills
+          %li#fat-menu
+            = link_to new_user_registration_path, class: 'sign-up', tabindex: '-1' do
+              Sign Up
+          %li#fat-menu
+            = link_to new_user_session_path, class: 'login', tabindex: '-1' do
+              Login
     / /nav
     %a.brand{:href => root_path} dunzo
