@@ -4,6 +4,6 @@ class Category < ActiveRecord::Base
   has_many :tasks, dependent: :destroy
 
   def tasks_by_date(date)
-    tasks.where(date: date)
+    tasks.where(date: date).order('created_at ASC')
   end
 end
