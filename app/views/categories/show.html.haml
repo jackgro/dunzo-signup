@@ -5,7 +5,7 @@
 .content
   .header
     %h1.page-title= @date.strftime("%A, %B %e, %Y")
-    = render partial: "tasks/day_switcher", locals: { category: params[:category_id] }
+    = render partial: "tasks/day_switcher"
   .container-fluid
     .row-fluid
       .btn-toolbar.date-switcher
