@@ -14,7 +14,7 @@
     .category-form
       = render 'categories/form'
     = content_tag(:li) do
-      = link_to "View all", root_path
+      = link_to "View all", root_path(date: @date)
     = render @categories
   //========== Calendar Accordion ============
   %a.nav-header{"data-toggle" => "collapse", :href => "#calendar-menu"}
