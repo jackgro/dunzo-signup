@@ -12,13 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap-transition.js
 //= require bootstrap-alert.js
 //= require bootstrap-button.js
 //= require bootstrap-collapse.js
 //= require bootstrap-dropdown.js
 //= require bootstrap-modal.js
-//= require bootstrap-tab.js
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
 //= require tasks
