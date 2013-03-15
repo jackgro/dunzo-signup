@@ -33,7 +33,12 @@
 .content
   .header
     %h1.page-title= @date.strftime("%A, %B %e, %Y")
-    = render partial: "tasks/day_switcher"
+    -#= render partial: "tasks/day_switcher", locals: { category: params[:category_id] }
+    .date-switcher
+      %a.btn{:href => "#{user_path(current_user, date: @date.prev_day)}"}
+        %i.icon-chevron-left
+      %a.btn{:href => "#{user_path(current_user, date: @date.next_day)}"}
+        %i.icon-chevron-right
   .container-fluid
     .row-fluid
       .btn-toolbar.date-switcher
