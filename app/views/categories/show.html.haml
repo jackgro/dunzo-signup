@@ -8,10 +8,11 @@
     = render partial: "tasks/day_switcher"
   .container-fluid
     .row-fluid
-      .btn-toolbar.date-switcher
-        .btn-group
       = render partial: 'layouts/messages'
       .well{class: "category-#{@category.id}-well"}
+        .pull-right
+          - delete_html = "<a href='#{user_category_path(@user, @category)}' data-method='delete' data-remote='true' rel='nofollow'>Delete</a>"
+          %i.icon-cog.options{"data-content" => delete_html, "data-original-title" => "Options", "data-placement" => "left", :href => "#", :rel => "popover"}
         = div_for @category do
           %h5= @category.name.titleize
           //========== Task form ============

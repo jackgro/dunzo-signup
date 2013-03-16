@@ -17,10 +17,13 @@
 //= require bootstrap-collapse.js
 //= require bootstrap-dropdown.js
 //= require bootstrap-modal.js
+//= require bootstrap-tooltip.js
+//= require bootstrap-popover.js
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
 //= require tasks
 //= require users
+//= require categories
 
 $('document').ready(function() {
 
