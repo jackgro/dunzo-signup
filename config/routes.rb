@@ -10,6 +10,8 @@ RailsPrelaunchSignup::Application.routes.draw do
   end
   devise_for :users, :path => 'accounts', :controllers => { :registrations => "registrations", :confirmations => "confirmations" }
   match 'users/bulk_invite/:quantity' => 'users#bulk_invite', :via => :get, :as => :bulk_invite
+  match '/:username' => "users#show", as: :username
+  match '/:username/category/:id' => "categories#show", as: :username_category
   resources :users, :only => [:show, :index] do
     get 'invite', :on => :member
 
@@ -19,9 +21,8 @@ RailsPrelaunchSignup::Application.routes.draw do
   resources :categories do
     resources :tasks
   end
+
   resources :tasks
-
-
 
 end
 

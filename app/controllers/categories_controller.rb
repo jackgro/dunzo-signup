@@ -10,7 +10,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @user = current_user || User.find(params[:id])
+    @user =  current_user || User.find_by_username(params[:username])
     @categories = @user.categories.all
     @category = Category.find(params[:id])
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
@@ -22,7 +22,7 @@ class CategoriesController < ApplicationController
     @category.destroy
 
     respond_to do |format|
-      format.html{ redirect_to user_path(@user) }
+      format.html{ redirect_to username_path(@user) }
       format.js
     end
 
@@ -35,7 +35,7 @@ class CategoriesController < ApplicationController
     respond_to do |format|
       format.html{
         if @category.save
-          redirect_to user_path(@user)
+          redirect_to username_path(@user)
         else
           render 'new'
         end
