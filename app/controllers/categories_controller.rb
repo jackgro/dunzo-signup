@@ -35,7 +35,7 @@ class CategoriesController < ApplicationController
     respond_to do |format|
       format.html{
         if @category.save
-          redirect_to username_path(@user)
+          redirect_to username_path(@user.username)
         else
           render 'new'
         end
