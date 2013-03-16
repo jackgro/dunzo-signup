@@ -12,7 +12,7 @@ class CategoriesController < ApplicationController
   def show
     @user =  current_user || User.find_by_username(params[:username])
     @categories = @user.categories.all
-    @category = Category.find(params[:id])
+    @category = @user.categories.find_by_name(params[:name]) || Category.find(params[:id])
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
 

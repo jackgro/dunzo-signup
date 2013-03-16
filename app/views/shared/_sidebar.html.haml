@@ -25,7 +25,7 @@
       - current = "current" if date == @date
       - case params[:controller]
       - when 'categories'
-        = link_to date.day, username_category_path(@user.username, @category, date: date), class: "calendar-day #{current}"
+        = link_to date.day, username_category_path(@user.username, @category.name, date: date), class: "calendar-day #{current}"
       - when 'users'
         = link_to date.day, username_path(@user.username, date: date), class: "calendar-day #{current}"
 
