@@ -8,15 +8,15 @@
     %meta{:content => content_for?(:description) ? yield(:description) : "Dunzo | Daily to-do lists made simple", :name => "description"}
     %meta{:content => "", :name => "author"}/
     = render 'layouts/ga-js'
-
-    - unless params[:controller] == "home"
-      = stylesheet_link_tag "application", :media => "all"
-      = stylesheet_link_tag "theme"
-      = stylesheet_link_tag "http://www.dunzoapp.com/stylesheets/merge.css"
-    - else
+    - case params[:controller]
+    - when "home"
       = stylesheet_link_tag "home"
       = javascript_include_tag "home"
       = render 'homepage-js'
+    - else
+      = stylesheet_link_tag "application", :media => "all"
+      = stylesheet_link_tag "theme"
+      = stylesheet_link_tag "http://www.dunzoapp.com/stylesheets/merge.css"
 
     = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic,300italic,300"
     = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Roboto:100"
@@ -37,7 +37,6 @@
     / <![endif]
     = render partial: 'layouts/navigation'
     - unless params[:controller] == "home"
-      -#= render partial: 'layouts/messages'
       = yield
     - else
       = yield
