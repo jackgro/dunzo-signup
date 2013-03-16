@@ -4,13 +4,13 @@
     %a.btn{:href => username_category_path(@user.username, date: @date.prev_day)}
       %i.icon-chevron-left
     %a.btn{:href => username_path(@user.username)}
-      %i.icon-home
+      Today
     %a.btn{:href => username_category_path(@user.username, date: @date.next_day)}
       %i.icon-chevron-right
   - when 'users'
     %a.btn{:href => username_path(@user.username, date: @date.prev_day)}
       %i.icon-chevron-left
     %a.btn{:href => username_path(@user.username)}
-      %i.icon-home
+      Today
     %a.btn{:href => username_path(@user.username, date: @date.next_day)}
       %i.icon-chevron-right
