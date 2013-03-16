@@ -1,0 +1,10 @@
+.row-fluid
+  .dialog.span4.offset4
+    .block
+      %p.block-heading Forgot your password?
+      .block-body
+        = simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
+          = f.error_notification
+          %div
+            = f.input :email, :autofocus => true, input_html: { class: 'span12' }
+          %div= f.submit "Send me reset password instructions", class: 'btn btn-primary btn-block btn-large'
