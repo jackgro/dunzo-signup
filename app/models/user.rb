@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   # override Devise method
   # no password is required when the account is created; validate password when the user sets one
   validates_confirmation_of :password
-  validates :username, presence: true
+  validates :username, presence: true, uniqueness: true
 
   def password_required?
     if !persisted?
