@@ -25,7 +25,7 @@ class RegistrationsController < Devise::RegistrationsController
 
   def after_sign_up_path_for(resource)
     # the page new users will see after sign up (after launch, when no invitation is needed)
-    redirect_to user_path(resource)
+    redirect_to username_path(resource)
   end
 
 end
