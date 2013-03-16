@@ -12,8 +12,7 @@
       - @categories.each do |category|
         .well{class: "category-#{category.id}-well"}
           .pull-right
-            - delete_html = "<a href='#{user_category_path(@user, category)}' data-method='delete' data-confirm='Are you sure?' data-remote='true' rel='nofollow'><i class='icon-trash'></i>  Delete</a>"
-            %i.icon-cog.options{"data-content" => delete_html, :href => "#", :rel => "popover"}
+            %i.icon-cog.options{"data-content" => popover_delete_link(category), :href => "#", :rel => "popover"}
           = div_for category do
             %h5= category.name.titleize
             //========== Task form ============
