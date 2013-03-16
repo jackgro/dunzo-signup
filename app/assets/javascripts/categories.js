@@ -6,6 +6,8 @@ $(function(){
   });
 
   $('.options').popover({
-     html: true
+     html: true,
+     placement: 'left',
+     title: 'Options'
   });
 });
