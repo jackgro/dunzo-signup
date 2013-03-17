@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+
+  has_mobile_fu
+
   before_filter :authenticate_user!
 
   def index
@@ -11,6 +14,11 @@ class UsersController < ApplicationController
     @user =  current_user || User.find_by_username(params[:username])
     @categories = @user.categories.all
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
+
+    if is_mobile_device?
+      render 'show.mobile.haml'
+    end
+
   end
 
   def invite

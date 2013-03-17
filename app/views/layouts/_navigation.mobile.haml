@@ -1,0 +1,30 @@
+.navbar.navbar-fixed-top
+  .navbar-inner
+    %ul.nav.nav-pills.pull-right
+      - if user_signed_in?
+        %li#fat-menu.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button"}
+            - if current_user
+              = current_user.full_name
+              %i.icon-caret-down
+          %ul.dropdown-menu
+            %li
+              = link_to 'Profile', username_path(current_user.username), tabindex: '-1'
+            %li
+              = link_to 'Settings', edit_user_registration_path, tabindex: '-1'
+            %li
+              = link_to 'Logout', destroy_user_session_path, :method=>'delete', tabindex: '-1'
+            %li.divider.visible-phone
+            - if current_user.has_role? :admin
+              %li.nav-header Admin
+              %li
+                = link_to 'Dashboard', users_path, tabindex: '-1'
+      - else
+        %li#fat-menu
+          = link_to new_user_registration_path, class: 'sign-up', tabindex: '-1' do
+            Sign Up
+        %li#fat-menu
+          = link_to new_user_session_path, class: 'login', tabindex: '-1' do
+            Login
+    / /nav
+    %a.brand{:href => root_path} dunzo

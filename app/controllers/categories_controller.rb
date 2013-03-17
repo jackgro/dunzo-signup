@@ -1,4 +1,7 @@
 class CategoriesController < ApplicationController
+
+  has_mobile_fu
+
   def new
     @category = Category.new
   end
@@ -14,6 +17,11 @@ class CategoriesController < ApplicationController
     @categories = @user.categories.all
     @category = @user.categories.find_by_name(params[:name]) || Category.find(params[:id])
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
+
+    if is_mobile_device?
+      render 'show.mobile.haml'
+    end
+
   end
 
   def destroy

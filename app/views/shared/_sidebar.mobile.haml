@@ -1,0 +1,32 @@
+//========================== Sidebar ========================//
+//==========================================================//
+.sidebar-nav
+  //========== Search ============
+  %form.search.form-inline
+    %input{:placeholder => "Search...", :type => "text"}/
+  //========== Categories Accordion ============
+  %a.nav-header{"data-toggle" => "collapse", :href => "#dashboard-menu"}
+    %i.icon-tags>
+    Categories
+    %i.icon-chevron-up
+  %ul#dashboard-menu.nav.nav-list.collapse.out
+    .category-form
+      = render 'categories/form'
+    = content_tag(:li) do
+      = link_to "View all", username_path(@user.username, date: date)
+    = render @categories
+  //========== Calendar Accordion ============
+  %a.nav-header{"data-toggle" => "collapse", :href => "#calendar-menu"}
+    %i.icon-calendar.icon-white>
+    Calendar
+    %i.icon-chevron-up
+  #calendar-menu.collapse.out
+    = render 'tasks/month-switcher', locals: { date: @date }
+    = calendar @date do |date|
+      - current = "current" if date == @date
+      - case params[:controller]
+      - when 'categories'
+        = link_to date.day, username_category_path(@user.username, @category.name, date: date), class: "calendar-day #{current}"
+      - when 'users'
+        = link_to date.day, username_path(@user.username, date: date), class: "calendar-day #{current}"
+

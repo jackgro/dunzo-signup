@@ -46,4 +46,12 @@ module CalendarHelper
       (first..last).to_a.in_groups_of(7)
     end
   end
+
+  def mobile_date_format(date)
+    date.strftime("%a, %b %e")
+  end
+
+  def date_format(date)
+    date.strftime("%A, %B %e, %Y")
+  end
 end
