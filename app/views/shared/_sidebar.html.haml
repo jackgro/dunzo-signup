@@ -21,6 +21,7 @@
     Calendar
     %i.icon-chevron-up
   #calendar-menu.collapse.in
+    = render 'tasks/month-switcher', locals: { date: @date }
     = calendar @date do |date|
       - current = "current" if date == @date
       - case params[:controller]
