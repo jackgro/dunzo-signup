@@ -17,6 +17,7 @@ $(function(){
 
   $('.tasks-container').sortable({
     axis: 'y',
+    handle: '.move',
     update: function(){
       $.post($(this).data('update-url'), $(this).sortable('serialize'));
     }
