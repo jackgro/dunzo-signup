@@ -16,6 +16,7 @@ $(function(){
   $('.edit_task').submitOnCheck();
 
   $('.tasks-container').sortable({
+    axis: 'y',
     update: function(){
       $.post($(this).data('update-url'), $(this).sortable('serialize'));
     }
