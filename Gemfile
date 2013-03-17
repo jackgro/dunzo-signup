@@ -14,9 +14,9 @@ gem "unicorn"
 gem "newrelic_rpm", "3.5.7.59"
 gem "haml-rails"
 gem "therubyracer"
+gem "acts_as_list"
 
 group :assets do
-  #gem "less-rails"
   gem 'jquery-ui-rails'
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
