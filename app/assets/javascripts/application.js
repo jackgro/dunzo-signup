@@ -32,7 +32,8 @@ $('document').ready(function() {
     loadSocial();
   }
 
-  if ($('.mobile').length > 0) {
+  if (!navigator.userAgent.match(/iPhone/)) {
+
     // Override default confirm dialog with Bootbox
     $.rails.allowAction = function(element) {
     var message = element.data('confirm'),
@@ -62,8 +63,8 @@ $('document').ready(function() {
       });
     }
 
-  });
-}
+  }
+});
 
 // load social sharing scripts if the page includes a Twitter "share" button
 function loadSocial() {
