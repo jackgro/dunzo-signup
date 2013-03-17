@@ -40,15 +40,10 @@ class CategoriesController < ApplicationController
     @user = User.find(params[:user_id])
     @category = @user.categories.create(params[:category])
 
-    respond_to do |format|
-      format.html{
-        if @category.save
-          redirect_to username_path(@user.username)
-        else
-          render 'new'
-        end
-      }
-      #format.js
+    if @category.save
+      redirect_to username_path(@user.username)
+    else
+      render 'new'
     end
   end
 end
