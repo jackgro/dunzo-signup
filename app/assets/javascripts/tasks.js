@@ -14,4 +14,10 @@ jQuery.fn.resetForm = function() {
 
 $(function(){
   $('.edit_task').submitOnCheck();
+
+  $('.tasks-container').sortable({
+    update: function(){
+      $.post($(this).data('update-url'), $(this).sortable('serialize'));
+    }
+  });
 });

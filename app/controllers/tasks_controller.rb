@@ -49,4 +49,11 @@ class TasksController < ApplicationController
       format.js
     end
   end
+
+  def sort
+    params[:edit_task].each_with_index do |id, index|
+      Task.update_all({position: index+1}, {id: id})
+    end
+    render nothing: true
+  end
 end

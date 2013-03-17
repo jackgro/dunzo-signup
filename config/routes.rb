@@ -22,7 +22,9 @@ RailsPrelaunchSignup::Application.routes.draw do
     resources :tasks
   end
 
-  resources :tasks
+  resources :tasks do
+    collection { post :sort }
+  end
 
 end
 
