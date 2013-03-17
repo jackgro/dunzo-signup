@@ -19,6 +19,7 @@
 //= require bootstrap-modal.js
 //= require bootstrap-tooltip.js
 //= require bootstrap-popover.js
+//= require bootbox.min.js
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
 //= require tasks
@@ -30,6 +31,36 @@ $('document').ready(function() {
   if ($('.thankyou').length > 0) {
     loadSocial();
   }
+
+  // Override default confirm dialog with Bootbox
+  $.rails.allowAction = function(element) {
+  var message = element.data('confirm'),
+    answer = false, callback;
+  if (!message) { return true; }
+
+  if ($.rails.fire(element, 'confirm')) {
+    myCustomConfirmBox(message, function() {
+      callback = $.rails.fire(element,
+        'confirm:complete', [answer]);
+        if(callback) {
+          var oldAllowAction = $.rails.allowAction;
+          $.rails.allowAction = function() { return true; };
+          element.trigger('click');
+          $.rails.allowAction = oldAllowAction;
+        }
+      });
+    }
+    return false;
+  }
+
+  function myCustomConfirmBox(message, callback) {
+    bootbox.confirm(message, "Cancel", "Yes", function(confirmed) {
+      if(confirmed){
+        callback();
+      }
+    });
+  }
+
 });
 
 // load social sharing scripts if the page includes a Twitter "share" button
