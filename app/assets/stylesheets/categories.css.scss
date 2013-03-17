@@ -17,11 +17,15 @@
   color:#FFF;
 }
 
-.options{
-  padding: 0 10px 0 15px;
-  cursor: pointer;
-}
+.category-options{
+  min-width: 100px;
 
-.popover{
-  width: 115px;
+  .delete{
+    display: inline;
+    padding: 0 10px 0 0;
+  }
+
+  a{
+    padding: 0 10px;
+  }
 }

@@ -10,8 +10,7 @@
     .row-fluid
       = render partial: 'layouts/messages'
       .well{class: "category-#{@category.id}-well"}
-        .pull-right
-          %i.icon-cog.options{"data-content" => popover_delete_link(@category), :href => "#", :rel => "popover"}
+        = render partial: 'categories/dropdown-options', locals: { category: @category }
         = div_for @category do
           %h5= @category.name.titleize
           //========== Task form ============
