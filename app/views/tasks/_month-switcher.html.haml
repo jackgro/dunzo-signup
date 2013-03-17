@@ -1,14 +1,14 @@
 .month-switcher
   - case params[:controller]
   - when 'categories'
-    %a{:href => username_category_path(@user.username, date: @date.prev_month)}
+    %a.pull-left{:href => username_category_path(@user.username, date: @date.prev_month)}
       %i.icon-chevron-left
     = @date.strftime("%B")
-    %a{:href => username_category_path(@user.username, date: @date.next_month)}
+    %a.pull-right{:href => username_category_path(@user.username, date: @date.next_month)}
       %i.icon-chevron-right
   - when 'users'
-    %a{:href => username_path(@user.username, date: @date.prev_month)}
+    %a.pull-left{:href => username_path(@user.username, date: @date.prev_month)}
       %i.icon-chevron-left
     = @date.strftime("%B")
-    %a{:href => username_path(@user.username, date: @date.next_month)}
+    %a.pull-right{:href => username_path(@user.username, date: @date.next_month)}
       %i.icon-chevron-right
