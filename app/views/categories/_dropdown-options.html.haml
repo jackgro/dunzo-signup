@@ -1,5 +1,5 @@
 .dropdown.pull-right
-  #dlabel.dropdown-toggle{"data-target" => "#", "data-toggle" => "dropdown", :href => "/page.html", :role => "button"}
+  %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#", :role => "button"}
     %i.icon-cog.options
   %ul.dropdown-menu.category-options{"aria-labelledby" => "dlabel", :role => "menu"}
     = link_to category_path(category), remote: true, method: :delete, confirm: category_confirm do
