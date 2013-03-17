@@ -2,12 +2,14 @@ jQuery.fn.submitOnCheck = function () {
   this.find('input:checkbox').on('click', function(){
     $(this).parent('form').submit();
   });
+  return this;
 }
 
 jQuery.fn.resetForm = function() { 
   this.each(function(){
     this.reset();
   });
+  return this;
 }
 
 // Hide new task form on blur and replace with new task link
@@ -22,6 +24,5 @@ jQuery.fn.resetForm = function() {
 }*/
 
 $(function(){
-  //$('.new_task').resetForm();
   $('.edit_task').submitOnCheck();
 });
