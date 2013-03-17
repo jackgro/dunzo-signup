@@ -32,36 +32,38 @@ $('document').ready(function() {
     loadSocial();
   }
 
-  // Override default confirm dialog with Bootbox
-  $.rails.allowAction = function(element) {
-  var message = element.data('confirm'),
-    answer = false, callback;
-  if (!message) { return true; }
+  if ($('.mobile').length > 0) {
+    // Override default confirm dialog with Bootbox
+    $.rails.allowAction = function(element) {
+    var message = element.data('confirm'),
+      answer = false, callback;
+    if (!message) { return true; }
 
-  if ($.rails.fire(element, 'confirm')) {
-    myCustomConfirmBox(message, function() {
-      callback = $.rails.fire(element,
-        'confirm:complete', [answer]);
-        if(callback) {
-          var oldAllowAction = $.rails.allowAction;
-          $.rails.allowAction = function() { return true; };
-          element.trigger('click');
-          $.rails.allowAction = oldAllowAction;
+    if ($.rails.fire(element, 'confirm')) {
+      myCustomConfirmBox(message, function() {
+        callback = $.rails.fire(element,
+          'confirm:complete', [answer]);
+          if(callback) {
+            var oldAllowAction = $.rails.allowAction;
+            $.rails.allowAction = function() { return true; };
+            element.trigger('click');
+            $.rails.allowAction = oldAllowAction;
+          }
+        });
+      }
+      return false;
+    }
+
+    function myCustomConfirmBox(message, callback) {
+      bootbox.confirm(message, "Cancel", "Yes", function(confirmed) {
+        if(confirmed){
+          callback();
         }
       });
     }
-    return false;
-  }
 
-  function myCustomConfirmBox(message, callback) {
-    bootbox.confirm(message, "Cancel", "Yes", function(confirmed) {
-      if(confirmed){
-        callback();
-      }
-    });
-  }
-
-});
+  });
+}
 
 // load social sharing scripts if the page includes a Twitter "share" button
 function loadSocial() {
