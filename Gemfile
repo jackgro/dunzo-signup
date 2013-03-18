@@ -15,6 +15,7 @@ gem "newrelic_rpm", "3.5.7.59"
 gem "haml-rails"
 gem "therubyracer"
 gem "acts_as_list"
+gem 'best_in_place'
 
 group :assets do
   gem 'jquery-ui-rails'

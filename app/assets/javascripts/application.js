@@ -21,6 +21,8 @@
 //= require bootstrap-tooltip.js
 //= require bootstrap-popover.js
 //= require bootbox.min.js
+//= require jquery.purr
+//= require best_in_place
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.bootstrap
 //= require tasks
