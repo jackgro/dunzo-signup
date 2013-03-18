@@ -13,7 +13,7 @@
         .well{class: "category-#{category.id}-well"}
           = render partial: 'categories/dropdown-options', locals: { category: category }
           = div_for category do
-            %h5= category.name.titleize
+            %h5= best_in_place category, :name
             //========== Task form ============
             = render partial: "tasks/form", locals: { category: category, date: @date }
             //========== Tasks ============

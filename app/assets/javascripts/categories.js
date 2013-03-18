@@ -5,4 +5,5 @@ $(function(){
     $('div.new-user-category-form').slideToggle(200);
   });
 
+  $('.best_in_place').best_in_place();
 });

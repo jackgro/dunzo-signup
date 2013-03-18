@@ -6,10 +6,18 @@ class CategoriesController < ApplicationController
     @category = Category.new
   end
 
-  def edit
-  end
-
   def update
+    @category = Category.find(params[:id]) || current_user.categories.find_by_name(params[:name])
+
+    respond_to do |format|
+      if @category.update_attributes(params[:category])
+        format.json {
+          respond_with_bip(@category)
+        }
+      else
+        format.json { respond_with_bip(@category) }
+      end
+    end
   end
 
   def show

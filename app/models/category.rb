@@ -6,4 +6,5 @@ class Category < ActiveRecord::Base
   def tasks_by_date(date)
     tasks.where(date: date).order('position')
   end
+
 end
