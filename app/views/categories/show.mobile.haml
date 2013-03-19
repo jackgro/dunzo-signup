@@ -16,7 +16,8 @@
           //========== Task form ============
           = render partial: "tasks/form", locals: { category: @category, date: @date }
           //========== Tasks ============
-          = content_tag :div, class: "category-#{@category.id}-tasks tasks-container", data: { update_url: sort_tasks_url } do
+          - classes = "category-#{@category.id}-tasks tasks-container"
+          = content_tag :div, class: classes, data: { update_url: sort_tasks_url } do
             = render @category.tasks_by_date(@date)
 
       = render partial: "layouts/footer"
