@@ -1,6 +1,10 @@
 @import "bootstrap/variables";
 @import "bootstrap/mixins";
 
+#calendar-menu {
+  background:#2E2E2E;
+}
+
 .calendar {
   border-collapse: collapse;
   width: 100%;
@@ -8,16 +12,17 @@
   td, th {
     @include font-size(0.6rem);
     font-family: "Lucida Grande", arial, helvetica, sans-serif;
-    padding: 6px;
+    padding:0; 
   }
 
   th {
-    color: #666;
+    color:#999;
     text-align: center;
     width: 14%;
   }
 
   td {
+    font-size:.7rem;
     height: 14%;
     vertical-align: top;
     @include font-size(0.6rem);
@@ -26,9 +31,47 @@
 
   a.calendar-day{
     font-weight: bold;
+    display:block;
+    padding:6px; 
+
+    &:hover{
+      background:#262626;
+      color:#FFF;
+    }
+
+    .current{
+      background:#25BC99;
+      color:#FFF;
+
+      &:hover{
+        background:#30D3A8;
+      }
+    }
+
   }
+
+  .notmonth, .notmonth a{
+    color:#666; 
+  }
+
+  .notmonth{
+    a.calendar-day:hover{
+      color:#999; 
+    }
+  }
+
+  .today{
+    background:#111;
+  }
+
 }
 
 .month-switcher{
   text-align: center;
+  color:#888;
+  font-size:.9em;
+
+  i{
+    padding:0 15px;
+  }
 }

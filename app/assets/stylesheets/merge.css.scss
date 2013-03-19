@@ -1,0 +1,181 @@
+input:-webkit-autofill {
+    color: #444 !important;
+}
+
+a:hover {
+  color:#30D3A8;
+}
+
+/*---------------------------------------------------
+    FORMS
+-----------------------------------------------------*/
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border-color: rgba(37, 188, 153, 0.8);
+  outline: 0;
+  outline: thin dotted \9;
+  /* IE6-9 */
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(37, 188, 153, .6);
+  -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(37, 188, 153,.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(37, 188, 153,.6);
+}
+.search input::-webkit-input-placeholder {
+    color: #94DECB;
+}
+.search input:-moz-placeholder {
+    color: #94DECB;
+}
+
+
+/*---------------------------------------------------
+    NAVBAR
+-----------------------------------------------------*/
+
+.navbar {
+  background:#333;
+}
+.navbar .navbar-inner {
+  background:none;
+}
+.navbar .brand { 
+  font-family: "Roboto", sans-serif;
+  font-weight:100;
+}
+.navbar .dropdown-menu a:hover {
+  background:#EEE;
+}
+.dropdown-menu a {
+  font-size:.9em;
+}
+.nav-pills .sign-up {
+  background:#25BC99;
+}
+.nav-pills li a.sign-up:hover {
+  background:#1B9377;
+}
+.nav-pills .login {
+  background:#444;
+  margin-right:15px;
+}
+.nav-pills li a.login:hover {
+  background:#555;
+}
+.nav-pills li {
+  margin:8px 4px;
+}
+.navbar .nav-pills > li > a {
+  color:#CCC;
+  font-size:.9em;
+  padding:9px 20px;
+}
+.navbar .nav-pills > li:hover {
+  background:none;
+}
+.navbar .nav-pills li a.login, .navbar .nav-pills li a.sign-up {
+color:#FFF;
+}
+.users .navbar .nav-pills > li > a {
+  padding:9px 11px 9px 20px; /* aligns dropdown */
+}
+
+/*---------------------------------------------------
+    LOGIN
+-----------------------------------------------------*/
+
+.dialog p {
+  color:#777;
+  text-align:center;
+}
+.dialog .block p {
+  text-align:left;
+}
+
+
+/*---------------------------------------------------
+    SIDEBAR
+-----------------------------------------------------*/
+
+.sidebar-nav {
+  margin:6px;
+}
+ul#dashboard-menu li:hover {
+  background:#262626;
+}
+
+
+/*---------------------------------------------------
+    SEARCH
+-----------------------------------------------------*/
+
+.sidebar-nav form.search {
+  padding: 0 1em 0.5em 0;
+}
+.sidebar-nav form.search input {
+  padding:6px;
+}
+
+
+/*---------------------------------------------------
+    CATEGORIES
+-----------------------------------------------------*/
+
+#dashboard-menu li:last-child {
+  margin-bottom:10px;
+}
+.sidebar-nav .category-form form input {
+  background:#222;
+  border:0;
+  border-radius:4px;
+  color:#999;
+  font-size:0.9em;
+}
+.nav-list {
+  padding-left:8px;
+  padding-right:8px;
+}
+#dashboard-menu li {
+  padding-left:5px;
+}
+.sidebar-nav .nav-list > li > a:hover {
+  color:#FFF;
+}
+
+
+/*---------------------------------------------------
+    @MEDIA
+-----------------------------------------------------*/
+
+@media (max-width: 604px) {
+  .header h1 {
+    font-size: .9em;
+  margin:1.7em 0;
+  }
+  form.edit_task {
+  padding:10px;
+  }
+  .well {
+    padding:0;
+  }
+  .well h5, form.new_task {
+    padding:10px 10px 0;
+  }
+  form.edit_task input[type="checkbox"] + label {
+    padding-left:35px;
+  }
+}
+
