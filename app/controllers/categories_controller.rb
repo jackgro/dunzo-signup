@@ -1,5 +1,7 @@
 class CategoriesController < ApplicationController
 
+  respond_to :html, :json
+
   has_mobile_fu
 
   def new
@@ -9,14 +11,10 @@ class CategoriesController < ApplicationController
   def update
     @category = Category.find(params[:id]) || current_user.categories.find_by_name(params[:name])
 
-    respond_to do |format|
-      if @category.update_attributes(params[:category])
-        format.json {
-          respond_with_bip(@category)
-        }
-      else
-        format.json { respond_with_bip(@category) }
-      end
+    if @category.update_attributes(params[:category])
+       respond_with_bip(@category)
+    else
+       respond_with_bip(@category)
     end
   end
 

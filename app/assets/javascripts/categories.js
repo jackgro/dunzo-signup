@@ -6,4 +6,8 @@ $(function(){
   });
 
   $('.best_in_place').best_in_place();
+  $('.best_in_place').bind('ajax:error', function(){
+    bootbox.alert("Whoa! Only letters, numbers, dashes and underscores are allowed. Please try again.");
+  });
+
 });
