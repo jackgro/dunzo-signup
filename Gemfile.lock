@@ -123,6 +123,8 @@ GEM
     kgio (2.8.0)
     launchy (2.2.0)
       addressable (~> 2.3)
+    letter_opener (1.1.0)
+      launchy (~> 2.2.0)
     libv8 (3.11.8.13)
     mail (2.5.3)
       i18n (>= 0.4.0)
@@ -254,6 +256,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   launchy (>= 2.1.2)
+  letter_opener
   newrelic_rpm (= 3.5.7.59)
   pg (= 0.12.2)
   pry-rails
