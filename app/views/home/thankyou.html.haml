@@ -1,12 +1,17 @@
 .row-fluid
   .dialog.span4.offset4
-    .block-body
-      %h1 Thank you
-      %p We have received your request for an invitation to Dunzo.
-      %p We'll contact you when we launch.
-      %p Share your discovery with your friends!
-      #tweet{:style => "display:inline-block;"}
-        %a.twitter-share-button{"data-count" => "horizontal", "data-related" => "dunzoapp", "data-text" => "A new site I've discovered", "data-url" => "http://dunzoapp.com", "data-via" => "dunzoapp", :href => "https://twitter.com/share"}
-      %span{:style => "display:inline-block; vertical-align:text-bottom;"}
-        .fb-like{"data-href" => "http//dunzoapp.com", "data-layout" => "button_count", "data-send" => "false", "data-show-faces" => "false", "data-width" => "90"}
-      .g-plusone{"data-annotation" => "inline", "data-href" => "http://dunzoapp.com", "data-size" => "medium", "data-width" => "120"}
+    .block
+      %p.block-heading Confirmation
+      .block-body
+        %h2 Thank you for signing up!
+        %p
+          We will let you know when we launch. For quicker access, simply
+          %a{:href => "http://twitter.com/share?url=http://dunzoapp.com&text=I just signed up for @dunzoapp! &hashtags=dunzo", :title => "@dunzoapp"} mention us
+          on Twitter!
+      .modal-footer
+        %a.btn{:href => "https://www.facebook.com/dunzoapp", target: "_blank"}
+          %i.icon-facebook
+          Facebook
+        %a.btn{:href => "https://twitter.com/dunzoapp", target: "_blank"}
+          %i.icon-twitter
+          Twitter
