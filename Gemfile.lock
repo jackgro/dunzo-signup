@@ -96,6 +96,7 @@ GEM
     figaro (0.6.3)
       bundler (~> 1.0)
       rails (>= 3, < 5)
+    friendly_id (4.0.9)
     gherkin (2.11.6)
       json (>= 1.7.6)
     google_visualr (2.1.7)
@@ -245,6 +246,7 @@ DEPENDENCIES
   email_spec (>= 1.2.1)
   factory_girl_rails (>= 4.1.0)
   figaro
+  friendly_id (~> 4.0.9)
   google_visualr (>= 2.1.2)
   haml-rails
   hominid (>= 3.0.5)
