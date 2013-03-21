@@ -44,7 +44,7 @@ class TasksController < ApplicationController
       @task.destroy
 
       format.html {
-        redirect_to username_path(@user)
+        redirect_to username_path(@user.slug)
       }
       format.js
     end

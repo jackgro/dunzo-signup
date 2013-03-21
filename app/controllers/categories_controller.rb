@@ -9,7 +9,7 @@ class CategoriesController < ApplicationController
   end
 
   def update
-    @category = Category.find(params[:id]) || current_user.categories.find_by_name(params[:name])
+    @category = Category.find(params[:id]) || current_user.categories.find_by_slug(params[:slug])
 
     if @category.update_attributes(params[:category])
        respond_with_bip(@category)
@@ -19,9 +19,9 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @user =  current_user || User.find_by_username(params[:username])
+    @user =  current_user || User.find_by_slug(params[:user_slug])
     @categories = @user.categories.all
-    @category = @user.categories.find_by_name(params[:name]) || Category.find(params[:id])
+    @category = @user.categories.find_by_slug(params[:slug]) || Category.find(params[:id])
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
 
     if is_mobile_device?
@@ -36,7 +36,7 @@ class CategoriesController < ApplicationController
     @category.destroy
 
     respond_to do |format|
-      format.html{ redirect_to username_path(@user) }
+      format.html{ redirect_to username_path(@user.slug) }
       format.js
     end
 
@@ -47,7 +47,7 @@ class CategoriesController < ApplicationController
     @category = @user.categories.create(params[:category])
 
     if @category.save
-      redirect_to username_path(@user.username)
+      redirect_to username_path(@user.slug)
     else
       render 'new'
     end

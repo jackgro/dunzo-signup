@@ -1,16 +1,17 @@
 .date-switcher
   - case params[:controller]
   - when 'categories'
-    %a.btn{:href => username_category_path(@user.username, date: @date.prev_day)}
+    %a.btn{:href => username_category_path(@user.slug, date: @date.prev_day)}
       %i.icon-chevron-left
-    %a.btn{:href => username_path(@user.username)}
+    %a.btn{:href => username_path(@user.slug)}
       Today
-    %a.btn{:href => username_category_path(@user.username, date: @date.next_day)}
+    %a.btn{:href => username_category_path(@user.slug, date: @date.next_day)}
       %i.icon-chevron-right
   - when 'users'
-    %a.btn{:href => username_path(@user.username, date: @date.prev_day)}
+    %a.btn{:href => username_path(@user.slug, date: @date.prev_day)}
       %i.icon-chevron-left
-    %a.btn{:href => username_path(@user.username)}
+    %a.btn{:href => username_path(@user.slug)}
       Today
-    %a.btn{:href => username_path(@user.username, date: @date.next_day)}
+    %a.btn{:href => username_path(@user.slug, date: @date.next_day)}
       %i.icon-chevron-right
+    %i.icon-chevron-right

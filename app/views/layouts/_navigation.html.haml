@@ -9,7 +9,7 @@
               %i.icon-caret-down
           %ul.dropdown-menu
             %li
-              = link_to 'Profile', username_path(current_user.username), tabindex: '-1'
+              = link_to 'Profile', username_path(current_user.slug), tabindex: '-1'
             %li
               = link_to 'Settings', edit_user_registration_path, tabindex: '-1'
             %li

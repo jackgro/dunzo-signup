@@ -15,8 +15,8 @@ RailsPrelaunchSignup::Application.routes.draw do
 
     resources :categories
   end
-  match '/:username' => "users#show", as: :username
-  match '/:username/lists/:name' => "categories#show", as: :username_category
+  match '/:user_slug' => "users#show", as: :username
+  match '/:user_slug/lists/:slug' => "categories#show", as: :username_category
 
   resources :categories do
     resources :tasks
