@@ -2,23 +2,18 @@
 
 //========================== Content ========================//
 //==========================================================//
+- user = @user
+- categories = @categories
+- date = @date
+
 .content
   .header
-    %h1.page-title= mobile_date_format(@date)
+    %h1.page-title= mobile_date_format(date)
     = render partial: "tasks/day_switcher"
   .container-fluid
     .row-fluid
       = render partial: 'layouts/messages'
-      - @categories.each do |category|
-        .well{class: "category-#{category.id}-well"}
-          = render partial: 'categories/dropdown-options', locals: { category: category }
-          = div_for category do
-            %h5= category.name.titleize
-            //========== Task form ============
-            = render partial: "tasks/form", locals: { category: category, date: @date }
-            //========== Tasks ============
-            - classes = "category-#{category.id}-tasks tasks-container"
-            = content_tag :div, class: classes, data: { update_url: sort_tasks_url } do
-              = render category.tasks_by_date(@date)
+      - categories.each do |category|
+        = render partial: 'shared/task-well', locals: { category: category, date: date }
 
       = render partial: "layouts/footer"
