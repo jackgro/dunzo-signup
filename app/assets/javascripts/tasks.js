@@ -15,7 +15,7 @@ jQuery.fn.resetForm = function() {
 $(function(){
   $('.edit_task').submitOnCheck();
 
-  $('.tasks-container').sortable({
+  $('.task-sort').sortable({
     axis: 'y',
     handle: '.move',
     update: function(){

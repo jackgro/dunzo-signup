@@ -83,12 +83,9 @@ form.new_task{
 }
 
 .move{
-  padding: 3px 8px 0 0;
+  padding-left: 0 !important;
   cursor: pointer;
   color:#CCC;
-  margin-right:5px;
-  padding-left:10px;
-  padding-right:10px;
 
   &:hover{
     color:#999;
