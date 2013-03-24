@@ -1,0 +1,42 @@
+$(function(){
+
+  // Display New Category form
+  $('a.new-category-link').on('click', function(){
+    $('div.new-user-category-form').slideToggle(200);
+  });
+
+  $('.best_in_place').best_in_place();
+  $('.best_in_place').bind('ajax:error', function(){
+    bootbox.alert("Whoa! Only letters, numbers, dashes and underscores are allowed. Please try again.");
+  });
+  $('.best_in_place').bind('ajax:success', function(){
+    //$url = $('#dashboard-menu').find('a').first().data('user-categories');
+    var $data = $('#categories').data('categories');
+
+    var $new_value = $(this).text();
+
+    //$.each($data, function(){
+
+    //  $new_category = '<li class="category" id="category_' + this.id + '">' +
+    //  '<a href="' + categoryUser + '/lists/' + $new_value + '" >' +
+    //  $new_value +
+    //  '</a></li>';
+      var $new_category = '<a href="' + userSlug + '/lists/' + $new_value + '" >' +
+                      $new_value +
+                      '</a></li>';
+      console.log($new_category);
+
+      $.grep($data, function(category){
+        console.log(category.name == this.name );
+      });
+      var $target_li = $('#dashboard-menu').find('#category_' + $data[1].id + '');
+      console.log($target_li);
+
+      // $('#dashboard-menu').append($new_category);
+      $target_li.html($new_category);
+      // window.location.reload();
+
+    //});
+  });
+
+});

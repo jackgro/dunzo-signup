@@ -12,7 +12,10 @@
   %ul#dashboard-menu.nav.nav-list.collapse.in
     .category-form
       = render 'categories/form'
-    = content_tag(:li) do
+    = javascript_tag do
+      window.userSlug = #{ raw User.find_by_slug(@user.slug).slug.to_json};
+      window.userId = #{ raw User.find_by_slug(@user.slug).id.to_json};
+    = content_tag(:li, id: "categories", data: { categories: current_user.categories.all }) do
       = link_to "View all", username_path(@user.slug, date: date)
     = render @categories
   //========== Calendar Accordion ============

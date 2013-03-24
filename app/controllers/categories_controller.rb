@@ -3,6 +3,10 @@ class CategoriesController < ApplicationController
   respond_to :html, :json
 
   has_mobile_fu
+  def index
+    @user = current_user
+    @categories = @user.categories.all
+  end
 
   def new
     @category = Category.new
@@ -10,6 +14,7 @@ class CategoriesController < ApplicationController
 
   def update
     @category = Category.find(params[:id]) || current_user.categories.find_by_slug(params[:slug])
+    @categories = current_user.categories.all
 
     if @category.update_attributes(params[:category])
        respond_with_bip(@category)
