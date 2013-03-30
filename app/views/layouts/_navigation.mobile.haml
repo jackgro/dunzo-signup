@@ -8,9 +8,8 @@
               = current_user.full_name
               %i.icon-caret-down
           %ul.dropdown-menu
-            - unless params[:action] == 'show'
-              %li
-                = link_to 'Lists', username_path(current_user.slug), tabindex: '-1'
+            %li
+              = link_to 'App', username_path(current_user.slug), tabindex: '-1'
             %li
               = link_to 'Profile', edit_user_registration_path, tabindex: '-1'
             %li
