@@ -29,3 +29,19 @@
     padding: 0 10px;
   }
 }
+
+// styles for re-rendered
+// categories in sidebar
+#category-list {
+  li{
+    padding: 6px;
+
+    a {
+      color: #ddd;
+      text-shadow: none;
+      padding: .5em 1em;
+      margin-left: -15px;
+      margin-right: -15px;
+    }
+  }
+}
