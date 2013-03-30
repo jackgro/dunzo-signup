@@ -10,7 +10,4 @@ class Category < ActiveRecord::Base
     tasks.where(date: date).order('position')
   end
 
-  valid_name_regex = /\A[a-zA-Z0-9\s_\-]+\z/i
-  validates :name, format: { with: valid_name_regex  }
-
 end
