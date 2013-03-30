@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user =  current_user || User.find_by_slug(params[:user_slug])
+    @user =  User.find_by_slug(params[:user_slug]) || current_user
     @categories = @user.categories.all
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
 

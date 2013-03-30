@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
 
   has_mobile_fu
   def index
-    @user = current_user
+    @user =  User.find_by_slug(params[:user_slug]) || current_user
     @categories = @user.categories.all
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
 
@@ -29,7 +29,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @user =  current_user || User.find_by_slug(params[:user_slug])
+    @user =  User.find_by_slug(params[:user_slug]) || current_user
     @categories = @user.categories.all
     @category = @user.categories.find_by_slug(params[:slug]) || Category.find(params[:id])
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
@@ -37,7 +37,6 @@ class CategoriesController < ApplicationController
     if is_mobile_device?
       render 'show.mobile.haml'
     end
-
   end
 
   def destroy
