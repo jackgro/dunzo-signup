@@ -6,6 +6,11 @@ class CategoriesController < ApplicationController
   def index
     @user = current_user
     @categories = @user.categories.all
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
+
+    respond_to do |format|
+      format.js
+    end
   end
 
   def new

@@ -14,7 +14,8 @@
       = render 'categories/form'
     = content_tag(:li) do
       = link_to "View all", username_path(@user.slug, date: date)
-    = render @categories
+    #category-list{ data: { url: user_categories_url(@user.id) } }
+      = render @categories
   //========== Calendar Accordion ============
   %a.nav-header{"data-toggle" => "collapse", :href => "#calendar-menu"}
     %i.icon-calendar.icon-white>

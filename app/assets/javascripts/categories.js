@@ -9,5 +9,9 @@ $(function(){
   $('.best_in_place').bind('ajax:error', function(){
     bootbox.alert("Whoa! Only letters, numbers, dashes and underscores are allowed. Please try again.");
   });
+  $('.best_in_place').bind('ajax:success', function(){
+    $url = $('#category-list').data('url');
+    $.get($url);
+  });
 
 });

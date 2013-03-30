@@ -12,12 +12,10 @@
   %ul#dashboard-menu.nav.nav-list.collapse.in
     .category-form
       = render 'categories/form'
-    = javascript_tag do
-      window.userSlug = #{ raw User.find_by_slug(@user.slug).slug.to_json};
-      window.userId = #{ raw User.find_by_slug(@user.slug).id.to_json};
-    = content_tag(:li, id: "categories", data: { categories: current_user.categories.all }) do
+    = content_tag(:li) do
       = link_to "View all", username_path(@user.slug, date: date)
-    = render @categories
+    #category-list{ data: { url: user_categories_url(@user.id) } }
+      = render @categories
   //========== Calendar Accordion ============
   %a.nav-header{"data-toggle" => "collapse", :href => "#calendar-menu"}
     %i.icon-calendar.icon-white>
