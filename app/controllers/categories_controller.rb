@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
   has_mobile_fu
   def index
     @user =  User.find_by_slug(params[:user_slug]) || current_user
-    @categories = @user.categories.all
+    @categories = @user.categories.order('created_at ASC')
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
 
     respond_to do |format|
@@ -19,7 +19,7 @@ class CategoriesController < ApplicationController
 
   def update
     @category = Category.find(params[:id]) || current_user.categories.find_by_slug(params[:slug])
-    @categories = current_user.categories.all
+    @categories = current_user.categories.order('created_at ASC')
 
     if @category.update_attributes(params[:category])
        respond_with_bip(@category)
@@ -30,7 +30,7 @@ class CategoriesController < ApplicationController
 
   def show
     @user =  User.find_by_slug(params[:user_slug]) || current_user
-    @categories = @user.categories.all
+    @categories = @user.categories.order('created_at ASC')
     @category = @user.categories.find_by_slug(params[:slug]) || Category.find(params[:id])
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
 
