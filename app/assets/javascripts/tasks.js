@@ -12,8 +12,16 @@ jQuery.fn.resetForm = function() {
   return this;
 }
 
+jQuery.fn.showOnHover = function(link) {
+  this.find(link).hide();
+  this.hover(function(){
+    $(this).find(link).toggle();
+  });
+}
+
 $(function(){
   $('.edit_task').submitOnCheck();
+  $('.edit_task').showOnHover('.delete-task');
 
   $('.task-sort').sortable({
     axis: 'y',
