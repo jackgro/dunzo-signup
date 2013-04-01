@@ -13,7 +13,10 @@
   .container-fluid
     .row-fluid
       = render partial: 'layouts/messages'
-      - categories.each do |category|
-        = render partial: 'shared/task-well', locals: { category: category, date: date }
+      - if categories.empty?
+        %h2.no-categories You dont have any lists yet. Use the form in the sidebar to create a new one. You can then add tasks to that list.
+      - else
+        - categories.each do |category|
+          = render partial: 'shared/task-well', locals: { category: category, date: date }
 
       = render partial: "layouts/footer"

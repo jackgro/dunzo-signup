@@ -12,8 +12,9 @@
   %ul#dashboard-menu.nav.nav-list.collapse.out
     .category-form
       = render 'categories/form'
-    = content_tag(:li) do
-      = link_to "View all", username_path(@user.slug, date: date)
+    - unless @categories.empty?
+      = content_tag(:li) do
+        = link_to "View all", username_path(@user.slug, date: date)
     #category-list{ data: { url: user_categories_url(@user.id) } }
       = render @categories
   //========== Calendar Accordion ============
