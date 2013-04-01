@@ -14,19 +14,15 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require best_in_place
+//= require bootbox.min.js
+//= require tasks
+//= require categories
 //= require bootstrap-alert.js
 //= require bootstrap-button.js
-//= require bootstrap-collapse.js
 //= require bootstrap-dropdown.js
 //= require bootstrap-modal.js
 //= require bootstrap-tooltip.js
 //= require bootstrap-popover.js
-//= require bootbox.min.js
-//= require dataTables/jquery.dataTables
-//= require dataTables/jquery.dataTables.bootstrap
-//= require tasks
-//= require users
-//= require categories
 
 $('document').ready(function() {
 
