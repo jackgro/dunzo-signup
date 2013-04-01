@@ -10,3 +10,4 @@ $('.new_task').resetForm();
 
 // Enable new tasks to be checked as complete
 $('#edit_task_<%= @task.id %>').submitOnCheck();
+$('#edit_task_<%= @task.id %>').showOnHover('.delete-task');
