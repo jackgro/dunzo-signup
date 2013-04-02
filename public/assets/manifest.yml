@@ -25,10 +25,12 @@ parallax-desk-2.jpg: parallax-desk-2-3debaec65ef3cdf148d52108db964eb9.jpg
 parallax-desk-2/index.jpg: parallax-desk-2-3debaec65ef3cdf148d52108db964eb9.jpg
 subtle_surface.png: subtle_surface-18d7c8ea273f7de348400c13fdef5001.png
 subtle_surface/index.png: subtle_surface-18d7c8ea273f7de348400c13fdef5001.png
-application.js: application-a72d0e7346853998988900e88e7a9c31.js
-application/index.js: application-a72d0e7346853998988900e88e7a9c31.js
+application.js: application-dccd2fdc961c471490342d70163b6df4.js
+application/index.js: application-dccd2fdc961c471490342d70163b6df4.js
 home.js: home-cd27e5e660d4052776694074ca409413.js
 home/index.js: home-cd27e5e660d4052776694074ca409413.js
+users.js: users-9009acb6a39a5e91381c5739083ff3eb.js
+users/index.js: users-9009acb6a39a5e91381c5739083ff3eb.js
 application.css: application-88b7d47ea62cb4e4ff7a37a44e60aa1d.css
 application/index.css: application-88b7d47ea62cb4e4ff7a37a44e60aa1d.css
 home.css: home-ce9ae1a440d097217953578716ae842f.css
@@ -363,6 +365,10 @@ dataTables/sort_desc.png: dataTables/sort_desc-e39af549b39a61bf112dc1f6a6a89ba8.
 dataTables/sort_desc/index.png: dataTables/sort_desc-e39af549b39a61bf112dc1f6a6a89ba8.png
 dataTables/sort_desc_disabled.png: dataTables/sort_desc_disabled-449a1b5885483860b0b16508a1219a41.png
 dataTables/sort_desc_disabled/index.png: dataTables/sort_desc_disabled-449a1b5885483860b0b16508a1219a41.png
+dataTables/jquery.dataTables.bootstrap.js: dataTables/jquery.dataTables.bootstrap-33ef0d1de6a064bb8996d143f9838554.js
+dataTables/jquery/index.dataTables.bootstrap.js: dataTables/jquery.dataTables.bootstrap-33ef0d1de6a064bb8996d143f9838554.js
+dataTables/jquery.dataTables.js: dataTables/jquery.dataTables-f3b32c6b02c78f6a91361e9f52ed0314.js
+dataTables/jquery/index.dataTables.js: dataTables/jquery.dataTables-f3b32c6b02c78f6a91361e9f52ed0314.js
 dataTables/extras/as3/ZeroClipboard.as: dataTables/extras/as3/ZeroClipboard-d1c2f8723cc1259059e7b90de64019cd.as
 dataTables/extras/as3/ZeroClipboard/index.as: dataTables/extras/as3/ZeroClipboard-d1c2f8723cc1259059e7b90de64019cd.as
 dataTables/extras/as3/ZeroClipboardPdf.as: dataTables/extras/as3/ZeroClipboardPdf-02cfd5868d3db805dc4008a19f1a1461.as
@@ -373,6 +379,8 @@ dataTables/extras/swf/copy_csv_xls.swf: dataTables/extras/swf/copy_csv_xls-0c354
 dataTables/extras/swf/copy_csv_xls/index.swf: dataTables/extras/swf/copy_csv_xls-0c354c0fa1349751520867ee73e59fb1.swf
 dataTables/extras/swf/copy_csv_xls_pdf.swf: dataTables/extras/swf/copy_csv_xls_pdf-115138da36e5d8d3594dac09d5dac2b9.swf
 dataTables/extras/swf/copy_csv_xls_pdf/index.swf: dataTables/extras/swf/copy_csv_xls_pdf-115138da36e5d8d3594dac09d5dac2b9.swf
+dataTables/jquery.dataTables.bootstrap.css: dataTables/jquery.dataTables.bootstrap-c138fad2e9e3caac48f61ab2b44a2f1b.css
+dataTables/jquery/index.dataTables.bootstrap.css: dataTables/jquery.dataTables.bootstrap-c138fad2e9e3caac48f61ab2b44a2f1b.css
 glyphicons-halflings-white.png: glyphicons-halflings-white-47de9d5eec0d3a99b2fdb15b00de28d7.png
 glyphicons-halflings-white/index.png: glyphicons-halflings-white-47de9d5eec0d3a99b2fdb15b00de28d7.png
 glyphicons-halflings.png: glyphicons-halflings-54c30952cb60b927cbb893c434d7b826.png
