@@ -2,7 +2,7 @@ RailsPrelaunchSignup::Application.routes.draw do
 
   match '/thankyou', to: 'application#thankyou'
   authenticated :user do
-    root :to => 'users#show'
+    root :to => 'categories#show'
   end
   devise_scope :user do
     root :to => 'devise/sessions#new'
