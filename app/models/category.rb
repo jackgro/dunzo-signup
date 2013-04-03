@@ -10,4 +10,9 @@ class Category < ActiveRecord::Base
     tasks.where(date: date).order('position')
   end
 
+  def set_category_uid
+    self.category_uid = Digest::MD5.hexdigest("#{self.user.slug}-#{self.name}")
+    self.save
+  end
+
 end
