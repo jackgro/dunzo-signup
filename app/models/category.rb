@@ -8,7 +8,7 @@ class Category < ActiveRecord::Base
   end
 
   def set_category_uid
-    self.category_uid = Digest::MD5.hexdigest("#{self.user.slug}-#{self.name}")
+    self.category_uid = Digest::MD5.hexdigest("#{Time.now.to_s}-#{self.user.slug}-#{self.name}")
     self.save
   end
 
