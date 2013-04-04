@@ -1,7 +1,4 @@
 class Category < ActiveRecord::Base
-  extend FriendlyId
-  friendly_id :name, use: [:history, :slugged]
-
   attr_accessible :name
   belongs_to :user
   has_many :tasks, dependent: :destroy
