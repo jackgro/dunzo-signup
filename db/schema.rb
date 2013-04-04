@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130404001503) do
+ActiveRecord::Schema.define(:version => 20130404002727) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(:version => 20130404001503) do
     t.datetime "updated_at",   :null => false
     t.string   "category_uid"
   end
+
+  add_index "categories", ["category_uid"], :name => "index_categories_on_category_uid", :unique => true
 
   create_table "friendly_id_slugs", :force => true do |t|
     t.string   "slug",                         :null => false
