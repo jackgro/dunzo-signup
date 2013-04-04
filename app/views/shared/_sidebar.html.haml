@@ -24,5 +24,8 @@
     = render 'tasks/month-switcher', locals: { date: @date }
     = calendar @date do |date|
       - current = "current" if date == @date
-      = link_to date.day, username_category_path(@user.slug, @category.category_uid, date: date), class: "calendar-day #{current}"
+      - if params[:category_uid]
+        = link_to date.day, username_category_path(@user.slug, @category.category_uid, date: date), class: "calendar-day #{current}"
+      - else
+        = link_to date.day, username_path(@user.slug, date: date), class: "calendar-day #{current}"
 
