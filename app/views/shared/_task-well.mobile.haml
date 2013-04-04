@@ -1,12 +1,17 @@
-.well{class: "category-#{category.id}-well"}
-  = render partial: 'categories/dropdown-options', locals: { category: category }
-  = div_for category do
-    %h5
-      %i.icon-edit.bip-trigger{ class: "bip-trigger-#{category.id}" }
-      = best_in_place category, :name, activator: ".bip-trigger-#{category.id}"
-    //========== Task form ============
-    = render partial: "tasks/form", locals: { category: category, date: date }
-    //========== Tasks ============
-    - classes = "category-#{category.id}-tasks task-sort"
-    = content_tag :div, class: classes, data: { update_url: sort_tasks_url } do
-      = render category.tasks_by_date(date)
+- if params[:category_uid]
+  .well{class: "category-#{category.id}-well"}
+    = render partial: 'categories/dropdown-options', locals: { category: category }
+    = div_for category do
+      %h5
+        %i.icon-edit.bip-trigger{ class: "bip-trigger-#{category.id}" }
+        = best_in_place category, :name, activator: ".bip-trigger-#{category.id}"
+      //========== Task form ============
+      = render partial: "tasks/form", locals: { category: category, date: date }
+      //========== Tasks ============
+      - classes = "category-#{category.id}-tasks task-sort"
+      = content_tag :div, class: classes, data: { update_url: sort_tasks_url } do
+        = render category.tasks_by_date(date)
+- else
+  %h2.no-categories You dont have any lists yet. Use the form in the sidebar to create a new one. You can then add tasks to that list.
+
+
