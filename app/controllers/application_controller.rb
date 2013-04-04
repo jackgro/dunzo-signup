@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
     render 'home/thankyou'
   end
 
+  def not_found
+    redirect_to username_path(current_user.slug)
+  end
+
 end

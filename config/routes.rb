@@ -26,6 +26,7 @@ RailsPrelaunchSignup::Application.routes.draw do
     collection { post :sort }
   end
 
+  match '*a', :to => 'application#not_found'
 end
 
 
