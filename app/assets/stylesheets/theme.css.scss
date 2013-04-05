@@ -392,9 +392,14 @@ a.block-heading:hover,
 }
 /*Buttons*/
 .btn {
+  border:0;
+  background:#E5E9EC;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
+}
+.btn:hover {
+  background:#D7DBDD;
 }
 .btn-primary {
   background-color: #25BC99;
