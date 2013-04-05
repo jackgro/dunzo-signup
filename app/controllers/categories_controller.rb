@@ -33,6 +33,15 @@ class CategoriesController < ApplicationController
     @category = @user.categories.find_by_category_uid(params[:category_uid])
     @categories = @user.categories.includes(:tasks).order('created_at ASC')
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
+    @first = @user.categories.first
+    @last = @user.categories.last
+
+    count = @user.categories.count
+    if count < 2
+      @link = username_category_path(@user.slug, @first.category_uid)
+    else
+      @link = username_category_path(@user.slug, @last.category_uid)
+    end
 
     if is_mobile_device?
       render 'show.mobile.haml'
@@ -73,6 +82,6 @@ class CategoriesController < ApplicationController
   private
 
     def get_user
-      @user ||=  User.find_by_slug(params[:user_slug])
+      @user ||=  User.find_by_slug(params[:user_slug]) || current_user
     end
 end
