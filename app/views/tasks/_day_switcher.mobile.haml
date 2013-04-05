@@ -1,16 +1,7 @@
 .date-switcher
-  - if params[:category_uid]
-    %a.btn{:href => username_category_path(@user.slug, @category.category_uid, date: @date.prev_day)}
-      %i.icon-chevron-left
-    %a.btn{:href => username_category_path(@user.slug, @category.category_uid)}
-      Today
-    %a.btn{:href => username_category_path(@user.slug, @category.category_uid, date: @date.next_day)}
-      %i.icon-chevron-right
-  - else
-    %a.btn{:href => username_path(@user.slug, date: @date.prev_day)}
-      %i.icon-chevron-left
-    %a.btn{:href => username_path(@user.slug)}
-      Today
-    %a.btn{:href => username_path(@user.slug, date: @date.next_day)}
-      %i.icon-chevron-right
-
+  %a.btn{:href => username_category_path(@user.slug, @category.category_uid, date: @date.prev_day)}
+    %i.icon-chevron-left
+  %a.btn{:href => username_category_path(@user.slug, @category.category_uid)}
+    Today
+  %a.btn{:href => username_category_path(@user.slug, @category.category_uid, date: @date.next_day)}
+    %i.icon-chevron-right

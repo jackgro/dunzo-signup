@@ -5,4 +5,3 @@
   = f.label :name, task.name, for: "task-#{task.id}"
   = link_to task_path(task.id), remote: true, method: :delete, class: "delete-task" do
     %i.icon-remove.pull-right
-  %i.icon-move.pull-right.move
