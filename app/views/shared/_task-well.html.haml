@@ -1,9 +1,7 @@
 .well{class: "category-#{category.id}-well"}
   = render partial: 'categories/dropdown-options', locals: { category: category }
   = div_for category do
-    %h5
-      %i.icon-edit.bip-trigger{ class: "bip-trigger-#{category.id}" }
-      = best_in_place category, :name, activator: ".bip-trigger-#{category.id}"
+    %h5= category.name
     //========== Task form ============
     = render partial: "tasks/form", locals: { category: category, date: date }
     //========== Tasks ============
