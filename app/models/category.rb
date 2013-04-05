@@ -12,4 +12,8 @@ class Category < ActiveRecord::Base
     self.save
   end
 
+  def destroyable?
+    self.user.categories.count > 1
+  end
+
 end
