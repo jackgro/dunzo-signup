@@ -20,7 +20,7 @@ class CategoriesController < ApplicationController
 
   def update
     @category = @user.categories.find_by_category_uid(params[:category_uid]) || Category.find(params[:id])
-    @categories = @user.categories.order('created_at ASC')
+    @categories = @user.categories.includes(:tasks).order('created_at ASC')
 
     if @category.update_attributes(params[:category])
        respond_with_bip(@category)
@@ -31,7 +31,7 @@ class CategoriesController < ApplicationController
 
   def show
     @category = @user.categories.find_by_category_uid(params[:category_uid])
-    @categories = @user.categories.order('created_at ASC')
+    @categories = @user.categories.includes(:tasks).order('created_at ASC')
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
 
     if is_mobile_device?
@@ -73,6 +73,6 @@ class CategoriesController < ApplicationController
   private
 
     def get_user
-      @user =  User.find_by_slug(params[:user_slug]) || current_user
+      @user ||=  User.find_by_slug(params[:user_slug])
     end
 end
