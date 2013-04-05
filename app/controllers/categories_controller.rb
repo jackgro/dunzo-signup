@@ -30,17 +30,13 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = @user.categories.find_by_category_uid(params[:category_uid])
     @categories = @user.categories.includes(:tasks).order('created_at ASC')
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
-    @first = @user.categories.first
-    @last = @user.categories.last
 
-    count = @user.categories.count
-    if count < 2
-      @link = username_category_path(@user.slug, @first.category_uid)
+    if !params.include?(:category_uid)
+      @category = @user.categories.includes(:tasks).last
     else
-      @link = username_category_path(@user.slug, @last.category_uid)
+      @category = @user.categories.includes(:tasks).find_by_category_uid(params[:category_uid])
     end
 
     if is_mobile_device?
@@ -51,14 +47,8 @@ class CategoriesController < ApplicationController
   def destroy
     @category = Category.find(params[:id])
     @category.destroy
-    @last = @user.categories.last
-
-    count = @user.categories.count
-    if count < 1
-      @link = username_path(@user.slug)
-    else
-      @link = username_category_path(@user.slug, @last.category_uid)
-    end
+    @last = @user.categories.includes(:tasks).last
+    @link = username_category_path(@user.slug, @last.category_uid)
 
     respond_to do |format|
       format.html{ redirect_to @link }
@@ -79,9 +69,4 @@ class CategoriesController < ApplicationController
     end
   end
 
-  private
-
-    def get_user
-      @user ||=  User.find_by_slug(params[:user_slug]) || current_user
-    end
 end

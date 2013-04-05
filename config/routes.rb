@@ -3,6 +3,8 @@ RailsPrelaunchSignup::Application.routes.draw do
   match '/thankyou', to: 'application#thankyou'
   authenticated :user do
     root :to => 'categories#show'
+    match '/:user_slug' => "categories#show", as: :username
+    match '/:user_slug/lists/:category_uid' => "categories#show", as: :username_category
   end
   devise_scope :user do
     root :to => 'devise/sessions#new'
@@ -15,8 +17,6 @@ RailsPrelaunchSignup::Application.routes.draw do
 
     resources :categories
   end
-  match '/:user_slug' => "categories#show", as: :username
-  match '/:user_slug/lists/:category_uid' => "categories#show", as: :username_category
 
   resources :categories do
     resources :tasks
@@ -26,7 +26,6 @@ RailsPrelaunchSignup::Application.routes.draw do
     collection { post :sort }
   end
 
-  match '*a', :to => 'application#not_found'
 end
 
 

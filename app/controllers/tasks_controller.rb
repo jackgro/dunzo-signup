@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+
+  before_filter :get_user, only: :destroy
   def new
     @category = Category.find(params[:category_id])
     @task = @category.tasks.new
@@ -37,14 +39,13 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @user = current_user
     @task = Task.find(params[:id])
 
     respond_to do |format|
       @task.destroy
 
       format.html {
-        redirect_to username_path(@user.slug)
+        redirect_to username_category_path(@user.slug)
       }
       format.js
     end

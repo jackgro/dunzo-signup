@@ -10,7 +10,14 @@ class ApplicationController < ActionController::Base
   end
 
   def not_found
-    redirect_to username_path(current_user.slug)
+    @first = current_user.categories.includes(:tasks).first
+    redirect_to username_category_path(current_user.slug, @first.category_uid)
   end
+
+  private
+
+    def get_user
+      @user ||=  User.find_by_slug(params[:user_slug]) || current_user
+    end
 
 end
