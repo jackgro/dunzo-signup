@@ -92,13 +92,8 @@ class User < ActiveRecord::Base
     @category = Category.create!(name: 'Dunzo')
     @category.user_id = self.id
     @category.set_category_uid
-    @category.save
-    @task1 = Task.create!(name: 'Make a new list', date: Date.today, position: 0)
-    @task1.category_id = @category.id
-    @task2 = Task.create!(name: 'Use the form in the sidebar to add one', date: Date.today, position: 1)
-    @task2.category_id = @category.id
-    @task3 = Task.create!(name: 'Add tasks to your new list', date: Date.today, position: 2)
-    @task3.category_id = @category.id
-    @category.tasks = [@task1, @task2, @task3]
+    @category.tasks.create(name: 'Make a new list', date: Date.today, position: 0)
+    @category.tasks.create(name: 'Use the form in the sidebar to add one', date: Date.today, position: 1)
+    @category.tasks.create(name: 'Add tasks to your new list', date: Date.today, position: 2)
   end
 end
