@@ -29,7 +29,7 @@
             %tbody
               - @users.each do |user|
                 %tr
-                  %td= link_to user.email, user
+                  %td= link_to user.email, username_path(user.slug)
                   %td= user.created_at.to_date
                   %td= (user.confirmation_token.nil? ? (link_to "send invitation", invite_user_path(user)) : (link_to "resend", invite_user_path(user))) unless user.confirmed_at
                   %td= user.confirmed_at.to_date if user.confirmed_at
