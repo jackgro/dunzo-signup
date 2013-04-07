@@ -2,6 +2,7 @@ class CategoriesController < ApplicationController
 
   before_filter :get_user,        except: [:new, :edit]
   before_filter :user_categories, except: [:new, :edit]
+  before_filter :find_category, only: [:edit, :update, :destroy]
 
   respond_to :html, :json
 
@@ -16,7 +17,7 @@ class CategoriesController < ApplicationController
   end
 
   def edit
-    @category = Category.find(params[:id])
+    # Category found by before_filter method
 
     respond_to do |format|
       format.js
@@ -24,7 +25,8 @@ class CategoriesController < ApplicationController
   end
 
   def update
-    @category = @user_categories.find(params[:id])
+    # Category found by before_filter method
+
     @categories = @user_categories.includes(:tasks).order('created_at ASC')
 
     if @category.update_attributes(params[:category])
@@ -47,7 +49,8 @@ class CategoriesController < ApplicationController
   end
 
   def destroy
-    @category = Category.find(params[:id])
+    # Category found by before_filter method
+
     @category.destroy
     @last = @user_categories.includes(:tasks).last
     @link = username_category_path(@user.slug, @last.category_uid)
@@ -74,6 +77,10 @@ class CategoriesController < ApplicationController
 
     def user_categories
       @user_categories ||= @user.categories
+    end
+
+    def find_category
+      @category = Category.find(params[:id])
     end
 
 end
