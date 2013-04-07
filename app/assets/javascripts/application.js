@@ -15,7 +15,6 @@
 //= require jquery-ui
 //= require bootbox.min.js
 //= require tasks
-//= require categories
 //= require bootstrap-alert.js
 //= require bootstrap-button.js
 //= require bootstrap-collapse.js
