@@ -10,15 +10,6 @@ class CategoriesController < ApplicationController
     is_device?("ipad") ? request.format = :html : super
   end
 
-  def index
-    @categories = @user.categories.order('created_at ASC')
-    @date = params[:date] ? Date.parse(params[:date]) : Date.today
-
-    respond_to do |format|
-      format.js
-    end
-  end
-
   def new
     @category = Category.new
   end
