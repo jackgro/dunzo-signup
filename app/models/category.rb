@@ -9,7 +9,6 @@ class Category < ActiveRecord::Base
 
   def set_category_uid
     self.category_uid = Digest::MD5.hexdigest("#{Time.now.to_s}-#{self.user.slug}-#{self.name}")
-    self.save
   end
 
   def destroyable?

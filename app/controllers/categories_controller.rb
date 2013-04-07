@@ -63,7 +63,7 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @category = @user_categories.create(params[:category])
+    @category = @user_categories.new(params[:category])
     @category.set_category_uid
 
     if @category.save
