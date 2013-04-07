@@ -27,7 +27,7 @@ class CategoriesController < ApplicationController
   def update
     # Category found by before_filter method
 
-    @categories = @user_categories.includes(:tasks).order('created_at ASC')
+    @categories = @user_categories.order('created_at ASC')
 
     if @category.update_attributes(params[:category])
       redirect_to username_category_path(@user.slug, @category.category_uid)
@@ -37,13 +37,13 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @categories = @user_categories.includes(:tasks).order('created_at ASC')
+    @categories = @user_categories.order('created_at ASC')
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
 
     if !params.include?(:category_uid)
-      @category = @user_categories.includes(:tasks).last
+      @category = @user_categories.last
     else
-      @category = @user_categories.includes(:tasks).find_by_category_uid(params[:category_uid])
+      @category = @user_categories.find_by_category_uid(params[:category_uid])
     end
 
   end
@@ -52,7 +52,7 @@ class CategoriesController < ApplicationController
     # Category found by before_filter method
 
     @category.destroy
-    @last = @user_categories.includes(:tasks).last
+    @last = @user_categories.last
     @link = username_category_path(@user.slug, @last.category_uid)
 
     respond_to do |format|
@@ -63,7 +63,7 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @category = @user_categories.new(params[:category])
+    @category = @user.categories.new(params[:category])
     @category.set_category_uid
 
     if @category.save
@@ -76,7 +76,7 @@ class CategoriesController < ApplicationController
   private
 
     def user_categories
-      @user_categories ||= @user.categories
+      @user_categories ||= @user.categories.includes(:tasks)
     end
 
     def find_category
