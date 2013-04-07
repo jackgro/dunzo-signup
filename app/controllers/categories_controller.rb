@@ -6,6 +6,10 @@ class CategoriesController < ApplicationController
 
   has_mobile_fu
 
+  def set_mobile_format
+    is_device?("ipad") ? request.format = :html : super
+  end
+
   def index
     @categories = @user.categories.order('created_at ASC')
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
@@ -48,9 +52,6 @@ class CategoriesController < ApplicationController
       @category = @user.categories.includes(:tasks).find_by_category_uid(params[:category_uid])
     end
 
-    if is_mobile_device?
-      render 'show.mobile.haml'
-    end
   end
 
   def destroy
