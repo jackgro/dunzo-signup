@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
 
-  before_filter :get_user, only: [:index, :show, :update, :destroy]
+  before_filter :get_user,        except: [:new, :edit]
+  before_filter :user_categories, except: [:new, :edit]
 
   respond_to :html, :json
 
@@ -23,8 +24,8 @@ class CategoriesController < ApplicationController
   end
 
   def update
-    @category = @user.categories.find(params[:id])
-    @categories = @user.categories.includes(:tasks).order('created_at ASC')
+    @category = @user_categories.find(params[:id])
+    @categories = @user_categories.includes(:tasks).order('created_at ASC')
 
     if @category.update_attributes(params[:category])
       redirect_to username_category_path(@user.slug, @category.category_uid)
@@ -34,13 +35,13 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @categories = @user.categories.includes(:tasks).order('created_at ASC')
+    @categories = @user_categories.includes(:tasks).order('created_at ASC')
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
 
     if !params.include?(:category_uid)
-      @category = @user.categories.includes(:tasks).last
+      @category = @user_categories.includes(:tasks).last
     else
-      @category = @user.categories.includes(:tasks).find_by_category_uid(params[:category_uid])
+      @category = @user_categories.includes(:tasks).find_by_category_uid(params[:category_uid])
     end
 
   end
@@ -48,7 +49,7 @@ class CategoriesController < ApplicationController
   def destroy
     @category = Category.find(params[:id])
     @category.destroy
-    @last = @user.categories.includes(:tasks).last
+    @last = @user_categories.includes(:tasks).last
     @link = username_category_path(@user.slug, @last.category_uid)
 
     respond_to do |format|
@@ -59,8 +60,7 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @category = @user.categories.create(params[:category])
+    @category = @user_categories.create(params[:category])
     @category.set_category_uid
 
     if @category.save
@@ -69,5 +69,11 @@ class CategoriesController < ApplicationController
       render 'new'
     end
   end
+
+  private
+
+    def user_categories
+      @user_categories ||= @user.categories
+    end
 
 end
