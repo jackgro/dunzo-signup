@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
+  rescue_from ActiveRecord::RecordNotFound, :with => :not_found
+
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_path, :alert => exception.message
   end
@@ -10,9 +12,11 @@ class ApplicationController < ActionController::Base
   end
 
   def not_found
-    @first = current_user.categories.includes(:tasks).first
-    redirect_to username_category_path(current_user.slug, @first.category_uid)
+    rescue ActiveRecord::RecordNotFound
+      @first = current_user.categories.includes(:tasks).first
+      redirect_to username_category_path(@user.slug, @first.category_uid)
   end
+
 
   private
 
