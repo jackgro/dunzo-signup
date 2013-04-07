@@ -1,13 +1,17 @@
 class TasksController < ApplicationController
 
   before_filter :get_user, only: :destroy
+  before_filter :find_category, only: [:new, :create]
+  before_filter :find_task, only: [:update, :destroy]
+
   def new
-    @category = Category.find(params[:category_id])
+    # Category found by before_filter method
     @task = @category.tasks.new
   end
 
   def create
-    @category = Category.find(params[:category_id])
+    # Category found by before_filter method
+
     @task = @category.tasks.create!(params[:task])
 
     respond_to do |format|
@@ -23,7 +27,8 @@ class TasksController < ApplicationController
   end
 
   def update
-    @task = Task.find(params[:id])
+    # Task found by before_filter method
+
     @task.update_attributes!(params[:task])
 
     respond_to do |format|
@@ -39,7 +44,7 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task = Task.find(params[:id])
+    # Task found by before_filter method
 
     respond_to do |format|
       @task.destroy
@@ -57,4 +62,14 @@ class TasksController < ApplicationController
     end
     render nothing: true
   end
+
+  private
+
+    def find_category
+      @category ||= Category.find(params[:category_id])
+    end
+
+    def find_task
+      @task ||= Task.find(params[:id])
+    end
 end
