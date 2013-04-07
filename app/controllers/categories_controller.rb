@@ -18,7 +18,6 @@ class CategoriesController < ApplicationController
 
   def edit
     # Category found by before_filter method
-
     respond_to do |format|
       format.js
     end
@@ -26,7 +25,6 @@ class CategoriesController < ApplicationController
 
   def update
     # Category found by before_filter method
-
     @categories = @user_categories.order('created_at ASC')
 
     if @category.update_attributes(params[:category])
@@ -50,7 +48,6 @@ class CategoriesController < ApplicationController
 
   def destroy
     # Category found by before_filter method
-
     @category.destroy
     @last = @user_categories.last
     @link = username_category_path(@user.slug, @last.category_uid)
