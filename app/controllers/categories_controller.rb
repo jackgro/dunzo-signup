@@ -1,10 +1,11 @@
 class CategoriesController < ApplicationController
 
-  before_filter :get_user, only: [:index, :update, :show, :destroy]
+  before_filter :get_user, only: [:index, :show, :update, :destroy]
 
   respond_to :html, :json
 
   has_mobile_fu
+
   def index
     @categories = @user.categories.order('created_at ASC')
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
@@ -18,14 +19,22 @@ class CategoriesController < ApplicationController
     @category = Category.new
   end
 
+  def edit
+    @category = Category.find(params[:id])
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
   def update
-    @category = @user.categories.find_by_category_uid(params[:category_uid]) || Category.find(params[:id])
+    @category = @user.categories.find(params[:id])
     @categories = @user.categories.includes(:tasks).order('created_at ASC')
 
     if @category.update_attributes(params[:category])
-       respond_with_bip(@category)
+      redirect_to username_category_path(@user.slug, @category.category_uid)
     else
-       respond_with_bip(@category)
+      render 'edit'
     end
   end
 
