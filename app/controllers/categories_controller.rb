@@ -4,12 +4,12 @@ class CategoriesController < ApplicationController
   before_filter :user_categories, except: [:new, :edit]
   before_filter :find_category, only: [:edit, :update, :destroy]
 
-  respond_to :html, :json
-
   has_mobile_fu
 
+  respond_to :html, :js
+
   def set_mobile_format
-    is_device?("ipad") ? request.format = :html : super
+    is_device?("ipad") ? request.format = :js : super
   end
 
   def new
@@ -19,6 +19,7 @@ class CategoriesController < ApplicationController
   def edit
     # Category found by before_filter method
     respond_to do |format|
+      format.html
       format.js
     end
   end
