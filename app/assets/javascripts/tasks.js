@@ -23,6 +23,11 @@ $(function(){
   $('.edit_task').submitOnCheck();
   $('.edit_task').showOnHover('.delete-task');
 
+  if (!navigator.userAgent.match(/iPhone/) && !navigator.userAgent.match(/iPad/)) {
+    $('li.category').showOnHover('i.icon-edit');
+    $('li.category').showOnHover('i.icon-remove');
+  }
+
   $('.task-sort').sortable({
     axis: 'y',
     handle: '.move',
