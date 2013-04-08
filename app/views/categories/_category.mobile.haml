@@ -4,5 +4,5 @@
     = link_to edit_category_path(category.id), data: { toggle: 'modal', target: '#editCategory' }, role: 'button', class: 'edit-category', remote: true do
       %i.icon-edit
     - if category.destroyable?
-      = link_to category_path(category), method: :delete, confirm: category_confirm, class: 'delete-category' do
+      = link_to category_path(category), remote: true, method: :delete, confirm: category_confirm, class: 'delete-category' do
         %i.icon-remove
