@@ -11,7 +11,6 @@ class TasksController < ApplicationController
 
   def create
     # Category found by before_filter method
-
     @task = @category.tasks.create!(params[:task])
 
     respond_to do |format|
@@ -28,7 +27,6 @@ class TasksController < ApplicationController
 
   def update
     # Task found by before_filter method
-
     @task.update_attributes!(params[:task])
 
     respond_to do |format|
@@ -45,13 +43,10 @@ class TasksController < ApplicationController
 
   def destroy
     # Task found by before_filter method
-
     respond_to do |format|
       @task.destroy
 
-      format.html {
-        redirect_to username_category_path(@user.slug)
-      }
+      format.html { redirect_to username_category_path(@user.slug) }
       format.js
     end
   end

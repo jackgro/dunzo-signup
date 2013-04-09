@@ -17,7 +17,6 @@ class ApplicationController < ActionController::Base
       redirect_to username_category_path(@user.slug, @first.category_uid)
   end
 
-
   private
 
     def get_user
