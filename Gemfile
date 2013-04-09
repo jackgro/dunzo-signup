@@ -15,7 +15,6 @@ gem "newrelic_rpm", "3.5.7.59"
 gem "haml-rails"
 gem "therubyracer"
 gem "acts_as_list"
-gem 'best_in_place'
 gem "friendly_id", "~> 4.0.9"
 
 group :assets do
