@@ -20,8 +20,6 @@
 //= require bootstrap-collapse.js
 //= require bootstrap-dropdown.js
 //= require bootstrap-modal.js
-//= require bootstrap-tooltip.js
-//= require bootstrap-popover.js
 
 $('document').ready(function() {
 
