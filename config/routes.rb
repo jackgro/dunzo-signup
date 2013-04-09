@@ -1,4 +1,4 @@
-RailsPrelaunchSignup::Application.routes.draw do
+Dunzo::Application.routes.draw do
 
   match '/thankyou', to: 'application#thankyou'
   authenticated :user do
