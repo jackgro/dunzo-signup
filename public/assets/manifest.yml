@@ -13,6 +13,8 @@ check-sprite.png: check-sprite-4970d0d13f80da8464fc16a2b72bad0a.png
 check-sprite/index.png: check-sprite-4970d0d13f80da8464fc16a2b72bad0a.png
 extra_clean_paper.png: extra_clean_paper-33175baa85f89861656d7ad405af6e51.png
 extra_clean_paper/index.png: extra_clean_paper-33175baa85f89861656d7ad405af6e51.png
+favicon.ico: favicon-94124ab022af587dbca2309bb2f6f7c1.ico
+favicon/index.ico: favicon-94124ab022af587dbca2309bb2f6f7c1.ico
 furley_bg.png: furley_bg-c3603ba194ec75bff831004680a6cd0e.png
 furley_bg/index.png: furley_bg-c3603ba194ec75bff831004680a6cd0e.png
 icon-drag.png: icon-drag-5a6e363d3b1cb55d5ea8144ace077bff.png
@@ -25,8 +27,8 @@ parallax-desk-2.jpg: parallax-desk-2-3debaec65ef3cdf148d52108db964eb9.jpg
 parallax-desk-2/index.jpg: parallax-desk-2-3debaec65ef3cdf148d52108db964eb9.jpg
 subtle_surface.png: subtle_surface-18d7c8ea273f7de348400c13fdef5001.png
 subtle_surface/index.png: subtle_surface-18d7c8ea273f7de348400c13fdef5001.png
-application.js: application-5e7761e4d513b1e1954a5e8ef446dfbd.js
-application/index.js: application-5e7761e4d513b1e1954a5e8ef446dfbd.js
+application.js: application-bc95892b9f104643343cdf936f3afd7e.js
+application/index.js: application-bc95892b9f104643343cdf936f3afd7e.js
 home.js: home-cd27e5e660d4052776694074ca409413.js
 home/index.js: home-cd27e5e660d4052776694074ca409413.js
 users.js: users-9009acb6a39a5e91381c5739083ff3eb.js
