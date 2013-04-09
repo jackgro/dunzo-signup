@@ -30,7 +30,7 @@ group :development do
   gem "quiet_assets", ">= 1.0.1"
   gem "better_errors"
   gem "binding_of_caller"
-  gem "sqlite3"
+  gem 'pg', '0.12.2'
   gem "rspec-rails", ">= 2.11.4"
   gem "factory_girl_rails", ">= 4.1.0"
   gem "pry-rails"
