@@ -13,7 +13,7 @@
     .category-form
       = render 'categories/form'
     - unless @categories.empty?
-      #category-list{ data: { url: user_categories_url(@user.id) } }
+      #category-list
         = render @categories
   //========== Calendar Accordion ============
   %a.nav-header{"data-toggle" => "collapse", :href => "#calendar-menu"}
