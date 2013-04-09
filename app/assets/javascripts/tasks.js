@@ -12,21 +12,26 @@ jQuery.fn.resetForm = function() {
   return this;
 }
 
+// iPad uses html views
+// Always show category icons on iPad
+// iPhone uses mobile views. Not hidden by default
+// so no special iPhone functionality required in this method
 jQuery.fn.showOnHover = function(link) {
-  this.find(link).hide();
-  this.hover(function(){
-    $(this).find(link).toggle();
-  });
+  if (navigator.userAgent.match(/iPad/)){
+    $(this).find(link).removeClass('hidden');
+  } else {
+    this.hover(function(){
+      $(this).find(link).toggleClass('hidden');
+    });
+  }
 }
 
 $(function(){
   $('.edit_task').submitOnCheck();
-  $('.edit_task').showOnHover('.delete-task');
+  $('.edit_task').showOnHover('i.icon-remove');
 
-  if (!navigator.userAgent.match(/iPhone/) && !navigator.userAgent.match(/iPad/)) {
-    $('li.category').showOnHover('i.icon-edit');
-    $('li.category').showOnHover('i.icon-remove');
-  }
+  $('li.category').showOnHover('i.icon-edit');
+  $('li.category').showOnHover('i.icon-remove');
 
   $('.task-sort').sortable({
     axis: 'y',

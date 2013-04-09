@@ -46,11 +46,6 @@
   }
 }
 
-.bip-trigger{
-  cursor: pointer;
-  vertical-align: top;
-}
-
 .no-categories{
   margin: 0 auto;
   margin-top: 50px;
@@ -58,4 +53,8 @@
   text-align: center;
   color: #666;
   text-shadow: 1px 1px 1px #ccc;
+}
+
+.hidden{
+  display: none !important;
 }
