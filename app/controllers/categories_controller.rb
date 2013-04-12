@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  rescue_from NoMethodError, :with => :method_not_found
 
   before_filter :get_user,        except: [:new, :edit]
   before_filter :user_categories, except: [:new, :edit]
@@ -39,10 +40,10 @@ class CategoriesController < ApplicationController
     @categories = @user_categories.order('created_at ASC')
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
 
-    if !params.include?(:category_uid)
-      @category = @user_categories.last
-    else
+    if params.include?(:category_uid)
       @category = @user_categories.find_by_category_uid(params[:category_uid])
+    else
+      @category = @user_categories.last
     end
 
   end
@@ -79,6 +80,11 @@ class CategoriesController < ApplicationController
 
     def find_category
       @category ||= Category.find(params[:id])
+    end
+
+    def method_not_found(exception = nil)
+      logger.info "Exception, redirecting: #{exception.message}" if exception
+      redirect_to root_path, alert: 'Sorry. The list you asked for is unavailable. Either the URL was incorrect or the list has been deleted.'
     end
 
 end
