@@ -8,7 +8,7 @@
     %meta{:content => content_for?(:description) ? yield(:description) : "Dunzo | Daily to-do lists made simple", :name => "description"}
     %meta{:content => "", :name => "author"}/
     = favicon_link_tag "favicon.ico", rel: 'shortcut icon'
-    %link{:href => "iphone-icon.png", :rel => "apple-touch-icon"}/
+    %link{:href => "apple-touch-icon-precomposed.png", :rel => "apple-touch-icon-precomposed"}/
 
     = render 'layouts/ga-js'
     - case params[:controller]
