@@ -84,7 +84,11 @@ class CategoriesController < ApplicationController
 
     def method_not_found(exception = nil)
       logger.info "Exception, redirecting: #{exception.message}" if exception
-      redirect_to root_path, alert: 'Sorry. The list you asked for is unavailable. Either the URL was incorrect or the list has been deleted.'
+      if is_mobile_device?
+        redirect_to root_path, alert: 'Sorry. The list you asked for is unavailable.'
+      else
+        redirect_to root_path, alert: 'Sorry. The list you asked for is unavailable. Either the URL was incorrect or the list has been deleted.'
+      end
     end
 
 end
