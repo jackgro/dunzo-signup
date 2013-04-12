@@ -22,6 +22,9 @@
 //= require bootstrap-modal.js
 
 $('document').ready(function() {
+  if ($(window).width() <= 1024) {
+    document.title = 'Dunzo'
+  }
 
   if (!navigator.userAgent.match(/iPhone/)) {
 
