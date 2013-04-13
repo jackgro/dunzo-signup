@@ -16,6 +16,7 @@ gem "haml-rails"
 gem "therubyracer"
 gem "acts_as_list"
 gem "friendly_id", "~> 4.0.9"
+gem "thin"
 
 group :assets do
   gem 'jquery-ui-rails'
