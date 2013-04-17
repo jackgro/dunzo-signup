@@ -11,8 +11,8 @@ black-Linen.png: black-Linen-e3f9882953822b03ab1619ad7541898f.png
 black-Linen/index.png: black-Linen-e3f9882953822b03ab1619ad7541898f.png
 blue-paper.png: blue-paper-2592ef275d47a0b118ebbc61b59df3dd.png
 blue-paper/index.png: blue-paper-2592ef275d47a0b118ebbc61b59df3dd.png
-check-sprite.png: check-sprite-4970d0d13f80da8464fc16a2b72bad0a.png
-check-sprite/index.png: check-sprite-4970d0d13f80da8464fc16a2b72bad0a.png
+check-sprite.png: check-sprite-e8d00d4082fb114d53c5b7b6ebcf58cc.png
+check-sprite/index.png: check-sprite-e8d00d4082fb114d53c5b7b6ebcf58cc.png
 extra_clean_paper.png: extra_clean_paper-33175baa85f89861656d7ad405af6e51.png
 extra_clean_paper/index.png: extra_clean_paper-33175baa85f89861656d7ad405af6e51.png
 favicon.ico: favicon-94124ab022af587dbca2309bb2f6f7c1.ico
@@ -35,8 +35,8 @@ home.js: home-cd27e5e660d4052776694074ca409413.js
 home/index.js: home-cd27e5e660d4052776694074ca409413.js
 users.js: users-9009acb6a39a5e91381c5739083ff3eb.js
 users/index.js: users-9009acb6a39a5e91381c5739083ff3eb.js
-application.css: application-dbdf9f1bbd99afe1983aed3a4efc1a9a.css
-application/index.css: application-dbdf9f1bbd99afe1983aed3a4efc1a9a.css
+application.css: application-5a911423ab97f6c9dc1e55516ab4a10d.css
+application/index.css: application-5a911423ab97f6c9dc1e55516ab4a10d.css
 home.css: home-ce9ae1a440d097217953578716ae842f.css
 home/index.css: home-ce9ae1a440d097217953578716ae842f.css
 merge.css: merge-fe9df41f9ff3d9afd757e4c3d9a64a3c.css
