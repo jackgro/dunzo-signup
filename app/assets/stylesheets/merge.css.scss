@@ -172,6 +172,7 @@ form.edit_task:hover {
 }
 #category-list li {
   position:relative;
+  border-left:4px solid transparent;
 }
 #category-list li a {
   color:#999;
@@ -180,7 +181,9 @@ form.edit_task:hover {
   padding:0.5em 1em;
 }
 #category-list .current {
-  background:none;
+  background:#262626;
+  color:#FFF;
+  border-color:#25BC99;
 }
 #category-list .current a {
   color:#EEE;
