@@ -51,11 +51,6 @@ Dunzo::Application.configure do
                                   theme.css
                                   home.js
                                   home.css
-                                  epicfullscreen.css
-                                  udt_shortcodes.css
-                                  udt_media_queries.css
-                                  jquery.fancybox-1.3.4.css
-                                  style.css
                                   dataTables/jquery.dataTables.bootstrap.css
                                   dataTables/jquery.dataTables.js
                                   dataTables/jquery.dataTables.bootstrap.js
