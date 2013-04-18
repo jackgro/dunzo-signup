@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
   private
 
     def get_user
-      @user ||=  User.find_by_slug(params[:user_slug]) || current_user
+      @user ||= current_user
     end
 
 end
