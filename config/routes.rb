@@ -5,7 +5,7 @@ Dunzo::Application.routes.draw do
     root :to => 'categories#show'
   end
   devise_scope :user do
-    root :to => 'devise/sessions#new'
+    root :to => 'home#index'
     match '/user/confirmation' => 'confirmations#update', :via => :put, :as => :update_user_confirmation
   end
   devise_for :users, :path => 'accounts', :controllers => { :registrations => "registrations", :confirmations => "confirmations" }

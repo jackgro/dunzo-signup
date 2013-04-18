@@ -1,123 +1,13 @@
-#wrapper
-  = render "nav"
-  #homepage.homepage.section{:style => "height: 481px;"}
-    .epicFullscreen{:style => "background-color: rgb(0, 0, 0); height: 969px; background-position: initial initial; background-repeat: initial initial;"}
-      %img.epicImg{:alt => "", :src => "assets/parallax-desk-2.jpg", :style => "opacity: 0.9; width: 1438px; height: 969px; left: 0px; top: -244px;"}/
-      #epic-loader
-      #epic-overlay
-    #featured.content.clearfix{:style => "opacity: 1;"}
-      .one_column
-        %h1 Dunzo is a free web app that lets you easily create and manage daily task lists.
-        = render :partial => 'devise/shared/signup-modal'
-        -##app-button-container
-          -#%a#button-appstore{:href => "#", :title => "Available in the App Store"}
-          -#%a#button-tweet{:href => "http://twitter.com/share?url=http://dunzoapp.com is a really neat new app! Try it out.", :title => "Tweet This"}
-      %a.navigateTo.page-down{:href => "#features-1"}
-  #features-1.page.odd.section.scroll{:style => "background-color: rgb(255, 255, 255); background-position: 50% 0px; background-repeat: initial initial;"}
-    .content.clearfix
-      .column_one_half
-        %h1.focus-title
-          %span Easily create daily task lists
-        %p.info-focus Whether it's for work or at home, quickly and easily create to-do lists and categorize them however you'd like.
-        %p Begin by creating a free account using your email address or Facebook account. Next, log in from your computer, tablet, or smartphone to access and edit your lists. Tasks can be added to a list on any day– past, present, or future.
-        %a.media.app-button.play{:href => "http://www.youtube.com/embed/Neff9scaCCI"}
-          iPhone Demo
-          %br/
-          %span Homescreen Demo and Mixing
-      .column_one_half.last.stripe-indicator-left
-        .thumb.feature.right
-          %img{:alt => "", :src => "images/gallery/iphone-feat-1.png"}/
-    #highlight.highlight.fixed.fixed-desktop{:style => "background-image: url(http://dunzoapp.com/images/gallery/parallax-office.jpg); background-position: 50% 0px; background-repeat: no-repeat no-repeat;"}
-      .info-container
-        .info
-          .info-inner
-            .column_one_half
-              %h5
-                %span Stay in sync
-              %p.info-focus
-              %p Dunzo automatically synchronizes your tasks across all your devices - smartphones, tablets, laptops, desktops - so you always have up-to-date access.
-            .column_one_half.last
-              .video{:style => "width:100%;height:234px;"}
-                %iframe{:allowfullscreen => "", :frameborder => "0", :mozallowfullscreen => "", :src => "http://player.vimeo.com/video/40530242?title=0&portrait=0&color=fc7022", :webkitallowfullscreen => ""}
-      .section-button
-        %a.navigateTo.page-up{:href => "#features-1"}
-  #features-2.page.even.section
-    .content.clearfix
-      .column_one_half.stripe-indicator-right
-        .thumb.feature.left
-          %img{:alt => "", :src => "images/gallery/iphone-feat-2.png"}/
-      .column_one_half.last
-        %h1.focus-title
-          %span See it in action
-        %p.info-focus Click the images below to see a close up view of the beautiful interface and features.
-        %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat fugiat nulla pariatur.
-        .thumb.xsmall.left
-          %a.lightbox{:href => "images/gallery/closup.jpg", :rel => "mini-gallery", :title => "view"}
-            %img.lazy{:alt => "Encore feature", :src => "images/gallery/thumb-1.jpg", :style => ""}/
-        .fancybox-html
-          %h3
-            Html
-            %span Content
-          %p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
-          %a{:href => "#"} Some Link Here
-        .thumb.xsmall.left
-          %a.media{:href => "http://player.vimeo.com/video/41178550?title=0&portrait=0&badge=0&color=fc7022", :rel => "mini-gallery", :title => "play"}
-            %img.lazy{:alt => "Encore feature", :src => "images/gallery/thumb-2.jpg", :style => ""}/
-        .fancybox-html
-          %p And caption for your video here...
-        .thumb.xsmall.left.last
-          %a.lightbox{:href => "images/gallery/closup.jpg", :rel => "mini-gallery", :title => "view"}
-            %img.lazy{:alt => "Encore feature", :src => "images/gallery/thumb-3.jpg", :style => ""}/
-        .fancybox-html
-          %h3
-            Html
-            %span Content
-          %p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
-          %a{:href => "#"} Some Link Here
-        %a.media.app-button.sync{:href => "http://player.vimeo.com/video/41178550?title=0&portrait=0&badge=0&color=fc7022"}
-          Sync Guard
-          %br/
-          %span And another video presentation here
-    #highlight-2.highlight.scroll.fixed-desktop{:style => "background-image: url(http://dunzoapp.com/images/gallery/parallax-city.jpg); background-position: 50% 0px; background-repeat: repeat repeat;"}
-      .info-container
-        .info
+%div{:role => "main"}
+  %header#home-head{:style => "height: 849px;"}
+    .container
+      .row.intro.appear{:style => "top: 332.5px;"}
+        .span12
           %h1
-            %span 3,680+ Songs Produced
-          %img{:alt => "", :src => "images/featured-in.png", :style => "margin-right:20px;"}/
-          %a{:href => ""}
-            %img{:alt => "", :src => "images/logos/logo-1.png", :style => "margin-right:20px;"}/
-          %a{:href => ""}
-            %img{:alt => "", :src => "images/logos/logo-2.png", :style => "margin-right:20px;"}/
-          %a{:href => ""}
-            %img{:alt => "", :src => "images/logos/logo-6.png", :style => "margin-right:20px;"}/
-          %a{:href => ""}
-            %img{:alt => "", :src => "images/logos/logo-4.png", :style => "margin-right:20px;"}/
-          %br/
-      .section-button
-        %a.navigateTo.page-up{:href => "#features-2"}
-  #signup.page.even.section
-    .content.clearfix.centeralign{:style => "height: auto;"}
-      %h4.focus-title.newsletter-title
-        %span Find out when we launch
-      %p.newsletter-content Enter your email address below and we'll notify you as soon as we launch.
-      %form#newsletter-form.signup{:action => "", :method => "post"}
-        %p
-          %input#signup_email.required{:name => "signup_email", :type => "text", :value => "Your E-mail"}/
-        %input#submitform.signupSubmit{:type => "submit", :value => "SEND"}/
-        #newsletter-msg-wrapper{:style => "position:relative; clear:both; width:100%;"}
-          #newsletter-loader{:style => "opacity: 0; display: block;"}
-          %span#newsletter-msg{:style => "opacity: 0;"}  
-    .section-button.last-page
-      %a.navigateTo.page-up{:href => "#homepage"}
-  #footer.even
-    .content
-      .logo
-        %a.navigateTo{:href => "#homepage"}
-          dunzo
-      %p.copyright
-        ©
-        %a{:href => "http://dunzoapp.com", :title => "dunzo | Easily create and manage your daily to-do lists."} dunzo app
-        2013. All rights reserved.
-      #social-share
-        %iframe{:frameborder => "0", :scrolling => "no", :src => "//www.facebook.com/plugins/like.php?href=http://www.facebook.com/dunzoapp&send=false&layout=button_count&width=80&show_faces=false&action=like&colorscheme=light&font&height=21&appId=291686137521455", :style => "border:none; overflow:hidden; width:80px; height:21px;float:left;"}
-          %iframe.twitter-share-button.twitter-count-horizontal{:allowtransparency => "true", "data-twttr-rendered" => "true", :frameborder => "0", :scrolling => "no", :src => "http://platform.twitter.com/widgets/tweet_button.1360366574.html#_=1360540953798&count=horizontal&id=twitter-widget-0&lang=en&original_referer=http%3A%2F%2Fdunzoapp.com%2F&size=m&text=Check%20out%20%40dunzoapp%2C%20a%20really%20easy%20way%20to%20keep%20track%20of%20daily%20tasks.&url=http%3A%2F%2Fdunzoapp%2F&via=twitterapi", :style => "width: 107px; height: 20px;", :title => "Twitter Tweet Button"}
+            %span Easily create daily to-do lists.
+            Access on any device from anywhere.
+          %p.tagline.clear
+            %span Get started by creating your free account today.
+          %p
+            %a.btn.btn-large.btn-outline.btn-white.scroll.hidden-phone{:href => new_user_session_path } Log in
+            %a.btn.btn-large.btn-green{:href => new_user_registration_path } Create Account
