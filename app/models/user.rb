@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
 
   after_create :add_user_to_mailchimp unless Rails.env.test?
   before_destroy :remove_user_from_mailchimp unless Rails.env.test?
+  #after_create :send_welcome_email
   after_create :assign_initial_list
 
   has_many :categories, dependent: :destroy
@@ -40,9 +41,9 @@ class User < ActiveRecord::Base
   end
 
   # override Devise method
-  def confirmation_required?
-    false
-  end
+  #def confirmation_required?
+    #false
+  #end
 
   # override Devise method
   def active_for_authentication?
@@ -68,6 +69,12 @@ class User < ActiveRecord::Base
   end
 
   private
+
+  #def send_welcome_email
+    #unless self.email.include?('@example.com') && Rails.env != 'test'
+      #UserMailer.welcome_email(self).deliver
+    #end
+  #end
 
   def add_user_to_mailchimp
     unless self.email.include?('@example.com') or !self.opt_in?
