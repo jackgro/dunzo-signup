@@ -4,7 +4,7 @@
       %p.block-heading Sign In
       .block-body
         = simple_form_for(resource, :as => resource_name, url: new_user_session_path, html: { class: 'form-vertical' }) do |f|
-          = f.error_notification
+          = render 'layouts/messages'
           = f.input :email, label: false, placeholder: "Email", autofocus: true, input_html: {class: 'span12'}
           = f.input :password, label: false, placeholder: "Password", input_html: {class: 'span12'}
           .btn-toolbar
