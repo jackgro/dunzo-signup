@@ -2,13 +2,95 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#dashboard-menu{
+  li{
+    padding:2px;
 
-.category-form form, form.new_task{
+    &:hover{
+      background:#262626;
+    }
+
+    a.inline{
+      width:70%;
+    }
+
+    i{
+      color:#666;
+      position:absolute;
+      top:8px;
+
+      &:hover{
+        color:#999;
+      }
+    }
+
+    &:last-child{
+      margin-bottom:10px;
+    }
+  }
+}
+
+.category-form form,
+form.new_task{
   margin: 0px;
 
   input{
     margin: 10px 0;
     width: 95%;
+  }
+}
+
+.category-form {
+  padding:0 8px;
+
+  form {
+    input{
+      background:#222;
+      border:0;
+      border-radius:4px;
+      color:#999;
+      font-size:0.9em;
+    }
+  }
+}
+
+form.edit_task{
+  &:hover{
+    background:#F5F5F5;
+  }
+}
+
+.nav-list {
+  padding:0;
+}
+
+/*---------------------------------------------------
+    SIDEBAR
+-----------------------------------------------------*/
+.sidebar-nav{
+  box-shadow:none;
+  margin:0; 
+
+    .nav-header{
+      background:#444;
+      border:0;
+
+      &:hover{
+        background:#484848;
+      }
+    }
+
+    form.search{
+      display:none;
+      padding: 0 1em 0.5em 0;
+
+      input{
+        padding:6px;
+      }
+    }
+
+  .nav-list > li > a:hover {
+    color:#FFF;
   }
 }
 
@@ -34,14 +116,54 @@
 // categories in sidebar
 #category-list {
   li{
-    padding: 6px;
+    position:relative;
+    padding: 6px; // Is this supposed to be here?
+    border-left:4px solid transparent;
 
     a {
-      color: #ddd;
       text-shadow: none;
-      padding: .5em 1em;
-      margin-left: -15px;
-      margin-right: -15px;
+      color:#999;
+      display:inline-block;
+      margin:0;
+      padding:0.5em 1em;
+    }
+
+    a.inline{
+      width:70%;
+    }
+  }
+
+  i{
+    color:#666;
+    position:absolute;
+    top:8px;
+
+    &:hover{
+      color:#999;
+    }
+  }
+
+  .edit-category,
+  .delete-category{
+    padding:0;
+    position:absolute;
+  }
+
+  .edit-category{
+    right:45px;
+  }
+
+  .delete-category{
+    right:25px;
+  }
+
+  .current{
+    background:#262626;
+    color:#FFF;
+    border-color:#25BC99;
+
+    a{
+      color:#EEE;
     }
   }
 }

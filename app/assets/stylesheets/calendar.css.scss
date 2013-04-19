@@ -9,6 +9,29 @@
   border-collapse: collapse;
   width: 100%;
 
+  a{ color:#CCC; }
+
+  .notmonth,
+  .notmonth a{
+    color:#666;
+  }
+
+  .notmonth{
+    a.calendar-day{
+      display:block;
+      padding:6px;
+
+      &:hover{
+        background:#444;
+        color:#FFF;
+      }
+    }
+    a.calendar-day.current{
+      background:#444;
+      color:#FFF;
+    }
+  }
+
   td, th {
     @include font-size(0.6rem);
     font-family: "Lucida Grande", arial, helvetica, sans-serif;
@@ -40,38 +63,44 @@
     }
 
     .current{
-      background:#25BC99;
+      background:#444;
       color:#FFF;
 
       &:hover{
-        background:#30D3A8;
+        background:#444;
+        color:#FFF;
       }
     }
 
   }
 
-  .notmonth, .notmonth a{
-    color:#666; 
-  }
-
-  .notmonth{
-    a.calendar-day:hover{
-      color:#999; 
-    }
-  }
-
   .today{
-    background:#111;
+    a{
+      background:#2E2E2E;
+      color:#25BC99;
+
+      &:hover{ color:#30D3A8; }
+
+      .current{
+        color:#25BC99;
+
+        &:hover{ color:#FFF; }
+      }
+    }
   }
 
 }
 
 .month-switcher{
+  margin-top:5px;
   text-align: center;
-  color:#888;
   font-size:.9em;
+  color:#CCC;
 
   i{
+    color:#999;
     padding:0 15px;
+
+    &:hover{ color:#CCC; }
   }
 }
