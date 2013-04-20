@@ -1,8 +1,8 @@
 ### UTILITY METHODS ###
 
 def create_visitor
-  @visitor ||= { :name => "Testy McUserton", :email => "example@example.com",
-    :password => "please", :password_confirmation => "please" }
+  @visitor ||= { first_name: "Testy", last_name: "McUserton", username: 'testymcuserton', email: "example@example.com",
+    password: "please", password_confirmation: "please" }
 end
 
 def find_user
@@ -11,14 +11,14 @@ end
 
 def create_unconfirmed_user
   create_visitor
-  delete_user
+  #delete_user
   sign_up
   visit '/users/sign_out'
 end
 
 def create_user
   create_visitor
-  delete_user
+  #delete_user
   @user = FactoryGirl.create(:user, email: @visitor[:email])
 end
 
@@ -28,7 +28,7 @@ def delete_user
 end
 
 def sign_up
-  delete_user
+  #delete_user
   visit '/users/sign_up'
   fill_in "Email", :with => @visitor[:email]
   click_button "Request Invitation"
@@ -58,7 +58,7 @@ end
 
 Given /^I do not exist as a user$/ do
   create_visitor
-  delete_user
+  #delete_user
 end
 
 Given /^I exist as an unconfirmed user$/ do
@@ -137,7 +137,7 @@ Then /^I should be signed in$/ do
 end
 
 Then /^I should be signed out$/ do
-  page.should have_content "Sign up"
+  page.should have_content "Sign Up"
   page.should have_content "Login"
   page.should_not have_content "Logout"
 end
