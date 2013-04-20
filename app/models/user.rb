@@ -24,6 +24,16 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password
   validates :username, presence: true, uniqueness: true
 
+  def tasks_to_roll_forward
+    self.tasks.where(complete: false).where("date < ?", Date.today)
+  end
+
+  def roll_tasks_forward
+    self.tasks_to_roll_forward.each do |task|
+      task.update_attributes(date: Date.today)
+    end
+  end
+
   def password_required?
     if !persisted?
       !(password != "")
