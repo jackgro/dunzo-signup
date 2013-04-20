@@ -31,20 +31,28 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller"
   gem 'pg', '0.12.2'
-  gem "rspec-rails", ">= 2.11.4"
-  gem "factory_girl_rails", ">= 4.1.0"
   gem "pry-rails"
   gem "letter_opener"
 end
 
-group :test do
+group :development, :test do
   gem "rspec-rails", ">= 2.11.4"
-  gem "factory_girl_rails", ">= 4.1.0"
-  gem "email_spec", ">= 1.2.1"
   gem "cucumber-rails", ">= 1.3.0", :require => false
+  gem 'guard-spork'
+  gem 'guard-rspec'
+  gem 'guard-cucumber'
+  gem 'rb-fsevent'
+  gem 'pry-rails'
+  gem 'fuubar'
+  gem 'debugger'
+end
+
+group :test do
+  gem "email_spec", ">= 1.2.1"
   gem "database_cleaner", ">= 0.9.1"
   gem "launchy", ">= 2.1.2"
   gem "capybara", ">= 1.1.2"
+  gem "factory_girl_rails", ">= 4.1.0"
 end
 
 group :production do
