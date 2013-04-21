@@ -124,10 +124,12 @@ When /^I sign in with a wrong password$/ do
 end
 
 When /^I edit my account details$/ do
-  click_link "Edit account"
-  fill_in "Name", :with => "newname"
-  fill_in "Current password", :with => @visitor[:password]
-  click_button "Update"
+  click_link 'Profile'
+  fill_in 'First name', :with => 'new'
+  fill_in 'Last name', :with => 'name'
+  fill_in 'Username', :with => 'newname'
+  fill_in 'Current password', :with => @visitor[:password]
+  click_button 'Update'
 end
 
 When /^I look at the list of users$/ do
