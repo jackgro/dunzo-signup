@@ -2,7 +2,7 @@
 
 def create_visitor
   @visitor ||= { first_name: "Testy", last_name: "McUserton", username: 'testymcuserton', email: "example@example.com",
-    password: "please", password_confirmation: "please" }
+    password: "password", password_confirmation: "password" }
 end
 
 def find_user
@@ -30,8 +30,13 @@ end
 def sign_up
   #delete_user
   visit '/accounts/sign_up'
-  fill_in "Email", :with => @visitor[:email]
-  click_button "Request Invitation"
+  fill_in 'First name', :with => @visitor[:first_name]
+  fill_in 'Last name', :with => @visitor[:last_name]
+  fill_in 'Email', :with => @visitor[:email]
+  fill_in 'Username', :with => @visitor[:username]
+  fill_in 'Password', :with => @visitor[:password]
+  fill_in 'Retype password', :with => @visitor[:password_confirmation]
+  click_button "Sign up"
   find_user
 end
 
@@ -151,7 +156,7 @@ Then /^I see a successful sign in message$/ do
 end
 
 Then /^I should see a successful sign up message$/ do
-  page.should have_content "Thank You"
+  page.should have_content "Thank you"
 end
 
 Then /^I should see an invalid email message$/ do
