@@ -3080,9 +3080,9 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
 .navbar .brand {
 	float: left;
 	display: block;
-	padding: 14px 20px;
+	padding: 10px 18px;
 	margin-left: -20px;
-	font-size: 20px;
+	font-size: 26px;
 	font-weight: 200;
 	color: #777;
 	text-shadow: 0 1px 0 #fff

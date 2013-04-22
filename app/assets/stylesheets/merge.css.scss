@@ -57,10 +57,6 @@ input[type="color"]:focus,
   border:0;
   box-shadow:none;
 }
-.navbar .brand { 
-  font-family: "Roboto", sans-serif;
-  font-weight:100;
-}
 .navbar .dropdown-menu a:hover {
   background:#EEE;
 }
@@ -123,7 +119,6 @@ ul#dashboard-menu li:hover {
   background:#262626;
 }
 .sidebar-nav .nav-header {
-  background:#444;
   border:0;
 }
 .sidebar-nav .nav-header:hover {

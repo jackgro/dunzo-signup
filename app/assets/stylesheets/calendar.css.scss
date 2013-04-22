@@ -2,7 +2,7 @@
 @import "bootstrap/mixins";
 
 #calendar-menu {
-  background:#2E2E2E;
+  background:none;
 }
 
 .calendar {
@@ -11,6 +11,15 @@
 
   a{ color:#CCC; }
 
+    .current{
+      background:#25BC99;
+      color:#FFF;
+
+      &:hover{
+        background:#444;
+        color:#FFF;
+      }
+    }
   .notmonth,
   .notmonth a{
     color:#666;
@@ -58,35 +67,23 @@
     padding:6px; 
 
     &:hover{
-      background:#262626;
+      background:#333;
       color:#FFF;
-    }
-
-    .current{
-      background:#444;
-      color:#FFF;
-
-      &:hover{
-        background:#444;
-        color:#FFF;
-      }
     }
 
   }
 
   .today{
     a{
-      background:#2E2E2E;
       color:#25BC99;
 
       &:hover{ color:#30D3A8; }
-
-      .current{
-        color:#25BC99;
+    }
+    .current{
+        color:#FFF;
 
         &:hover{ color:#FFF; }
       }
-    }
   }
 
 }
