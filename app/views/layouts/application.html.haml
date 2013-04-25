@@ -14,8 +14,8 @@
     - case params[:controller]
     - when "home"
       = stylesheet_link_tag "home"
-      = stylesheet_link_tag "merge"
       = stylesheet_link_tag "theme"
+      = stylesheet_link_tag "merge"
     - else
       = stylesheet_link_tag "application", :media => "all"
       = stylesheet_link_tag "theme"
@@ -48,5 +48,3 @@
 
   - unless params[:controller] == "home" || (params[:controller] == 'users' && params[:action] == 'index')
     = javascript_include_tag "application"
-  - if params[:controller] == "home"
-    = javascript_include_tag "home"

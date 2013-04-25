@@ -55,10 +55,6 @@ Dunzo::Application.configure do
                                   dataTables/jquery.dataTables.js
                                   dataTables/jquery.dataTables.bootstrap.js
                                   users.js
-                                  home-application.js
-                                  home-all.js
-                                  home.js
-                                  homepage.css
                                  )
 
   # Disable delivery errors, bad email addresses will be ignored
