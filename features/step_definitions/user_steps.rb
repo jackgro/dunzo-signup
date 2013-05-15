@@ -1,7 +1,7 @@
 ### UTILITY METHODS ###
 
 def create_visitor
-  @visitor ||= { first_name: "Testy", last_name: "McUserton", username: 'testymcuserton', email: "example@example.com",
+  @visitor ||= { first_name: "Testy", last_name: "McUserton", username: 'testymcuserton', email: "user@example.com",
     password: "password", password_confirmation: "password" }
 end
 
@@ -11,15 +11,15 @@ end
 
 def create_unconfirmed_user
   create_visitor
-  #delete_user
+  delete_user
   sign_up
   visit '/accounts/sign_out'
 end
 
 def create_user
   create_visitor
-  #delete_user
-  @user = FactoryGirl.create(:user, email: @visitor[:email])
+  delete_user
+  @user = create(:user, email: @visitor[:email], password: @visitor[:password], password_confirmation: @visitor[:password_confirmation])
 end
 
 def delete_user
@@ -28,7 +28,7 @@ def delete_user
 end
 
 def sign_up
-  #delete_user
+  delete_user
   visit '/accounts/sign_up'
   fill_in 'First name', :with => @visitor[:first_name]
   fill_in 'Last name', :with => @visitor[:last_name]
@@ -63,7 +63,7 @@ end
 
 Given /^I do not exist as a user$/ do
   create_visitor
-  #delete_user
+  delete_user
 end
 
 Given /^I exist as an unconfirmed user$/ do
@@ -72,7 +72,6 @@ end
 
 ### WHEN ###
 When /^I sign in with valid credentials$/ do
-  create_visitor
   sign_in
 end
 
