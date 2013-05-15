@@ -19,7 +19,7 @@ end
 def create_user
   create_visitor
   delete_user
-  @user = create(:user, email: @visitor[:email], password: @visitor[:password], password_confirmation: @visitor[:password_confirmation])
+  @user = create(:user, email: @visitor[:email], username: @visitor[:username], password: @visitor[:password], password_confirmation: @visitor[:password_confirmation])
 end
 
 def delete_user
