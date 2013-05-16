@@ -48,6 +48,11 @@ def sign_in
 end
 
 ### GIVEN ###
+
+Given(/^a user exists$/) do
+  @user = create(:user)
+end
+
 Given /^I am not logged in$/ do
   visit '/accounts/sign_out'
 end
