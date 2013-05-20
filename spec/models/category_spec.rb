@@ -41,7 +41,7 @@ describe Category do
     context "User has more than 1 category" do
       let(:category1) { create(:category, user_id: user.id) }
       let(:category2) { create(:category, user_id: user.id) }
-      
+
       it "should return true" do
         expect(category1.destroyable?).to be_true
       end
@@ -49,7 +49,7 @@ describe Category do
     end
 
     context "User only has 1 category" do
-      
+
       it "should return false" do
         expect(user.categories.first.destroyable?).to be_false
       end

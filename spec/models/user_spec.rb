@@ -102,4 +102,24 @@ describe User do
 
   end
 
+  describe "#full_name" do
+
+    context "first and last name are present" do
+      it "returns the user's full name" do
+        @user = build_stubbed(:user)
+        expect(@user.full_name).to eq 'Test User'
+      end
+    end
+
+    context "first and last name are not present" do
+
+      it "returns the user's email address" do
+        no_name_user = build_stubbed(:user, email: 'user@example.com', first_name: '', last_name: '')
+
+        expect(no_name_user.full_name).to eq no_name_user.email
+      end
+
+    end
+  end
+
 end
