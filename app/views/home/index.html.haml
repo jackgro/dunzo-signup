@@ -1,13 +1,16 @@
-%div{:role => "main"}
-  %header#home-head{:style => "height: 849px;"}
-    .container
-      .row.intro.appear{:style => "top: 332.5px;"}
-        .span12
-          %h1
-            %span Easily create daily to-do lists.
-            Access on any device from anywhere.
-          %p.tagline.clear
-            %span Get started by creating your free account today.
-          %p
-            %a.btn.btn-large.btn-outline.btn-white.scroll.hidden-phone{:href => new_user_session_path } Log in
-            %a.btn.btn-large.btn-green{:href => new_user_registration_path } Create Account
+#homeimage
+#wrapper
+  %header
+    .intro
+      %h1
+        Daily to-do lists made simple.
+      %h2 
+        Dunzo is a web app for easily creating lists to help keep track of your daily routine.
+      %p.clear
+        %b 
+          Completely free.
+        Access from any workspace or device.
+      %p
+        %a.btn{:href => new_user_registration_path } Create Account
+        %a.btn.outline{:href => new_user_session_path }Log in
+    #computer

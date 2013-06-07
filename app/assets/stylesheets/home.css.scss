@@ -4,17 +4,67 @@
 
 @import "bootstrap.min";
 
-.request-invitation{
-  font-style: Helvetica, Arial, sans-serif;
-  font-weight: 100;
-  color: #444;
-  text-align:left;
+body { overflow:hidden; }
+#homeimage { 
+    background:image-url('headerbg.jpg') center top no-repeat #000;
+	height:600px;
 }
-
-.request-body{
-  color: #333;
+#wrapper {
+	margin: 0 auto;
+	width:1200px;
 }
-
-.modal{
-  top: 25%;
+body.home {
+	background:#e6eaed;
+}
+.home h1 { 
+	font-size:33px;
+	font-weight:normal;
+} 
+.home h2 {
+	font-size:17px;
+	font-weight:normal;
+	line-height:21px;
+	margin-bottom:40px;
+}
+.home p {
+	margin-bottom:25px;
+}
+.intro .btn {
+	background:#1b9377;
+	border-radius:5px;
+	border:3px solid #1b9377;
+	color:#FFF;
+	letter-spacing:1px;
+	margin-right:10px;
+	padding:12px 20px;
+	text-transform:uppercase;
+}
+.intro .btn:hover { 
+	background:#25bc99;
+	border-color:#25bc99;
+}
+.intro .btn.outline { 
+	background:#222;
+	border:3px solid #666;
+	padding:12px 40px;
+}
+.intro .btn.outline:hover {
+	border-color:#999;
+}
+header { 
+	color:#FFF;
+	height:600px;
+	margin-top:-300px;
+	position:relative;
+}
+.intro { 
+	width:420px;
+}
+#computer {
+	background:image-url('computer.png') no-repeat transparent;
+	height:532px;
+	position:absolute;
+	right:-50px;
+	top:-155px;
+	width:894px
 }
