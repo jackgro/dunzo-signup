@@ -11,14 +11,12 @@ end
 
 def create_unconfirmed_user
   create_visitor
-  delete_user
   sign_up
   visit '/accounts/sign_out'
 end
 
 def create_user
   create_visitor
-  delete_user
   @user = create(:user, email: @visitor[:email], username: @visitor[:username], password: @visitor[:password], password_confirmation: @visitor[:password_confirmation])
 end
 
@@ -28,7 +26,6 @@ def delete_user
 end
 
 def sign_up
-  delete_user
   visit '/accounts/sign_up'
   fill_in 'First name', :with => @visitor[:first_name]
   fill_in 'Last name', :with => @visitor[:last_name]
@@ -68,7 +65,6 @@ end
 
 Given /^I do not exist as a user$/ do
   create_visitor
-  delete_user
 end
 
 Given /^I exist as an unconfirmed user$/ do
@@ -140,9 +136,13 @@ When /^I look at the list of users$/ do
   visit '/'
 end
 
+When(/^I visit my profile$/) do
+  visit '/'
+end
+
 ### THEN ###
 Then /^I should be signed in$/ do
-  page.should have_content "Logout"
+  page.should have_content @user.full_name
   page.should_not have_content "Sign up"
   page.should_not have_content "Login"
 end
@@ -196,4 +196,11 @@ end
 Then /^I should see my name$/ do
   create_user
   page.should have_content @user[:name]
+end
+
+Then(/^I should see the standard UI$/) do
+  page.should have_content @user.full_name
+  page.should have_content 'dunzo'
+  page.should have_content 'Calendar'
+  page.should have_content 'Lists'
 end

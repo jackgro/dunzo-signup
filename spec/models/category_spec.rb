@@ -58,4 +58,8 @@ describe Category do
 
   end
 
+  describe "#set_category_uid" do
+
+  end
+
 end

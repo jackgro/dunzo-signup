@@ -54,6 +54,7 @@ group :test do
   gem "capybara", ">= 1.1.2"
   gem "factory_girl_rails", ">= 4.1.0"
   gem "timecop"
+  gem "shoulda-matchers"
 end
 
 group :production do

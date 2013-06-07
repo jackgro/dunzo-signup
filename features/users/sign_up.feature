@@ -8,7 +8,7 @@ Feature: Sign up
 
     Scenario: User views home page
       When I visit the home page
-      Then I should see the buttons "Log in" and "Create Account"
+      Then I should see the buttons "Log in" and "Sign Up Free"
 
     Scenario: User views login form
       When I visit the home page
