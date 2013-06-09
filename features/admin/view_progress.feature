@@ -1,4 +1,3 @@
-@dev
 Feature: View Progress
   As the owner of the site
   I want to know how many visitors have requested invitations
