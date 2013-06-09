@@ -30,7 +30,7 @@ group :development do
   gem "quiet_assets", ">= 1.0.1"
   gem "better_errors"
   gem "binding_of_caller"
-  gem 'pg', '0.12.2'
+  gem 'pg', '0.15.1'
   gem "pry-rails"
   gem "letter_opener"
 end
@@ -56,5 +56,5 @@ group :test do
 end
 
 group :production do
-  gem 'pg', '0.12.2'
+  gem 'pg', '0.15.1'
 end
