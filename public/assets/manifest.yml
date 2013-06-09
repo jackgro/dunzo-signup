@@ -19,6 +19,12 @@ extra_clean_paper.png: extra_clean_paper-33175baa85f89861656d7ad405af6e51.png
 extra_clean_paper/index.png: extra_clean_paper-33175baa85f89861656d7ad405af6e51.png
 favicon.ico: favicon-94124ab022af587dbca2309bb2f6f7c1.ico
 favicon/index.ico: favicon-94124ab022af587dbca2309bb2f6f7c1.ico
+features-access.png: features-access-e8f9274bdd6fbae82e32548f95d807ec.png
+features-access/index.png: features-access-e8f9274bdd6fbae82e32548f95d807ec.png
+features-collaborate.png: features-collaborate-2ab01c6ac99fb17b2a5bc39e0831c2e6.png
+features-collaborate/index.png: features-collaborate-2ab01c6ac99fb17b2a5bc39e0831c2e6.png
+features-organize.png: features-organize-e480bada63f2526572aca9d778f7af62.png
+features-organize/index.png: features-organize-e480bada63f2526572aca9d778f7af62.png
 furley_bg.png: furley_bg-c3603ba194ec75bff831004680a6cd0e.png
 furley_bg/index.png: furley_bg-c3603ba194ec75bff831004680a6cd0e.png
 headerbg.jpg: headerbg-e55c521a1ac5d2cf48806d7e246437ee.jpg
@@ -43,8 +49,8 @@ users.js: users-9009acb6a39a5e91381c5739083ff3eb.js
 users/index.js: users-9009acb6a39a5e91381c5739083ff3eb.js
 application.css: application-c49429050deec5ba8c524d9a54b6a15f.css
 application/index.css: application-c49429050deec5ba8c524d9a54b6a15f.css
-home.css: home-98c00f71e6a52295fa92a6f47e200851.css
-home/index.css: home-98c00f71e6a52295fa92a6f47e200851.css
+home.css: home-5422faf3478b0cbda7aa9e8d0239574b.css
+home/index.css: home-5422faf3478b0cbda7aa9e8d0239574b.css
 merge.css: merge-f7ff5f6452898abc94a21fa9d9f3c4fd.css
 merge/index.css: merge-f7ff5f6452898abc94a21fa9d9f3c4fd.css
 theme.css: theme-c37297867458b0a091824c83a1b54fb6.css
