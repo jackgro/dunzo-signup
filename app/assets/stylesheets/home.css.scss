@@ -4,6 +4,9 @@
 
 @import "bootstrap.min";
 
+body { 
+	overflow-x:hidden;
+}
 header { 
     background:image-url('headerbg.jpg') center top no-repeat #000;
 	height:500px;
