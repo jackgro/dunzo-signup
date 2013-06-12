@@ -3,7 +3,6 @@
 FactoryGirl.define do
   factory :category do
     name "MyString"
-    task_id 1
-    user_id 1
+    user
   end
 end
