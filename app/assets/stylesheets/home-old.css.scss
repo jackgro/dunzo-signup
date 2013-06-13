@@ -1,0 +1,130 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "bootstrap.min";
+
+body { 
+	overflow-x:hidden;
+}
+header { 
+    background:image-url('headerbg.jpg') center top no-repeat #000;
+	height:500px;
+	color:#FFF;
+	position:relative;
+}
+header .container {
+	height:500px;
+}
+#wrapper {
+	margin: 0 auto;
+}
+body.home {
+	background:#e6eaed;
+}
+.home h1 { 
+	font-size:28px;
+	font-weight:normal;
+} 
+.home h2 {
+	font-size:17px;
+	font-weight:normal;
+	line-height:21px;
+	margin-bottom:40px;
+}
+.home p {
+	margin-bottom:25px;
+}
+#intro {
+	margin-top:150px;
+}
+#intro .btn {
+	background:#1b9377;
+	border-radius:5px;
+	border:3px solid #1b9377;
+	box-shadow:none;
+	color:#FFF;
+	letter-spacing:1px;
+	margin-right:10px;
+	padding:12px 20px;
+	text-transform:uppercase;
+}
+#intro .btn:hover { 
+	background:#25bc99;
+	border-color:#25bc99;
+}
+#intro .btn.outline { 
+	background:transparent;
+	border:3px solid #666;
+	padding:12px 40px;
+}
+#intro .btn.outline:hover {
+	border-color:#999;
+}
+#computer {
+	position:absolute;
+	text-align:right;
+	top:50px;
+}
+#computer img {
+	position:absolute;
+	left:400px;
+	top:0;
+}
+#features .row-fluid { 
+	list-style:none;
+	margin:125px 0 40px;
+}
+#features .span4 {
+	color:#4b494f;
+	text-align:center;
+}
+#features h3 {
+	font-size:15px;
+	letter-spacing:1px;
+	line-height:25px;
+	text-transform:uppercase;
+}
+#features img { 
+	margin-bottom:5px;
+}
+#features .padding {
+	padding:0 25px;
+}
+#footer { 
+	border-top:1px solid #CCC; 
+	padding:20px 0 0;
+}
+#footer p { 
+	color:#959595;
+	font-size:12px;
+}
+
+
+
+/* Large desktop */
+@media (min-width: 1200px) { }
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) { 
+
+	#intro { width:400px; }
+
+ }
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { 
+
+	#intro { width:400px; margin-left:25px;}
+	.home h1 { text-align:left; }
+	#footer { text-align:center}
+}
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+
+	#computer img { display:none; }
+	header #intro { text-align:center!important; width:90%; margin-left: auto; margin-right:auto; }
+	.home h1 { text-align:center; }
+
+  }
