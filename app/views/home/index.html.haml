@@ -1,46 +1,45 @@
-#wrapper
-  %header
-    .container
-      .row-fluid
-        #intro.span5
-          %h1
-            Daily to-do lists made simple.
-          %h2 
-            Dunzo is a web app for easily creating lists to help keep track of your daily routine.
-          %p.clear
-            %b 
-              Completely free.
-            Access from any workspace or device.
-          %p
-            %a.btn{:href => new_user_registration_path } Create Account
-            %a.btn.outline{:href => new_user_session_path }Log in
-      #computer
-        =image_tag "computer.png"
-  #features.container
-    .row-fluid
-      .span4
-        .padding
-          =image_tag "features-organize.png"
-          %h3
-            Stay on track
-          %p
-            Organize your daily routine and get things done by creating simple checklists.
-      .span4
-        .padding
-          =image_tag "features-access.png"
-          %h3
-            Access anywhere
-          %p
-            Use a computer, tablet, or smartphone to access your lists in any web browser.
-      .span4
-        .padding
-          =image_tag "features-collaborate.png"
-          %h3
-            Collaborate
-          %p
-            Share lists with anyone, enabling you to collaborate at work or home.
-  #footer.container
-    .row-fluid
-      .span12
+/
+  Carousel
+  \==================================================
+#header.carousel.slide.animated.fadeIn
+  .carousel-inner
+    .item.one.active
+      .container.animated.fadeInUp
+        .carousel-caption
+          %h1 Daily to-do lists made simple
+          %p.lead.margin-40
+            %em Dunzo is a free web app that lets you easily create lists to help keep track of your daily routine.
+          %a.btn-main{:href => new_user_registration_path } 
+            Sign Up Free
+          %a.btn-outline{:href => new_user_session_path }
+            Log in      
+  %a.left.carousel-control.hidden-phone{"data-slide" => "prev", :href => "#header"}
+    %i.icon-angle-left
+  %a.right.carousel-control.hidden-phone{"data-slide" => "next", :href => "#header"}
+    %i.icon-angle-right
+/ /.carousel
+/ Services
+%section#services
+  .container
+    .row.text-center
+      / Seciton 1
+      .span4.service.margin-30
+        =image_tag "features-organize.png"
+        %h3 Stay on track
+        %p Organize your daily routine and get things done by creating simple checklists.
+      / Seciton 2
+      .span4.service.margin-30
+        =image_tag "features-access.png"
+        %h3 Access anywhere
+        %p Use a computer, tablet, or smartphone to access your lists in any web browser.
+      / Seciton 3
+      .span4.service.margin-30
+        =image_tag "features-collaborate.png"
+        %h3 Collaborate with anyone
+        %p Share lists with anyone, enabling you to collaborate at work or home.
+%section#footer
+  .container
+    .row
+      .span12.text-center
         %p
-          &copy Dunzo 2013. All rights reserved.
+          @ Copyright Dunzo. All Rights Reserved. 
