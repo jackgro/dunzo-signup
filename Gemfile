@@ -51,10 +51,12 @@ group :test do
   gem "email_spec", ">= 1.2.1"
   gem "database_cleaner", ">= 0.9.1"
   gem "launchy", ">= 2.1.2"
-  gem "capybara", ">= 1.1.2"
+  gem "capybara"
+  gem "capybara-webkit"
   gem "factory_girl_rails", ">= 4.1.0"
   gem "timecop"
   gem "shoulda-matchers"
+  gem "chronic"
 end
 
 group :production do

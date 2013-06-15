@@ -61,6 +61,7 @@ end
 
 Given /^I exist as a user$/ do
   create_user
+  @list = @user.categories.first
 end
 
 Given /^I do not exist as a user$/ do
@@ -136,7 +137,8 @@ When /^I look at the list of users$/ do
   visit '/'
 end
 
-When(/^I visit my profile$/) do
+When(/^I visit my profile today$/) do
+  @date = Date.today
   visit '/'
 end
 
@@ -203,4 +205,5 @@ Then(/^I should see the standard UI$/) do
   page.should have_content 'dunzo'
   page.should have_content 'Calendar'
   page.should have_content 'Lists'
+  page.should have_content @date.strftime("%A, %B %e, %Y")
 end

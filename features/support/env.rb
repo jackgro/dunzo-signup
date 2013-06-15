@@ -5,9 +5,9 @@ require 'spork'
 
 Spork.prefork do
   require 'cucumber/rails'
+  require 'capybara/rails'
   require 'email_spec'
   require 'email_spec/cucumber'
-  require 'capybara/rails'
 
   ActionController::Base.allow_rescue = false
 

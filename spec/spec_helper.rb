@@ -14,7 +14,7 @@ Spork.prefork do
   require 'rspec/rails'
   require 'shoulda/matchers/integrations/rspec'
   require 'rspec/autorun'
-  #require 'chronic'
+  require 'chronic'
 
   # Requires supporting ruby files with custom matchers and macros, etc,
   # in spec/support/ and its subdirectories.

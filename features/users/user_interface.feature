@@ -6,5 +6,5 @@ Feature: Basic UI Features
   Scenario: Basic UI
     Given I exist as a user
     When I sign in with valid credentials
-    And I visit my profile
+    And I visit my profile today
     Then I should see the standard UI
