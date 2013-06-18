@@ -18,7 +18,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 h1 {
   font-weight: 800;
-  font-size: 45px;
+  font-size: 35px;
   line-height: 60px;
   color: #FFFFFF;
   margin: 0;
@@ -55,8 +55,12 @@ p {
 
 p.lead {
   color: #25BC99;
+  font-size:18px;
+  line-height:22px;
 }
-
+p.lead-small {
+	font-size:15px;
+}
 a {
   color: #626c72;
 }
@@ -79,12 +83,12 @@ a:hover {
     text-shadow: none;
     padding: 15px 25px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 .btn-main:hover {
-	background: #dc644b repeat scroll 0 0;
-    border: 3px solid #dc644b;	
+	background: #1b9377 repeat scroll 0 0;
+    border: 3px solid #1b9377;	
 	color: #FFFFFF;
 	text-decoration: none;
 	transition: all 0.35s ease-in-out;
@@ -95,12 +99,12 @@ a:hover {
     font-weight: 800;
     border-radius: 5px;
     box-shadow: none;
-    color: #FFFFFF;
+    color: #CCC;
     text-decoration: none;
     text-shadow: none;
-    padding: 15px 25px;
+    padding: 15px 30px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 .btn-outline:hover {
@@ -290,9 +294,9 @@ a:hover {
 .carousel-caption {
   background-color: transparent;
   position: static;
-  max-width: 900px;
+  max-width: 500px;
   padding: 0 20px;
-  margin-top: 36%;
+  margin-top: 25%;
 }
 
 .one {
@@ -391,7 +395,7 @@ body {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 35px;
   line-height: 38px;
 }
 
@@ -447,7 +451,7 @@ body {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 35px;
   line-height: 38px;
 }
 
