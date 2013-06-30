@@ -22,15 +22,9 @@ describe Category do
     let(:user) { create(:user) }
     let(:list) { create(:category, user: user) }
 
-    it "creates an MD5 hash out of the time, slug and name of the category" do
-      slug = list.user.slug
-      name = list.name
-
-      Timecop.freeze do
-        time = Time.now.to_s
-        expect(list.set_category_uid).to eq Digest::MD5.hexdigest("#{time}-#{slug}-#{name}")
-      end
-
+    it "creates an 8 character SecureRandom hex" do
+      expect(list.category_uid).to_not be_nil
+      expect(list.category_uid.length).to eq 8
     end
 
   end

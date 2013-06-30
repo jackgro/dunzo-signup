@@ -1,5 +1,7 @@
 class Category < ActiveRecord::Base
   attr_accessible :name
+  before_create :set_category_uid
+
   belongs_to :user
   has_many :tasks, dependent: :destroy
 
@@ -8,7 +10,7 @@ class Category < ActiveRecord::Base
   end
 
   def set_category_uid
-    self.category_uid = Digest::MD5.hexdigest("#{Time.now.to_s}-#{self.user.slug}-#{self.name}")
+    self.category_uid = SecureRandom.hex(4)
   end
 
   def destroyable?

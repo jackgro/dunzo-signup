@@ -63,7 +63,6 @@ class CategoriesController < ApplicationController
 
   def create
     @category = @user.categories.new(params[:category])
-    @category.set_category_uid
 
     if @category.save
       redirect_to username_category_path(@user.slug, @category.category_uid)
