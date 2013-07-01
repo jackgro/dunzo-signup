@@ -1,9 +1,0 @@
-- current_class = 'current' if category == @category
-= content_tag_for(:li, category, class: current_class) do
-  = link_to username_category_path(@user.slug, category.category_uid, date: params[:date]), class: 'inline' do
-    = category.name
-    = link_to edit_category_path(category.id), data: { toggle: 'modal', target: '#editCategory' }, role: 'button', class: 'edit-category', remote: true do
-      %i.icon-edit.hidden
-    - if category.destroyable?
-      = link_to category_path(category), remote: true, method: :delete, confirm: category_confirm, class: 'delete-category' do
-        %i.icon-remove.hidden

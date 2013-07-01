@@ -2,7 +2,7 @@ Dunzo::Application.routes.draw do
 
   match '/thankyou', to: 'application#thankyou'
   authenticated :user do
-    root :to => 'categories#show'
+    root :to => 'lists#show'
   end
   devise_scope :user do
     root :to => 'home#index'
@@ -13,13 +13,13 @@ Dunzo::Application.routes.draw do
   resources :users, :only => [:show, :index] do
     get 'invite', :on => :member
 
-    resources :categories
+    resources :lists
   end
 
-  match '/:user_slug' => "categories#show", as: :username
-  match '/:user_slug/lists/:category_uid' => "categories#show", as: :username_category
+  match '/:user_slug' => "lists#show", as: :username
+  match '/:user_slug/lists/:list_uid' => "lists#show", as: :username_list
 
-  resources :categories do
+  resources :lists do
     resources :tasks
   end
 

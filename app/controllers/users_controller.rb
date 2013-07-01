@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
   def show
     @user =  User.find_by_slug(params[:user_slug]) || current_user
-    @categories = @user.categories.order('created_at ASC')
+    @lists = @user.lists.order('created_at ASC')
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
 
     if is_mobile_device?

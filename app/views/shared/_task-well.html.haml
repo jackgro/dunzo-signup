@@ -1,11 +1,11 @@
-.well{class: "category-#{category.id}-well"}
-  = div_for category do
-    %h5= category.name
+.well{class: "list-#{list.id}-well"}
+  = div_for list do
+    %h5= list.name
     //========== Task form ============
-    = render partial: "tasks/form", locals: { category: category, date: date }
+    = render partial: "tasks/form", locals: { list: list, date: date }
     //========== Tasks ============
-    - classes = "category-#{category.id}-tasks task-sort"
+    - classes = "list-#{list.id}-tasks task-sort"
     = content_tag :div, class: classes, data: { update_url: sort_tasks_url } do
-      = render category.tasks_by_date(date)
+      = render list.tasks_by_date(date)
 
-= render partial: 'categories/edit-modal'
+= render partial: 'lists/edit-modal'

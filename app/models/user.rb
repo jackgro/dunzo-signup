@@ -17,8 +17,8 @@ class User < ActiveRecord::Base
   #after_create :send_welcome_email
   after_create :assign_initial_list
 
-  has_many :categories, dependent: :destroy
-  has_many :tasks, :through => :categories
+  has_many :lists, dependent: :destroy
+  has_many :tasks, :through => :lists
   # override Devise method
   # no password is required when the account is created; validate password when the user sets one
   validates_confirmation_of :password
@@ -96,9 +96,9 @@ class User < ActiveRecord::Base
   end
 
   def assign_initial_list
-    @category = self.categories.create(name: 'Dunzo')
-    @category.tasks.create(name: 'Make a new list', date: Date.today, position: 0)
-    @category.tasks.create(name: 'Use the form in the sidebar to add one', date: Date.today, position: 1)
-    @category.tasks.create(name: 'Add tasks to your new list', date: Date.today, position: 2)
+    @list = self.lists.create(name: 'Dunzo')
+    @list.tasks.create(name: 'Make a new list', date: Date.today, position: 0)
+    @list.tasks.create(name: 'Use the form in the sidebar to add one', date: Date.today, position: 1)
+    @list.tasks.create(name: 'Add tasks to your new list', date: Date.today, position: 2)
   end
 end

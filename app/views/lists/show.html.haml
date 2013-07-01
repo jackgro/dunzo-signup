@@ -3,16 +3,16 @@
 //========================== Content ========================//
 //==========================================================//
 - user = @user
-- category = @category
+- list = @list
 - date = @date
 
 .content
   .header
-    %h1.page-title= mobile_date_format(date)
+    %h1.page-title= date_format(date)
     = render partial: "tasks/day_switcher"
   .container-fluid
     .row-fluid
       = render partial: 'layouts/messages'
-      = render partial: 'shared/task-well', locals: { category: category, date: date }
+      = render partial: 'shared/task-well', locals: { list: list, date: date }
 
       = render partial: "layouts/footer"

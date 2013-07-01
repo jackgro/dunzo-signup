@@ -1,6 +1,6 @@
 .month-switcher
-  %a.pull-left{:href => username_category_path(@user.slug, @category.category_uid, date: @date.prev_month)}
+  %a.pull-left{:href => username_list_path(@user.slug, @list.uid, date: @date.prev_month)}
     %i.icon-chevron-left
   = @date.strftime("%B")
-  %a.pull-right{:href => username_category_path(@user.slug, @category.category_uid, date: @date.next_month)}
+  %a.pull-right{:href => username_list_path(@user.slug, @list.uid, date: @date.next_month)}
     %i.icon-chevron-right

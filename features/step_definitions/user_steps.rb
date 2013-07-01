@@ -61,7 +61,7 @@ end
 
 Given /^I exist as a user$/ do
   create_user
-  @list = @user.categories.first
+  @list = @user.lists.first
 end
 
 Given /^I do not exist as a user$/ do

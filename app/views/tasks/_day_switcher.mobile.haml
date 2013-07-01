@@ -1,7 +1,7 @@
 .date-switcher
-  %a.btn{:href => username_category_path(@user.slug, @category.category_uid, date: @date.prev_day)}
+  %a.btn{:href => username_list_path(@user.slug, @list.uid, date: @date.prev_day)}
     %i.icon-chevron-left
-  %a.btn{:href => username_category_path(@user.slug, @category.category_uid)}
+  %a.btn{:href => username_list_path(@user.slug, @list.uid)}
     Today
-  %a.btn{:href => username_category_path(@user.slug, @category.category_uid, date: @date.next_day)}
+  %a.btn{:href => username_list_path(@user.slug, @list.uid, date: @date.next_day)}
     %i.icon-chevron-right

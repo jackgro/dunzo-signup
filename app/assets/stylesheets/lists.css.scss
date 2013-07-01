@@ -1,4 +1,4 @@
-// Place all the styles related to the categories controller here.
+// Place all the styles related to the lists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
@@ -30,7 +30,7 @@
   }
 }
 
-.category-form form,
+.list-form form,
 form.new_task{
   margin: 0px;
 
@@ -40,7 +40,7 @@ form.new_task{
   }
 }
 
-.category-form {
+.list-form {
   padding:0;
 
   form {
@@ -107,7 +107,7 @@ form.edit_task{
   color:#FFF;
 }
 
-.category-options{
+.list-options{
   min-width: 100px;
 
   .delete{
@@ -121,8 +121,8 @@ form.edit_task{
 }
 
 // styles for re-rendered
-// categories in sidebar
-#category-list {
+// lists in sidebar
+#list-list {
   li{
     position:relative;
     padding: 6px; // Is this supposed to be here?
@@ -151,17 +151,17 @@ form.edit_task{
     }
   }
 
-  .edit-category,
-  .delete-category{
+  .edit-list,
+  .delete-list{
     padding:0;
     position:absolute;
   }
 
-  .edit-category{
+  .edit-list{
     right:45px;
   }
 
-  .delete-category{
+  .delete-list{
     right:25px;
   }
 
@@ -176,7 +176,7 @@ form.edit_task{
   }
 }
 
-.no-categories{
+.no-lists{
   margin: 0 auto;
   margin-top: 50px;
   width: 50%;

@@ -4,17 +4,17 @@
   //========== Search ============
   %form.search.form-inline
     %input{:placeholder => "Search...", :type => "text"}/
-  //========== Categories Accordion ============
+  //========== lists Accordion ============
   %a.nav-header{"data-toggle" => "collapse", :href => "#dashboard-menu"}
     %i.icon-tags>
     Lists
     %i.icon-chevron-up
   %ul#dashboard-menu.nav.nav-list.collapse.out
-    .category-form
-      = render 'categories/form'
-    - unless @categories.empty?
-      #category-list
-        = render @categories
+    .list-form
+      = render 'lists/form'
+    - unless @lists.empty?
+      #list-list
+        = render @lists
   //========== Calendar Accordion ============
   %a.nav-header{"data-toggle" => "collapse", :href => "#calendar-menu"}
     %i.icon-calendar.icon-white>
@@ -24,5 +24,5 @@
     = render 'tasks/month-switcher', locals: { date: @date }
     = calendar @date do |date|
       - current = "current" if date == @date
-      = link_to date.day, username_category_path(@user.slug, @category.category_uid, date: date), class: "calendar-day #{current}"
+      = link_to date.day, username_list_path(@user.slug, @list.uid, date: date), class: "calendar-day #{current}"
 

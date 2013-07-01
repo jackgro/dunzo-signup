@@ -1,7 +1,0 @@
-- current_class = 'current' if category == @category
-= content_tag_for(:li, category, class: current_class) do
-  = link_to username_category_path(@user.slug, category.category_uid, date: params[:date]), class: 'inline' do
-    = category.name
-    - if category.destroyable?
-      = link_to category_path(category), remote: true, method: :delete, confirm: category_confirm, class: 'delete-category' do
-        %i.icon-remove

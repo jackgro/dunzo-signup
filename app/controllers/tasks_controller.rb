@@ -1,17 +1,17 @@
 class TasksController < ApplicationController
 
   before_filter :get_user, only: :destroy
-  before_filter :find_category, only: [:new, :create]
+  before_filter :find_list, only: [:new, :create]
   before_filter :find_task, only: [:update, :destroy]
 
   def new
-    # Category found by before_filter method
-    @task = @category.tasks.new
+    # List found by before_filter method
+    @task = @list.tasks.new
   end
 
   def create
-    # Category found by before_filter method
-    @task = @category.tasks.create!(params[:task])
+    # List found by before_filter method
+    @task = @list.tasks.create!(params[:task])
 
     respond_to do |format|
       format.html {
@@ -46,7 +46,7 @@ class TasksController < ApplicationController
     respond_to do |format|
       @task.destroy
 
-      format.html { redirect_to username_category_path(@user.slug) }
+      format.html { redirect_to username_list_path(@user.slug) }
       format.js
     end
   end
@@ -60,8 +60,8 @@ class TasksController < ApplicationController
 
   private
 
-    def find_category
-      @category ||= Category.find(params[:category_id])
+    def find_list
+      @list ||= List.find(params[:list_id])
     end
 
     def find_task

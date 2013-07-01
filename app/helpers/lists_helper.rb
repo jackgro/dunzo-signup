@@ -1,6 +1,6 @@
-module CategoriesHelper
+module ListsHelper
 
-  def category_confirm
+  def list_confirm
     "Are you sure? All associated tasks will be deleted."
   end
 

@@ -13,7 +13,7 @@ jQuery.fn.resetForm = function() {
 }
 
 // iPad uses html views
-// Always show category icons on iPad
+// Always show list icons on iPad
 // iPhone uses mobile views. Not hidden by default
 // so no special iPhone functionality required in this method
 jQuery.fn.showOnHover = function(link) {
@@ -30,8 +30,8 @@ $(function(){
   $('.edit_task').submitOnCheck();
   $('.edit_task').showOnHover('i.icon-remove');
 
-  $('li.category').showOnHover('i.icon-edit');
-  $('li.category').showOnHover('i.icon-remove');
+  $('li.list').showOnHover('i.icon-edit');
+  $('li.list').showOnHover('i.icon-remove');
 
   $('.task-sort').sortable({
     axis: 'y',

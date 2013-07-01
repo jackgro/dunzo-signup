@@ -1,0 +1,10 @@
+$left_nav = $('#list_<%= @list.id %>');
+$list_task_list = $('.list-<%= @list.id %>-well');
+
+$left_nav.fadeOut(300, function(){
+  $this.remove();
+});
+
+$list_task_list.fadeOut(300, function(){
+  $this.remove();
+});

@@ -1,0 +1,7 @@
+- current_class = 'current' if list == @list
+= content_tag_for(:li, list, class: current_class) do
+  = link_to username_list_path(@user.slug, list.uid, date: params[:date]), class: 'inline' do
+    = list.name
+    - if list.destroyable?
+      = link_to list_path(list), remote: true, method: :delete, confirm: list_confirm, class: 'delete-list' do
+        %i.icon-remove

@@ -13,8 +13,8 @@ class ApplicationController < ActionController::Base
 
   def not_found
     rescue ActiveRecord::RecordNotFound
-      @first = @user.categories.includes(:tasks).first
-      redirect_to username_category_path(@user.slug, @first.category_uid)
+      @first = @user.lists.includes(:tasks).first
+      redirect_to username_list_path(@user.slug, @first.uid)
   end
 
   private

@@ -126,10 +126,10 @@ describe User do
 
   describe "#assign_initial_list" do
     let(:user) { create(:user) }
-    let(:list) { user.categories.first }
+    let(:list) { user.lists.first }
 
     it "creates a new list called 'Dunzo' and assigns it to the user" do
-      expect(user.categories.count).to be 1
+      expect(user.lists.count).to be 1
       expect(list.name).to eq 'Dunzo'
     end
 
