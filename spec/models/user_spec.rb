@@ -124,5 +124,20 @@ describe User do
     end
   end
 
+  describe "#assign_initial_list" do
+    let(:user) { create(:user) }
+    let(:list) { user.categories.first }
+
+    it "creates a new list called 'Dunzo' and assigns it to the user" do
+      expect(user.categories.count).to be 1
+      expect(list.name).to eq 'Dunzo'
+    end
+
+    it "creates 3 tasks associated to the newly created list" do
+      expect(list.tasks.count).to eq 3
+    end
+
+  end
+
 
 end
