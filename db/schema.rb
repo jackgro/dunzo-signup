@@ -11,17 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130612011104) do
-
-  create_table "categories", :force => true do |t|
-    t.string   "name"
-    t.integer  "user_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-    t.string   "category_uid"
-  end
-
-  add_index "categories", ["category_uid"], :name => "index_categories_on_category_uid", :unique => true
+ActiveRecord::Schema.define(:version => 20130701014607) do
 
   create_table "friendly_id_slugs", :force => true do |t|
     t.string   "slug",                         :null => false
@@ -33,6 +23,16 @@ ActiveRecord::Schema.define(:version => 20130612011104) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], :name => "index_friendly_id_slugs_on_slug_and_sluggable_type", :unique => true
   add_index "friendly_id_slugs", ["sluggable_id"], :name => "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], :name => "index_friendly_id_slugs_on_sluggable_type"
+
+  create_table "lists", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "uid"
+  end
+
+  add_index "lists", ["uid"], :name => "index_lists_on_uid", :unique => true
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -47,10 +47,10 @@ ActiveRecord::Schema.define(:version => 20130612011104) do
 
   create_table "tasks", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
-    t.integer  "category_id"
-    t.boolean  "complete",    :default => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.integer  "list_id"
+    t.boolean  "complete",   :default => false
     t.date     "date"
     t.integer  "position"
   end
