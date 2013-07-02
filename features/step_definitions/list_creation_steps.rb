@@ -57,3 +57,9 @@ Then(/^I should be able to edit my list$/) do
   @list.reload
   expect(@list.name).to eq "Edited Dunzo List"
 end
+
+Then(/^I should have a list called "(.*?)"$/) do |arg1|
+  list = List.find_by_name(arg1)
+  expect(@user.lists).to include list
+  page.should have_content arg1
+end

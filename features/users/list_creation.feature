@@ -6,6 +6,12 @@ Feature: List management
   Background:
     Given I exist as a user
 
+  @dev
+  Scenario: I should already have an initial list upon sign up
+    When I sign in with valid credentials
+    And I visit my profile today
+    Then I should have a list called "Dunzo"
+
   @javascript
   Scenario: I can create new lists
     When I sign in with valid credentials
