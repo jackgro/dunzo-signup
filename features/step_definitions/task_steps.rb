@@ -1,6 +1,6 @@
 Given(/^I have a list with a complete task$/) do
-  @list = create(:category, user: @user)
-  @task = create(:task, category: @list, complete: true)
+  @list = create(:list, user: @user)
+  @task = create(:task, list: @list, complete: true)
 end
 
 When(/^I create a new task for my list$/) do

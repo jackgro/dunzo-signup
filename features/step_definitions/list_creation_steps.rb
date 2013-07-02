@@ -5,13 +5,13 @@ Given(/^I have (\d+) lists$/) do |arg1|
 end
 
 When(/^I create a new list$/) do
-  fill_in "category_name", with: "Groceries\n"
+  fill_in "list_name", with: "Groceries\n"
   page.should have_content "Groceries"
-  @list = Category.last
+  @list = List.last
 end
 
 When(/^I visit the page for my list$/) do
-  visit username_category_path(@user.slug, @list.category_uid)
+  visit username_list_path(@user.slug, @list.list_uid)
 end
 
 Then(/^I should be able to create a new list$/) do
