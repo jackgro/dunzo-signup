@@ -2,6 +2,8 @@
 
 FactoryGirl.define do
   factory :task do
-    name "MyString"
+    name "New task"
+    date Date.today
+    complete false
   end
 end

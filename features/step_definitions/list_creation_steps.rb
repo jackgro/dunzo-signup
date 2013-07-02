@@ -4,6 +4,16 @@ Given(/^I have (\d+) lists$/) do |arg1|
   @list.save
 end
 
+When(/^I create a new list$/) do
+  fill_in "category_name", with: "Groceries\n"
+  page.should have_content "Groceries"
+  @list = Category.last
+end
+
+When(/^I visit the page for my list$/) do
+  visit username_category_path(@user.slug, @list.category_uid)
+end
+
 Then(/^I should be able to create a new list$/) do
   fill_in "category_name", with: "Groceries\n"
   page.should have_content "Groceries"
