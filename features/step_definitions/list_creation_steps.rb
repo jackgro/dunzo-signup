@@ -11,7 +11,7 @@ When(/^I create a new list$/) do
 end
 
 When(/^I visit the page for my list$/) do
-  visit username_list_path(@user.slug, @list.list_uid)
+  visit username_list_path(@user.slug, @list.uid)
 end
 
 Then(/^I should be able to create a new list$/) do
