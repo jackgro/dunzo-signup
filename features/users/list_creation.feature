@@ -6,7 +6,6 @@ Feature: List management
   Background:
     Given I exist as a user
 
-  @dev
   Scenario: I should already have an initial list upon sign up
     When I sign in with valid credentials
     And I visit my profile today
