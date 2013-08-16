@@ -3,13 +3,15 @@
 
 #calendar-menu {
   background:none;
+  padding:0 10px;
 }
 
 .calendar {
   border-collapse: collapse;
   width: 100%;
 
-  a{ color:#CCC; }
+  a{ color:#CCC; 
+     border-radius:4px; }
 
     .current{
       background:#25BC99;
@@ -31,7 +33,7 @@
       padding:6px;
 
       &:hover{
-        background:#444;
+        background:#333;
         color:#FFF;
       }
     }

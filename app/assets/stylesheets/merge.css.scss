@@ -111,19 +111,10 @@ input[type="color"]:focus,
     SIDEBAR
 -----------------------------------------------------*/
 
-.sidebar-nav {
-  box-shadow:none;
-  margin:0; 
-}
 ul#dashboard-menu li:hover {
   background:#262626;
 }
-.sidebar-nav .nav-header {
-  border:0;
-}
-.sidebar-nav .nav-header:hover {
-  background:#484848;
-}
+
 
 
 /*---------------------------------------------------
@@ -149,7 +140,7 @@ ul#dashboard-menu li:hover {
 -----------------------------------------------------*/
 
 .content {
-  background:#E5E9EC;
+  background:#e4e5e5;
   border:0;
   margin-top:0;
 }
@@ -159,7 +150,6 @@ ul#dashboard-menu li:hover {
 }
 .well {
   border:0;
-  border-radius:0;
   box-shadow:none;
 }
 .well h5 {
@@ -203,16 +193,6 @@ a.delete-task .icon-remove:hover {
 }
 .edit_task .move:hover {
   color:#999;
-}
-
-
-/*---------------------------------------------------
-    FOOTER
------------------------------------------------------*/
-
-
-footer {
-  color:#666;
 }
 
 

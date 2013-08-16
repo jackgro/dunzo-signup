@@ -48,10 +48,10 @@ form.new_task{
       background:#222;
       border:0;
       border-radius:4px;
-      color:#999;
+      color:#666;
       font-size:0.8em;
       margin:0;
-      padding:10px 19px;
+      padding:10px 25px;
 
       &:focus{
         background:#151515;
@@ -125,7 +125,7 @@ form.edit_task{
 #category-list {
   li{
     position:relative;
-    padding: 6px; // Is this supposed to be here?
+    padding: 3px 6px; 
     border-left:4px solid transparent;
 
     a {
