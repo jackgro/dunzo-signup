@@ -1,8 +1,8 @@
 - form_class = task.complete? ? "edit_task complete" : "edit_task"
 
 = form_for task, remote: true, html: {:class => "#{form_class} default" } do |f|
-  %i.icon-reorder.move
+  %i.icon-reorder.move{title: 'Drag to reorder'}
   = f.check_box :complete, id: "task-#{task.id}"
   = f.label :name, task.name, for: "task-#{task.id}"
   = link_to task_path(task.id), remote: true, method: :delete, class: "delete-task" do
-    %i.icon-remove.pull-right.hidden
+    %i.icon-remove.pull-right.hidden{title: 'Delete'}
