@@ -29,6 +29,8 @@ furley_bg.png: furley_bg-c3603ba194ec75bff831004680a6cd0e.png
 furley_bg/index.png: furley_bg-c3603ba194ec75bff831004680a6cd0e.png
 headerbg.jpg: headerbg-e55c521a1ac5d2cf48806d7e246437ee.jpg
 headerbg/index.jpg: headerbg-e55c521a1ac5d2cf48806d7e246437ee.jpg
+hero.jpg: hero-912761e8f907908a844ca6abe9450628.jpg
+hero/index.jpg: hero-912761e8f907908a844ca6abe9450628.jpg
 home-bg.jpg: home-bg-bff3d2ce0751475bba9aa8635eb908fd.jpg
 home-bg/index.jpg: home-bg-bff3d2ce0751475bba9aa8635eb908fd.jpg
 icon-drag.png: icon-drag-5a6e363d3b1cb55d5ea8144ace077bff.png
@@ -49,8 +51,8 @@ users.js: users-9009acb6a39a5e91381c5739083ff3eb.js
 users/index.js: users-9009acb6a39a5e91381c5739083ff3eb.js
 application.css: application-43656fcdc53294864b73dd05bdacac8f.css
 application/index.css: application-43656fcdc53294864b73dd05bdacac8f.css
-home.css: home-927cca9572a8a578ccb1afdf24136bf2.css
-home/index.css: home-927cca9572a8a578ccb1afdf24136bf2.css
+home.css: home-1d29e2b1dd850e5fa3e7d983410620c4.css
+home/index.css: home-1d29e2b1dd850e5fa3e7d983410620c4.css
 merge.css: merge-4f5303dce48b2c133ee538b71c8f2a44.css
 merge/index.css: merge-4f5303dce48b2c133ee538b71c8f2a44.css
 theme.css: theme-2fb38b9c3fa669f9c200b829a47c2274.css
