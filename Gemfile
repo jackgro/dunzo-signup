@@ -13,7 +13,7 @@ gem "figaro"
 gem "unicorn"
 gem "newrelic_rpm", "3.5.7.59"
 gem "haml-rails"
-gem "therubyracer"
+gem "therubyracer", "0.11.4"
 gem "acts_as_list"
 gem "friendly_id", "~> 4.0.9"
 gem "thin"
@@ -30,8 +30,6 @@ group :development do
   gem "quiet_assets", ">= 1.0.1"
   gem "better_errors"
   gem "binding_of_caller"
-  gem 'pg', '0.15.1'
-  gem "pry-rails"
   gem "letter_opener"
 end
 
@@ -59,6 +57,4 @@ group :test do
   gem "chronic"
 end
 
-group :production do
-  gem 'pg', '0.15.1'
-end
+gem 'pg', '0.15.1'
